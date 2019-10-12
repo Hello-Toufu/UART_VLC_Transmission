@@ -1,0 +1,80 @@
+--altsyncram ADDRESS_ACLR_A="NONE" ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK0" BYTE_SIZE=8 BYTEENA_ACLR_A="NONE" BYTEENA_ACLR_B="NONE" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CLOCK_ENABLE_CORE_A="NORMAL" CLOCK_ENABLE_CORE_B="NORMAL" CLOCK_ENABLE_INPUT_A="NORMAL" CLOCK_ENABLE_INPUT_B="NORMAL" CLOCK_ENABLE_OUTPUT_A="BYPASS" CLOCK_ENABLE_OUTPUT_B="NORMAL" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Cyclone IV E" ENABLE_ECC="FALSE" ENABLE_RUNTIME_MOD="NO" IMPLEMENT_IN_LES="ON" INDATA_ACLR_A="NONE" INDATA_ACLR_B="NONE" INIT_FILE_LAYOUT="PORT_B" LOW_POWER_MODE="AUTO" MAXIMUM_DEPTH=2 NUMWORDS_A=2 NUMWORDS_B=2 OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_A="NONE" OUTDATA_ACLR_B="CLEAR0" OUTDATA_REG_A="UNREGISTERED" OUTDATA_REG_B="CLOCK0" RAM_BLOCK_TYPE="AUTO" RDCONTROL_ACLR_B="NONE" RDCONTROL_REG_B="CLOCK0" READ_DURING_WRITE_MODE_MIXED_PORTS="OLD_DATA" read_during_write_mode_port_a="NEW_DATA_WITH_NBE_READ" read_during_write_mode_port_b="NEW_DATA_WITH_NBE_READ" WIDTH_A=16 WIDTH_B=16 WIDTH_BYTEENA_A=1 WIDTH_BYTEENA_B=1 WIDTHAD_A=1 WIDTHAD_B=1 WRCONTROL_ACLR_A="NONE" WRCONTROL_ACLR_B="NONE" WRCONTROL_WRADDRESS_REG_B="CLOCK0" aclr0 address_a address_b clock0 clocken0 data_a q_b wren_a CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 18.0 cbx_altera_syncram_nd_impl 2018:04:24:18:04:18:SJ cbx_altsyncram 2018:04:24:18:04:18:SJ cbx_cycloneii 2018:04:24:18:04:18:SJ cbx_lpm_add_sub 2018:04:24:18:04:18:SJ cbx_lpm_compare 2018:04:24:18:04:18:SJ cbx_lpm_decode 2018:04:24:18:04:18:SJ cbx_lpm_mux 2018:04:24:18:04:18:SJ cbx_mgl 2018:04:24:18:08:49:SJ cbx_nadder 2018:04:24:18:04:18:SJ cbx_stratix 2018:04:24:18:04:18:SJ cbx_stratixii 2018:04:24:18:04:18:SJ cbx_stratixiii 2018:04:24:18:04:18:SJ cbx_stratixv 2018:04:24:18:04:18:SJ cbx_util_mgl 2018:04:24:18:04:18:SJ  VERSION_END
+
+
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details.
+
+
+FUNCTION decode_jsa (data[0..0], enable)
+RETURNS ( eq[1..0]);
+FUNCTION mux_lob (data[31..0], sel[0..0])
+RETURNS ( result[15..0]);
+
+--synthesis_resources = lut 16 reg 83 
+OPTIONS ALTERA_INTERNAL_OPTION = "SUPPRESS_DA_RULE_INTERNAL=C106";
+
+SUBDESIGN altsyncram_t7i3
+( 
+	aclr0	:	input;
+	address_a[0..0]	:	input;
+	address_b[0..0]	:	input;
+	clock0	:	input;
+	clocken0	:	input;
+	data_a[15..0]	:	input;
+	q_b[15..0]	:	output;
+	wren_a	:	input;
+) 
+VARIABLE 
+	address_reg[0..0] : dffe;
+	clken0_reg : dffe;
+	data_reg[15..0] : dffe;
+	outdata_reg[15..0] : dffe;
+	ram_block[31..0] : dffe;
+	rd_data_out_latch[15..0] : dffe;
+	wren_reg : dffe;
+	address_decoder : decode_jsa;
+	output_mux : mux_lob;
+	address_b_wire[0..0]	: WIRE;
+
+BEGIN 
+	address_reg[].clk = clock0;
+	address_reg[].d = address_a[];
+	address_reg[].ena = clocken0;
+	clken0_reg.clk = clock0;
+	clken0_reg.d = clocken0;
+	data_reg[].clk = clock0;
+	data_reg[].d = data_a[];
+	data_reg[].ena = clocken0;
+	outdata_reg[].clk = clock0;
+	outdata_reg[].clrn = (! aclr0);
+	outdata_reg[].d = rd_data_out_latch[].q;
+	outdata_reg[].ena = clocken0;
+	ram_block[].clk = (! clock0);
+	ram_block[].d = ( data_reg[].q, data_reg[].q);
+	ram_block[].ena = ( (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[1..1]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]), (clken0_reg.q & address_decoder.eq[0..0]));
+	rd_data_out_latch[].clk = clock0;
+	rd_data_out_latch[].d = output_mux.result[];
+	rd_data_out_latch[].ena = clocken0;
+	wren_reg.clk = clock0;
+	wren_reg.d = wren_a;
+	wren_reg.ena = clocken0;
+	address_decoder.data[] = address_reg[].q;
+	address_decoder.enable = wren_reg.q;
+	output_mux.data[] = ram_block[].q;
+	output_mux.sel[] = address_b_wire[];
+	address_b_wire[] = address_b[];
+	q_b[] = outdata_reg[].q;
+END;
+--VALID FILE

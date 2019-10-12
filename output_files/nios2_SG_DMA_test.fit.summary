@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Oct 12 10:52:44 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : nios2_SG_DMA_test
+Top-level Entity Name : nios2_SG_DMA_test
+Family : Cyclone IV E
+Device : EP4CE22E22C8
+Timing Models : Final
+Total logic elements : 6,437 / 22,320 ( 29 % )
+    Total combinational functions : 4,701 / 22,320 ( 21 % )
+    Dedicated logic registers : 4,771 / 22,320 ( 21 % )
+Total registers : 4771
+Total pins : 12 / 80 ( 15 % )
+Total virtual pins : 0
+Total memory bits : 215,616 / 608,256 ( 35 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

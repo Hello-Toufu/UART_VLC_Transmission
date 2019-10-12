@@ -1,0 +1,7 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst syn_threshold -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst syn_threshold.in_system_sources_probes_0 -pg 1 -lvl 1 -y 30
+preplace netloc EXPORT<net_container>syn_threshold</net_container>(SLAVE)in_system_sources_probes_0.sources,(SLAVE)syn_threshold.sources) 1 0 1 NJ
+levelinfo -pg 1 0 60 290
+levelinfo -hier syn_threshold 70 140 270

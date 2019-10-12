@@ -1,0 +1,2 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) syn_threshold/syn_threshold.qip]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) manual_rst/manual_rst.qip]

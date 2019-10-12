@@ -1,0 +1,350 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2019/02/11 
+// Design Name: 
+// Module Name: nios2_SG_DMA
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+module nios2_SG_DMA_test(
+//		input               i_rst_n       //the external async reset, reset all the internal modules
+//    ,input              i_phy_rst_n
+
+		input              i_sys_clk     //mii_clk/scillator.clock location has been changed 20180713
+
+//    ,input              i_spi_cs            
+//    ,input              i_spi_sck           
+//    ,input              i_spi_si            
+//    ,output             o_spi_so    
+//
+//
+//		,output             o_gmii_tx_en 
+//		,output             o_gmii_tx_er   
+//		,input              i_gmii_rx_dv
+//		,input              i_gmii_rx_er   
+//		,input              i_gmii_crs
+//		,input              i_gmii_col
+//
+//`ifdef GMAC_MII
+//		,output     [3:0]   o_gmii_txd    
+//		,input      [3:0]   i_gmii_rxd    
+//`else
+//    ,output     [7:0]   o_gmii_txd    
+//    ,input      [7:0]   i_gmii_rxd    
+//`endif
+//
+//		,input              i_gmii_rx_clk
+//		,input              i_mii_tx_clk
+//
+//		,output             o_phy_rst_n
+//
+//		,output             o_gmii_mdc
+//		,inout              io_gmii_mdio
+//
+		,output  			o_led1
+// 	,output  			o_led2
+//		,output  			o_led3
+//    ,output             o_led4
+//	
+//	
+//	//vlc in and out
+    //,output   [0:0]     o_serial_tx_data
+    //,input    [0:0]     i_serial_rx_clk
+    ,output   [0:0]     o_serial_tx_data_33V
+    ,input    [0:0]     i_serial_rx_data
+	 
+	 ,output					o_vlc_en
+	 
+    ,output   [31:0]     o_tx_frame_cnt
+	 
+	 
+    //,input    [3:0]   i_serial_clk_rx_n
+    //,input    [3:0]  i_serial_rx_data_n    
+    ,output   [31:0]     o_good_frame_num
+    );
+	
+    assign o_vlc_en 					= 1'b1;
+    assign o_serial_tx_data_33V 	= r_serial_tx_data;	
+
+	 //assign o_phy_rst_n = clk_locked;	 
+	 clk_gen_1 m_clk_gen(
+		  .inclk0    (i_sys_clk)
+        ,.c0        (c_sys_clk)            //25M
+		  ,.c1		(c_serial_tx_clk)
+		  ,.c2		(c_vl_tx_clk)
+		  ,.c3		(c_8x_serial_tx_clk)
+        ,.locked    (clk_locked) //(o_led3)
+    );
+
+	//===============================================================================
+	// from old version, not used here 
+	//===============================================================================	
+
+	//assign o_serial_tx_data = r_serial_tx_data;
+		 
+		
+	//	wire c_rx_clk_locked;
+	//	 m_r_clk_gen m_r_clk_gen(
+	//		  .inclk0    (i_serial_rx_clk)
+	//        ,.c0        (c_serial_rx_clk)            //25M
+	//		  ,.c1		(c_vl_rx_clk)
+	//		  //,.c2		(c_vl_tx_clk)
+	//		  //,.c3		(clk_2p5)
+	//        ,.locked    (c_rx_clk_locked) //(o_led3)
+	//    );
+	 
+	//MDI Interface
+	//assign	io_gmii_mdio		=	c_gmii_mdo_oe ? c_gmii_mdo : 1'bz;
+	//assign	c_gmii_mdi			=	io_gmii_mdio;
+   
+	wire [31:0]		sgdma_tx_pcs_out_data;
+	wire [1:0] 		sgdma_tx_pcs_out_empty;
+	wire [31:0]		sgdma_rx_pcs_in_data;
+	wire [1:0] 		sgdma_rx_pcs_in_empty;
+	
+ 
+	wire [31:0]	tx_fifo_out_data             ; 
+	wire			tx_fifo_out_valid            ; 
+	wire			tx_fifo_out_ready            ; 
+	wire			tx_fifo_out_startofpacket    ; 
+	wire			tx_fifo_out_endofpacket      ;
+	wire [1:0]	tx_fifo_out_empty            ;
+	
+ 
+	wire [31:0]	rx_fifo_in_data               ;  
+	wire 			rx_fifo_in_valid              ;  
+	wire 			rx_fifo_in_ready              ;  
+	wire 			rx_fifo_in_startofpacket      ;  
+	wire 			rx_fifo_in_endofpacket        ;  
+	wire [1:0]	rx_fifo_in_empty             ;
+	
+	wire [1:0]	LED             ;
+	//assign 		o_led1	=	LED[0];
+
+	wire [31:0]	c_ari_data;
+	wire [1:0] 	c_ari_be;
+	wire [14:0] 	c_ari_frame_len;
+
+	wire [31:0]	r_pl_data;
+	wire [1:0] 	r_pl_be;
+	//===============================================================================
+	// PCS (physical coding sublayer) part
+	//===============================================================================	
+	PCS_TOP
+//	#(
+//        .PULSE_POSEDGE_TIME(32'd0_001), //time to 
+//        .PULSE_NEGEDGE_TIME(32'd60_000),  //time to rst
+//        .PULSE_WAITING_TIME(32'd10_000)  
+//	)
+	m_PCS_TOP	(
+		.i_pon_rst_n       			(1'b1                       )
+
+		,.i_vl_tx_rst_n				(clk_locked                  )
+		,.i_serial_rx_rst_n			(clk_locked                  )
+		,.i_serial_tx_clk				(c_serial_tx_clk                  )
+		,.i_serial_rx_clk          (c_8x_serial_tx_clk                  )
+		,.o_serial_tx_data         (r_serial_tx_data                 )
+		,.i_serial_rx_data         (r_serial_rx_data                 )
+		,.i_vl_tx_clk              (c_vl_tx_clk                      )																						 
+																						 
+																						 
+	                                                                 
+		,.i_ari_val                (c_ari_val                        )
+		,.i_ari_sof                (c_ari_sof                        )
+		,.i_ari_eof                (c_ari_eof                        )
+		,.i_ari_be                 (c_ari_be                         )
+		,.i_ari_data               (c_ari_data                       )
+		,.o_ari_ack                (c_ari_ack                        )
+		,.i_ari_frame_len          (c_ari_frame_len                  )
+		,.i_ari_frame_len_val      (c_ari_frame_len_val              )
+		                                                             
+		,.o_ati_val                (r_pl_val      )
+		,.o_ati_sof                (r_pl_sof      )
+		,.o_ati_eof                (r_pl_eof      )
+		,.o_ati_be                 (r_pl_be       )
+		,.o_ati_data               (r_pl_data     )
+		,.i_ati_rdy     	         (r_pl_rdy      )
+		
+		,.i_threshold					(c_threshold)
+	);
+		
+		
+	//===============================================================================
+	// interface: ack <--------> ready
+	//===============================================================================	
+	ps_avalon_tx_2_tx_interface	m_ps_avalon_tx_2_tx_interface(
+		
+		.i_clk                              (c_vl_tx_clk          )
+		,.i_rst_n                           (clk_locked           )
+                                                                  
+		,.i_sgdma_tx_pcs_in_data            (tx_fifo_out_data)           
+		,.i_sgdma_tx_pcs_in_valid           (tx_fifo_out_valid)          
+		,.o_sgdma_tx_pcs_in_ready           (tx_fifo_out_ready)          
+		,.i_sgdma_tx_pcs_in_endofpacket     (tx_fifo_out_endofpacket)    
+		,.i_sgdma_tx_pcs_in_startofpacket   (tx_fifo_out_startofpacket)  
+		,.i_sgdma_tx_pcs_in_empty           (tx_fifo_out_empty)           
+
+		,.o_ari_val                         (c_ari_val             )
+		,.o_ari_sof                         (c_ari_sof             )
+		,.o_ari_eof                         (c_ari_eof             )
+		,.o_ari_be                          (c_ari_be              )
+		,.o_ari_data                        ({c_ari_data[7:0], c_ari_data[15:8], c_ari_data[23:16],c_ari_data[31:24]}            )
+		,.i_ari_ack                         (c_ari_ack             )
+		,.o_ari_frame_len                   (c_ari_frame_len       )
+		,.o_ari_frame_len_val               (c_ari_frame_len_val   )
+	);
+
+	//===============================================================================
+	// eof gen: 
+	//===============================================================================	
+	frame_eof_regen	m_frame_eof_regen(
+		
+		.i_clk                              (c_vl_tx_clk          )
+		,.i_rst_n                           (clk_locked           )
+                                                                  
+		,.i_pl_val    (r_pl_val      )
+		,.i_pl_sof    (r_pl_sof      )
+		,.i_pl_eof    (r_pl_eof      )
+		,.i_pl_be     (r_pl_be       )
+		,.i_pl_data   (r_pl_data     )
+		,.o_pl_rdy    (r_pl_rdy      )
+
+		,.o_ps_val                         (rx_fifo_in_valid            )
+		,.o_ps_sof                         (rx_fifo_in_startofpacket    )
+		,.o_ps_eof                         (rx_fifo_in_endofpacket      )
+		,.o_ps_be                          (rx_fifo_in_empty           )
+		,.o_ps_data                        ({rx_fifo_in_data[7:0], rx_fifo_in_data[15:8], rx_fifo_in_data[23:16],rx_fifo_in_data[31:24]}               )
+		,.i_ps_rdy                         (rx_fifo_in_ready            )
+	);		
+	
+	//===============================================================================
+	// rst gen
+	//===============================================================================
+	wire [3:0]	c_manual_prob;
+    manual_rst m_manual_rst (
+        .source (c_manual_prob)  // sources.source
+    );	
+	 
+	wire [15:0]	c_threshold;
+    syn_threshold m_syn_threshold (
+        .source (c_threshold)  // syn_threshold
+    );	
+	 
+	 
+	assign c_manual_rst = c_manual_prob[0];
+	assign c_tx_frame_num_cnt_rst = c_manual_prob[1];
+	assign c_always_turn_on_tx	 	= c_manual_prob[2];
+	assign r_serial_rx_data	 		= c_manual_prob[3] ?  r_serial_tx_data : ~i_serial_rx_data ;
+	//generate a periodical rst 
+    periodical_pulse_gen#(
+        .PULSE_POSEDGE_TIME(32'd0_001), //time to 
+        .PULSE_NEGEDGE_TIME(32'd60_000),  //time to rst
+        .PULSE_WAITING_TIME(32'd10_000)  
+	)m_periodical_rst_gen(
+        .i_rst_n				(clk_locked && c_manual_rst),
+        .i_clk					(c_vl_tx_clk),
+        .o_pulse				(r_periodical_rst)
+    );
+	
+	(* keep *) reg [31:0] r_tx_frame_cnt /* synthesis preserve */;
+	(* preserve *) reg r_periodical_rst_delay /*synthesis keep*/;
+	assign o_tx_frame_cnt = r_tx_frame_cnt;
+    // counter before pulse is generated
+   always @ (posedge c_vl_tx_clk or negedge c_tx_frame_num_cnt_rst)
+   begin
+       if (!c_tx_frame_num_cnt_rst)
+           r_periodical_rst_delay <= 1'd0;
+       else begin
+           r_periodical_rst_delay <= r_periodical_rst;
+       end
+   end
+   always @ (posedge c_vl_tx_clk or negedge c_tx_frame_num_cnt_rst)
+   begin
+       if (!c_tx_frame_num_cnt_rst)
+           r_tx_frame_cnt <= 32'd0;
+       else begin
+           if ( (r_periodical_rst_delay == 1'b0) && (r_periodical_rst == 1'b1)) begin
+               r_tx_frame_cnt <= r_tx_frame_cnt + 1'b1;
+           end
+       end
+   end
+	 
+	//===============================================================================
+	// turn on-off IR LED
+	//===============================================================================	
+	//generate a pulse
+	//reg r_turn_on_ir_led;
+    pulse_gen#(
+        .PULSE_POSEDGE_TIME(32'd00_001), //time to turn on
+        .PULSE_NEGEDGE_TIME(32'd50_000)  //time to turn off
+	)m_turn_on_ir_led(
+        .i_rst_n				(clk_locked && c_manual_rst && r_periodical_rst),
+        .i_clk					(c_vl_tx_clk),
+        .o_pulse				(r_led1)
+    );
+	assign o_led1 =  c_always_turn_on_tx ? 1'b1 : r_led1;
+	
+	// delay before sending packet: 10ms() is not enough, 50ms is enough
+	// delay after sending packet: 10 ms is enough
+	//===============================================================================
+	// pac gen and checker
+	//===============================================================================	
+	//reg turn_on_pac_gen;
+    pulse_gen#(
+        .PULSE_POSEDGE_TIME(32'd40_010), //time to send packet
+        .PULSE_NEGEDGE_TIME(32'd40_020)
+	)m_turn_on_pac_gen(
+        .i_rst_n				(clk_locked && c_manual_rst && r_periodical_rst),
+        .i_clk					(c_vl_tx_clk),
+        .o_pulse				(c_turn_on_pac_gen)
+    );
+
+	//test source gen
+    pat_gen_switchable#(
+        .FRAME_LEN_VAL(16'd1518),
+        .FRAME_GAP_VAL(16'd100)
+	)m_pat_gen_switchable(
+        .arst_n					(clk_locked && c_manual_rst && r_periodical_rst),
+        .light_modu_clk			(c_vl_tx_clk),
+        .i_switch					(c_turn_on_pac_gen),
+        .light_modu_tdata		(tx_fifo_out_data),
+        .light_modu_tvalid		(tx_fifo_out_valid),
+        .light_modu_tlast		(tx_fifo_out_endofpacket),
+        .light_modu_tready		(tx_fifo_out_ready)
+    );		
+	
+	wire [31:0]	c_good_word_num;
+	wire [31:0]	c_good_frame_num;
+	wire [31:0]	c_frame_num;
+	//packet checker 
+    pac_chek#(
+        .FRAME_LEN_VAL(16'd1518)
+	)m_pac_chek(
+        .i_rst_n					(clk_locked && c_manual_rst),
+        .i_pac_chek_clk				(c_vl_tx_clk),
+        .i_pac_chek_data			(rx_fifo_in_data),
+        .i_pac_chek_data_valid		(rx_fifo_in_valid),
+        .i_pac_chek_sof				(rx_fifo_in_startofpacket),
+        .o_good_word_num			(c_good_word_num),//o_good_word_num == FRAME_LEN_VAL
+ 
+        .o_good_frame_num			(c_good_frame_num),
+        .o_frame_num 				(c_frame_num)
+ );
+	 assign rx_fifo_in_ready = 1'b1;
+	 assign o_good_frame_num = c_good_frame_num;
+endmodule

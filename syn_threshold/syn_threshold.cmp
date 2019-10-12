@@ -1,0 +1,6 @@
+	component syn_threshold is
+		port (
+			source : out std_logic_vector(15 downto 0)   -- source
+		);
+	end component syn_threshold;
+

@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\winner\Desktop\vlc_m_8x_syn_uart\wait_time_threshold.qsys --block-symbol-file --output-directory=C:\Users\winner\Desktop\vlc_m_8x_syn_uart\wait_time_threshold --family="Cyclone IV E" --part=EP4CE22E22C8
+Progress: Loading vlc_m_8x_syn_uart/wait_time_threshold.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\winner\Desktop\vlc_m_8x_syn_uart\wait_time_threshold.qsys --synthesis=VERILOG --output-directory=C:\Users\winner\Desktop\vlc_m_8x_syn_uart\wait_time_threshold\synthesis --family="Cyclone IV E" --part=EP4CE22E22C8
+Progress: Loading vlc_m_8x_syn_uart/wait_time_threshold.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: wait_time_threshold: Generating wait_time_threshold "wait_time_threshold" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "wait_time_threshold" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: wait_time_threshold: Done "wait_time_threshold" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

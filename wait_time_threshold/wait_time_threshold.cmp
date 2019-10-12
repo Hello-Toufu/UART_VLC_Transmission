@@ -1,0 +1,6 @@
+	component wait_time_threshold is
+		port (
+			source : out std_logic_vector(7 downto 0)   -- source
+		);
+	end component wait_time_threshold;
+

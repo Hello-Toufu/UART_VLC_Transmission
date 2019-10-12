@@ -1,0 +1,7 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst manual_rst.in_system_sources_probes_0 -pg 1 -lvl 1 -y 30
+preplace inst manual_rst -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>manual_rst</net_container>(SLAVE)in_system_sources_probes_0.sources,(SLAVE)manual_rst.sources) 1 0 1 N
+levelinfo -pg 1 0 60 290
+levelinfo -hier manual_rst 70 140 270

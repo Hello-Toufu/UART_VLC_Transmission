@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\winner\Desktop\8_vlc_m_8x_syn_quatus_e10_tx_rx2\manual_rst.qsys --block-symbol-file --output-directory=C:\Users\winner\Desktop\8_vlc_m_8x_syn_quatus_e10_tx_rx2\manual_rst --family="Cyclone IV E" --part=EP4CE10F17C8
+Progress: Loading 8_vlc_m_8x_syn_quatus_e10_tx_rx2/manual_rst.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\winner\Desktop\8_vlc_m_8x_syn_quatus_e10_tx_rx2\manual_rst.qsys --synthesis=VERILOG --output-directory=C:\Users\winner\Desktop\8_vlc_m_8x_syn_quatus_e10_tx_rx2\manual_rst\synthesis --family="Cyclone IV E" --part=EP4CE10F17C8
+Progress: Loading 8_vlc_m_8x_syn_quatus_e10_tx_rx2/manual_rst.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: manual_rst: Generating manual_rst "manual_rst" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "manual_rst" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: manual_rst: Done "manual_rst" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

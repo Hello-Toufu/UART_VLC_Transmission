@@ -1,0 +1,242 @@
+LIBRARY ieee;                             
+USE ieee.std_logic_1164.all;              
+use ieee.std_logic_arith.all;             
+use ieee.std_logic_unsigned.all;
+LIBRARY XilinxCoreLib;
+
+--LIBRARY lpm;
+--USE lpm.all;
+--LIBRARY altera_mf;
+--USE altera_mf.all;
+--LIBRARY altera_mf;
+--USE altera_mf.altera_mf_components.all;
+
+ENTITY desyn IS
+	PORT	(
+		clk				: 	in	STD_LOGIC;
+		reset		   	: 	in STD_LOGIC;
+		data_in			:	in std_logic;
+		
+		data_out			:	out std_logic;
+		eop_out			:	out std_logic;
+		en_out			:	out std_logic
+		
+--		syn_count_out	 : out std_logic_vector(20 downto 0)
+--		error_1000     :	out std_logic
+
+		
+	);
+END desyn;
+
+--##################################################################################
+ARCHITECTURE behav OF desyn IS
+
+	------------------------------------------------------------------------------
+	-- n. Signals Declaration
+	------------------------------------------------------------------------------
+--	signal syn_count  :	std_logic_vector(20 downto 0);
+    
+	signal syn_flag		:	std_logic;
+	signal data_delay1		:	std_logic;
+	signal data_delay2		:	std_logic;
+--	signal data_delay3		:	std_logic;
+--	signal data_delay4		:	std_logic;
+--	signal data_delay5		:	std_logic;
+--	signal data_delay6		:	std_logic;
+--	signal data_delay7		:	std_logic;
+--	signal data_delay8		:	std_logic;
+--	signal data_delay9		:	std_logic;
+--	signal data_delay10		:	std_logic;
+
+	----Matching_filter signals
+	signal syn_vector		:	STD_LOGIC_VECTOR(63 DOWNTO 0);
+	constant syn_header : std_logic_vector(63 downto 0) := "0101000101010101100110101001011001010110100101010101101001100110";
+
+    type state_type is (st1_idle, st2_sdata,  st3_eop);
+    signal state, state_delay1 , state_delay2 , state_delay3 , state_delay4 , state_delay5 , state_delay6 , state_delay7 , state_delay8 , state_delay9 : state_type;
+	 
+	 
+	signal len_count  :	std_logic_vector(11 downto 0); --ZDF 20170920 for count the data 
+	 
+--##################################################################################
+begin
+--	syn_count_out <= syn_count;
+	------------------------------------------------------------------------------
+	-- 1. Data_in go through shift register
+	------------------------------------------------------------------------------
+
+
+	----Delay
+	process(reset,clk)
+	begin
+		if(reset='1') then
+			data_delay1<='0';
+            data_delay2<='0';
+--            data_delay3<='0';
+--			data_delay4<='0';
+--            data_delay5<='0';
+--            data_delay6<='0';
+--            data_delay7<='0';
+--            data_delay8<='0';
+--            data_delay9<='0';
+--            data_delay10<='0';
+		elsif(rising_edge(clk)) then
+		    data_delay1<=data_in;
+            data_delay2<=data_delay1;
+--            data_delay3<=data_delay2;
+--            
+--		    data_delay4<=data_delay3;
+--            data_delay5<=data_delay4;
+--            data_delay6<=data_delay5;
+--            data_delay7<=data_delay6;
+--            data_delay8<=data_delay7;
+--            data_delay9<=data_delay8;
+--            data_delay10<=data_delay9;
+		end if;
+	end process;
+
+
+
+
+	------------------------------------------------------------------------------
+	-- 4. syn_header capture
+	------------------------------------------------------------------------------
+	process (clk)
+	begin
+		if(reset='1') then
+
+			syn_vector<=(others=>'0');  --4150   8231
+		elsif(rising_edge(clk)) then
+			syn_vector(63) <= data_in;
+			syn_vector(62 downto 0) <= syn_vector(63 downto 1);
+		end if;
+	end process;	
+	
+	process (clk)
+	begin
+		if(reset='1') then
+
+			syn_flag<='0';  --4150   8231
+		elsif(rising_edge(clk)) then
+				if ( syn_vector = syn_header) then
+                 syn_flag<='1';
+				else
+					 syn_flag<='0';
+            end if;
+		end if;
+	end process;	
+
+   STATE_CODE: process (clk)
+   begin
+        if(reset='1') then
+               state <= st1_idle;
+					len_count <=(others=>'0');  
+           elsif(rising_edge(clk)) then
+                  case (state) is
+                     when st1_idle =>
+                        if ( syn_flag = '1') then
+                           state <= st2_sdata;
+									len_count <=(others=>'0'); 
+                        end if;
+                     when st2_sdata =>
+								len_count <= len_count + '1'; 
+                        if(    len_count = 4078  ) then
+                           state <= st3_eop;
+                        end if;
+                     when st3_eop =>
+                        state <= st1_idle;
+                     when others =>
+                        state <= st1_idle;
+                  end case;
+              end if;
+   end process;
+
+
+--	process(clk)
+--	begin
+--		if(reset='1') then
+--			state_delay1 <= st1_idle;
+--			state_delay2 <= st1_idle;
+--			state_delay3 <= st1_idle;
+--			state_delay4 <= st1_idle;
+--			state_delay5 <= st1_idle;
+--			state_delay6 <= st1_idle;
+--			state_delay7 <= st1_idle;
+--			state_delay8 <= st1_idle;
+--			state_delay9 <= st1_idle;
+--		elsif(rising_edge(clk)) then
+--			state_delay1 <= state;
+--			state_delay2 <= state_delay1;
+--			state_delay3 <= state_delay2;
+--			state_delay4 <= state_delay3;
+--			state_delay5 <= state_delay4;
+--			state_delay6 <= state_delay5;
+--			state_delay7 <= state_delay6;
+--			state_delay8 <= state_delay7;
+--			state_delay9 <= state_delay8;
+--
+--		end if;
+--        end process;
+
+	process(clk)
+	begin
+		if(reset='1') then
+			eop_out<='0';
+		elsif(rising_edge(clk)) then
+			if( state = st3_eop ) then
+				eop_out<='1';
+			else
+				eop_out<='0';
+			end if;
+		end if;
+        end process;
+
+	---- Generate	sop/eop/en signals  next need qudiao yige 
+	process(clk)
+	begin
+		if(reset='1') then
+			en_out<='0';
+			data_out <= '0';
+		elsif(rising_edge(clk)) then
+
+         if(  (state = st2_sdata or state = st3_eop) ) then --and  len_count>=0 and len_count <= 4079
+				en_out<='1';
+				data_out <= data_delay2;
+			else
+				data_out <= '0';
+				en_out<='0';
+			end if;
+		end if;
+	end process;
+
+--	---- Generate	count test the end is 1000 or not 1000*8*2
+--	process(clk)
+--	begin
+--		if(reset='1') then
+--			syn_count<=(others=>'0'); 
+--		elsif(rising_edge(clk)) then
+--
+--         if(  (state = st2_sdata and state_delay9 = st2_sdata ) ) then
+--				syn_count <= syn_count + '1';
+--			elsif (state = st3_eop) then 
+--				syn_count <= (others=>'0'); 
+--			end if;
+--		end if;
+--	end process;	
+	
+--	---- Generate	count test the end is 1000 or not 1000*8*2
+--	process(clk)
+--	begin
+--		if(reset='1') then
+--			error_1000 <= '0'; 
+--		elsif(rising_edge(clk)) then
+--
+--         if(  (state = st3_eop and syn_count /= 15999 ) ) then
+--				error_1000 <= '1';
+--			else 
+--				error_1000 <= '0';
+--			end if;
+--		end if;
+--	end process;		
+
+end behav;

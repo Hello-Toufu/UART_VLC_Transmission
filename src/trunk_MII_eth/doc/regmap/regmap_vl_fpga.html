@@ -1,0 +1,458 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>regmap_vl_fpga.html</title>
+</head>
+<body>
+----------regmap_vl_fpga.html----------
+</body>
+<style type="text/css">
+<!--
+  a                {text-decoration: none; color: #000000; font: bold 9pt geneva, arial; text-align: center;}
+  .cellBlank       {font: 8pt geneva, arial; text-align: center;}
+  .cellRegTitle    {text-decoration: none; color: #000000; background: #bebebe; font: 9pt geneva, arial; text-align: left;}
+  .cellColumnTitle {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellName        {text-decoration: none; color: #000000; background: #000000; font: 9pt geneva, arial; text-align: center;}
+  .cellBits        {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellDefault     {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellDescription {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+  .cellInformation {text-decoration: none; color: #000000; background: #000000; font: 8pt geneva, arial; text-align: left;}
+  .cellRegDesc     {text-decoration: none; color: #000000; background: #bebebe; font: 9pt geneva, arial; text-align: left;}
+  .cellFieldName   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+  .cellFieldBits   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellFieldDef    {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellFieldDesc   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+
+  .cellMirrorSlave {text-decoration: none; color: #000000; background: #FFC0C0; font: 9pt geneva, arial; text-align: left;}
+  .cellSpecialAttr {text-decoration: none; color: #FF0000; font: 8pt geneva, arial; text-align: left;}
+//-->
+</style>
+<body bgcolor="#FFFFFF">
+
+<!--Template_RegStart-->
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RESET_CTRL        Offset = 16'h00            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>soft reset</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>soft_all_rst</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      reset all modules except cfg<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>soft_cfg_rst</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      reset top cfg module<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RW_TEST        Offset = 16'hFF            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>use to test the register access</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rw_scratch</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      scratch board for test<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PGEN_CTRL1        Offset = 16'h10            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet generator control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_gen_en</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' to enable packet generator<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_num_clr</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' to clear the packet counter<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PGEN_ERR_CTRL        Offset = 16'h11            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>insert prbs error to packet source</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_txperrone</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      change from '0' to '1' will insert 1 error<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PGEN_PKT_CNT        Offset = 16'h12            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet generator packet num</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_pkt_num</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      sent packet num<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PGEN_CTRL2        Offset = 16'h13            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>pkt interval</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_pkt_interval</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'd800</td>
+      <td width=70% valign=top class=cellDescription>
+      packet interval<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PCHK_CTRL        Offset = 16'h14            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet checker control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_chk_en</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' to enable packet checker<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_num_clr</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' to clear the packet counter<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PCHK_ERR_CNT        Offset = 16'h15            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet prbs error counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_errcnt</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      prbs error counter<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PCHK_PKT_CNT        Offset = 16'h16            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet checker packet num</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_pkt_num</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      receive packet num<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       ERR_INJ_CTRL        Offset = 16'h20            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>line error injection control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>err_inj_cont</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      continues insert error<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       SIM_CABLE_DIS        Offset = 16'h21            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>simulate cable disconnection</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>lane_cable_dis</td>
+      <td width=5% valign=top class=cellBits>3:0</td>
+      <td width=10% valign=top class=cellDefault>4'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' will disconnect the serial data (set to 0)<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       S2P_PHASE        Offset = 16'h30            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>select use posedge or negedge to sample serial data in s2p</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>s2p_phase</td>
+      <td width=5% valign=top class=cellBits>3:0</td>
+      <td width=10% valign=top class=cellDefault>4'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' will use negedge, '0' will use posedge<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       DBG_OUTPORT        Offset = 16'h80            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>debug signals</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>debug_out1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      debug signal<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       DBG_INPORT        Offset = 16'h81            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>debug signals</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>debug_in1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      debug signal<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       PGEN_CTRL3        Offset = 16'h17            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>packet length</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_pkt_len</td>
+      <td width=5% valign=top class=cellBits>13:0</td>
+      <td width=10% valign=top class=cellDefault>16'd1000</td>
+      <td width=70% valign=top class=cellDescription>
+      packet length of byte<p>valid range: 44-1498<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_pkt_fix_len</td>
+      <td width=5% valign=top class=cellBits>15:15</td>
+      <td width=10% valign=top class=cellDefault>1'b1</td>
+      <td width=70% valign=top class=cellDescription>
+      0: packet length increase from 64 to 1514<p>1: packet length is set by tx_pkt_len<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+<!--Template_RegEnd-->
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Administrator\Desktop\vlc_m_8x_syn\7_vlc_m_8x_syn_quatus_e6_tx_rx\syn_threshold.qsys --block-symbol-file --output-directory=C:\Users\Administrator\Desktop\vlc_m_8x_syn\7_vlc_m_8x_syn_quatus_e6_tx_rx\syn_threshold --family="Cyclone IV E" --part=EP4CE6F17C8
+Progress: Loading 7_vlc_m_8x_syn_quatus_e6_tx_rx/syn_threshold.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Administrator\Desktop\vlc_m_8x_syn\7_vlc_m_8x_syn_quatus_e6_tx_rx\syn_threshold.qsys --synthesis=VERILOG --output-directory=C:\Users\Administrator\Desktop\vlc_m_8x_syn\7_vlc_m_8x_syn_quatus_e6_tx_rx\syn_threshold\synthesis --family="Cyclone IV E" --part=EP4CE6F17C8
+Progress: Loading 7_vlc_m_8x_syn_quatus_e6_tx_rx/syn_threshold.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: syn_threshold: Generating syn_threshold "syn_threshold" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "syn_threshold" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: syn_threshold: Done "syn_threshold" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

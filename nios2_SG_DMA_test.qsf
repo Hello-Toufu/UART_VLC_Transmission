@@ -1,0 +1,366 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+# Date created = 15:47:21  February 11, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		nios2_SG_DMA_test_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY nios2_SG_DMA_test
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:47:21  FEBRUARY 11, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name IP_SEARCH_PATHS "c:\\users\\administrator\\desktop\\20190211#nios2_sg_dma_test\\ps\\ps;c:\\users\\administrator\\desktop\\20190211#nios2_sg_dma_test\\ps"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SEARCH_PATH "c:\\users\\administrator\\desktop\\20190211#nios2_sg_dma_test\\ps\\ps"
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE AREA
+set_global_assignment -name AUTO_RAM_TO_LCELL_CONVERSION ON
+set_global_assignment -name AUTO_RESOURCE_SHARING ON
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE fifo_2_pcs_tx_interface.stp
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VERILOG_MACRO "ALTERA_FPGA=<None>"
+set_global_assignment -name VERILOG_MACRO "X1_ONLY_MODE=<None>"
+set_global_assignment -name VERILOG_MACRO "DELAY=#1"
+set_global_assignment -name VERILOG_MACRO "GMAC_MII=<None>"
+set_global_assignment -name VERILOG_MACRO "ADD_GMII_REG=<None>"
+set_global_assignment -name VERILOG_MACRO "MANCHESTER_EN=<None>"
+set_global_assignment -name SMART_RECOMPILE ON
+set_instance_assignment -name VIRTUAL_PIN ON -to o_tx_frame_cnt
+set_global_assignment -name VERILOG_MACRO "RS_QUATUS=<None>"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_rs_manchester_switchable -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_rs_manchester_switchable -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_rs_manchester_switchable
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_rs_manchester_switchable -section_id tb_rs_manchester_switchable
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb_rs_manchester_switchable.v -section_id tb_rs_manchester_switchable
+set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=2048" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=2048" -section_id auto_signaltap_0
+set_location_assignment PIN_127 -to i_sys_clk
+set_location_assignment PIN_98 -to rx
+set_location_assignment PIN_101 -to tx
+set_location_assignment PIN_104 -to vlc_tx
+set_location_assignment PIN_106 -to vlc_rx
+set_location_assignment PIN_110 -to arm_rx
+set_location_assignment PIN_112 -to arm_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to arm_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to arm_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_sys_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vlc_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vlc_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_pwm_64k
+set_location_assignment PIN_31 -to o_pwm_64k
+set_location_assignment PIN_83 -to PB3
+set_location_assignment PIN_80 -to PB4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PB3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PB4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to F_LED1
+set_location_assignment PIN_76 -to F_LED1
+set_location_assignment PIN_77 -to F_LED2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to F_LED2
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_clk" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[0]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_full" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rd_full" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name QIP_FILE wait_time_threshold/synthesis/wait_time_threshold.qip
+set_global_assignment -name VERILOG_FILE src/UART.v
+set_global_assignment -name VHDL_FILE src/fsmc_interface.vhd
+set_global_assignment -name VERILOG_FILE src/fifo_2_pcs_tx_interface.v
+set_global_assignment -name QSYS_FILE syn_threshold.qsys
+set_global_assignment -name VERILOG_FILE src/trunk_MII_eth/rtl/manchester_sync/product.v
+set_global_assignment -name VERILOG_FILE src/trunk_MII_eth/rtl/manchester_sync/fir.v
+set_global_assignment -name VERILOG_FILE src/trunk_MII_eth/rtl/manchester_sync/delay1.v
+set_global_assignment -name VHDL_FILE src/trunk_MII_eth/rtl/manchester_sync/man_code.vhd
+set_global_assignment -name VHDL_FILE src/trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+set_global_assignment -name VHDL_FILE src/trunk_MII_eth/rtl/manchester_sync/data_s2p.vhd
+set_global_assignment -name VHDL_FILE src/trunk_MII_eth/rtl/manchester_sync/data_p2s.vhd
+set_global_assignment -name VHDL_FILE src/trunk_MII_eth/rtl/manchester_sync/add_synheader_p.vhd
+set_global_assignment -name VERILOG_FILE src/pulse_gen.v
+set_global_assignment -name VERILOG_FILE src/pat_gen_switchable.v
+set_global_assignment -name VERILOG_FILE src/pac_chek.v
+set_global_assignment -name QSYS_FILE manual_rst.qsys
+set_global_assignment -name VERILOG_FILE src/ps_avalon_tx_2_tx_interface.v
+set_global_assignment -name VERILOG_FILE src/trunk_MII_eth/rtl/top_list.v
+set_global_assignment -name VERILOG_FILE src/nios2_SG_DMA_test.v
+set_global_assignment -name TCL_SCRIPT_FILE src/Tcl_ep4ce22.tcl
+set_global_assignment -name SIGNALTAP_FILE output_files/sgnals_sgdma.stp
+set_global_assignment -name VERILOG_FILE src/frame_eof_regen.v
+set_global_assignment -name SIGNALTAP_FILE output_files/vlc_test.stp
+set_global_assignment -name VERILOG_FILE src/periodical_pulse_gen.v
+set_global_assignment -name SIGNALTAP_FILE output_files/vlc_rx_part.stp
+set_global_assignment -name SDC_FILE src/nios2_SG_DMA_test.sdc
+set_global_assignment -name SIGNALTAP_FILE rx_s.stp
+set_global_assignment -name SIGNALTAP_FILE tx.stp
+set_global_assignment -name SIGNALTAP_FILE desyn.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/vlc_syn.stp
+set_global_assignment -name QIP_FILE RS_ENC_LANE_QUATUS.qip
+set_global_assignment -name QIP_FILE RS_DE_LANE_QUATUS.qip
+set_global_assignment -name SIGNALTAP_FILE desyn2.stp
+set_global_assignment -name SIGNALTAP_FILE rx_rs.stp
+set_global_assignment -name SIGNALTAP_FILE tx_rs.stp
+set_global_assignment -name SIGNALTAP_FILE rx_interface.stp
+set_global_assignment -name QIP_FILE fifo_tx.qip
+set_global_assignment -name QIP_FILE fifo_rx.qip
+set_global_assignment -name QIP_FILE clk_gen.qip
+set_global_assignment -name SIGNALTAP_FILE output_files/fifo_2_pcs.stp
+set_global_assignment -name SIGNALTAP_FILE fsmc_tx.stp
+set_global_assignment -name SIGNALTAP_FILE fifo_tx_2_pcs.stp
+set_global_assignment -name SIGNALTAP_FILE fifo_2_pcs_tx_interface.stp
+set_global_assignment -name SIGNALTAP_FILE fifo_tx_input.stp
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_be[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_be[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_eof" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len_val" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_sof" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_val" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_fifo_rd_en" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.DATA_SYMBOL" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.EOF" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.IDLE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.SOF" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_fifo_rdusedw[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|i_wait_time_len[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_be[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_be[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_eof" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_frame_len_val" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_sof" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_ari_val" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|o_fifo_rd_en" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.DATA_SYMBOL" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.EOF" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.IDLE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state.SOF" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_wait_cnt[7]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=71" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=71" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=71" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=238" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/fifo_2_pcs_tx_interface_auto_stripped.stp

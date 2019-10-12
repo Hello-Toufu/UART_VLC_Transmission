@@ -1,0 +1,1166 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>regmap_vl.html</title>
+</head>
+<body>
+----------regmap_vl.html----------
+</body>
+<style type="text/css">
+<!--
+  a                {text-decoration: none; color: #000000; font: bold 9pt geneva, arial; text-align: center;}
+  .cellBlank       {font: 8pt geneva, arial; text-align: center;}
+  .cellRegTitle    {text-decoration: none; color: #000000; background: #bebebe; font: 9pt geneva, arial; text-align: left;}
+  .cellColumnTitle {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellName        {text-decoration: none; color: #000000; background: #000000; font: 9pt geneva, arial; text-align: center;}
+  .cellBits        {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellDefault     {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellDescription {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+  .cellInformation {text-decoration: none; color: #000000; background: #000000; font: 8pt geneva, arial; text-align: left;}
+  .cellRegDesc     {text-decoration: none; color: #000000; background: #bebebe; font: 9pt geneva, arial; text-align: left;}
+  .cellFieldName   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+  .cellFieldBits   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellFieldDef    {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: center;}
+  .cellFieldDesc   {text-decoration: none; color: #000000; background: #f0f0f0; font: 9pt geneva, arial; text-align: left;}
+
+  .cellMirrorSlave {text-decoration: none; color: #000000; background: #FFC0C0; font: 9pt geneva, arial; text-align: left;}
+  .cellSpecialAttr {text-decoration: none; color: #FF0000; font: 8pt geneva, arial; text-align: left;}
+//-->
+</style>
+<body bgcolor="#FFFFFF">
+
+<!--Template_RegStart-->
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RESET_CTRL        Offset = 16'h00            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>soft reset</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>soft_pcs_rst</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      set to '1' to reset the whole pcs<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>soft_tx_rst</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      set to '1' to reset the pcs tx part<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>soft_rx_rst</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      set to '1' to reset the pcs rx part<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RW_TEST        Offset = 16'hFF            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>use to test the register access</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rw_scratch</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      scratch board for test<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       LANE_MODE        Offset = 16'h01            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>control X1 or X4 mode, on X1 mode, only Lane0 is used</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_x1_mode_en</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' enable the x1 mode for tx path<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_x1_mode_en</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' enable the x1 mode for rx path<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_CTRL        Offset = 16'h02            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs_control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>tx_rs_en</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b1</td>
+      <td width=70% valign=top class=cellDescription>
+      1' enable the reed-solomon encoder on tx lanes<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rx_rs_en</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b1</td>
+      <td width=70% valign=top class=cellDescription>
+      1' enable the reed-solomon decoder on rx lanes<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RX_DEC_STAT        Offset = 16'h10            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rx 8b10b dec status of each lane</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>comma_aligned_l0</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      comma aligned<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>comma_aligned_l1</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      comma aligned<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>comma_aligned_l2</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      comma aligned<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>comma_aligned_l3</td>
+      <td width=5% valign=top class=cellBits>3:3</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      comma aligned<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>disp_err_l0</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      disparity error, wirte to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>disp_err_l1</td>
+      <td width=5% valign=top class=cellBits>5:5</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      disparity error, wirte to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>disp_err_l2</td>
+      <td width=5% valign=top class=cellBits>6:6</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      disparity error, wirte to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>disp_err_l3</td>
+      <td width=5% valign=top class=cellBits>7:7</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      disparity error, wirte to clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RXLD_CTRL1        Offset = 16'h20            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rx lane deskew control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_half_thres</td>
+      <td width=5% valign=top class=cellBits>4:0</td>
+      <td width=10% valign=top class=cellDefault>5'd8</td>
+      <td width=70% valign=top class=cellDescription>
+      control how many samples to store into deskew buffer before read out<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RXLD_CTRL2        Offset = 16'h21            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rx lane deskew control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_align_det_thres</td>
+      <td width=5% valign=top class=cellBits>7:0</td>
+      <td width=10% valign=top class=cellDefault>8'd4</td>
+      <td width=70% valign=top class=cellDescription>
+      control how many sucessive align marker match to judge align sucess<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_align_los_thres</td>
+      <td width=5% valign=top class=cellBits>15:8</td>
+      <td width=10% valign=top class=cellDefault>8'd8</td>
+      <td width=70% valign=top class=cellDescription>
+      control how many align mismatch to detect align loss of sync<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RXLD_STAT        Offset = 16'h22            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>deskew status</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_overflow_l0</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter overflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_overflow_l1</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter overflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_overflow_l2</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter overflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_overflow_l3</td>
+      <td width=5% valign=top class=cellBits>3:3</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter overflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_underflow_l0</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter underflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_underflow_l1</td>
+      <td width=5% valign=top class=cellBits>5:5</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter underflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_underflow_l2</td>
+      <td width=5% valign=top class=cellBits>6:6</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter underflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_underflow_l3</td>
+      <td width=5% valign=top class=cellBits>7:7</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew buffter underflow, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxld_aligned</td>
+      <td width=5% valign=top class=cellBits>12:12</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      deskew align status<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_STATUS        Offset = 16'h30            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs decoder status lane 0</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_l0</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs fail to correct errors, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_l1</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs fail to correct errors, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_l2</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs fail to correct errors, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_l3</td>
+      <td width=5% valign=top class=cellBits>3:3</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs fail to correct errors, write to clear<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_found_l0</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs found error<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_found_l1</td>
+      <td width=5% valign=top class=cellBits>5:5</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs found error<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_found_l2</td>
+      <td width=5% valign=top class=cellBits>6:6</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs found error<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_found_l3</td>
+      <td width=5% valign=top class=cellBits>7:7</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      rs found error<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_FAIL_CNT_L0        Offset = 16'h34            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs fail counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_cnt_l0</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_FAIL_CNT_L1        Offset = 16'h35            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs fail counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_cnt_l1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_FAIL_CNT_L2        Offset = 16'h36            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs fail counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_cnt_l2</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_FAIL_CNT_L3        Offset = 16'h37            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs fail counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_fail_cnt_l3</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_COR_NUM_CNT_L0        Offset = 16'h38            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs corrected err number counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_err_num_cnt_l0</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_COR_NUM_CNT_L1        Offset = 16'h39            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs corrected err number counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_err_num_cnt_l1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_COR_NUM_CNT_L2        Offset = 16'h3A            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs corrected err number counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_err_num_cnt_l2</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RS_COR_NUM_CNT_L3        Offset = 16'h3B            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>rs corrected err number counter</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rs_err_num_cnt_l3</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      write '0' to lock, write '1' to lock and clear<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       MANCHEST_CTRL        Offset = 16'h3C            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>control the manchest enable or disable</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>manchest_en</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1 to enable the manchest encoding<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_adj_en</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b1</td>
+      <td width=70% valign=top class=cellDescription>
+      1 to enable the auto pol comma and pol adjustment<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_cont_adj</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b1</td>
+      <td width=70% valign=top class=cellDescription>
+      0: only do pol adj once after reset<p>1: pol adj continuesly run <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RXPOL_OW        Offset = 16'h3D            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>overwrite the polarity adjust value</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_l0</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1 to overwrite the pol adj value<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_l1</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_l2</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_l3</td>
+      <td width=5% valign=top class=cellBits>3:3</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_val_l0</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      the overwriten pol adj value when pol_ow is 1, this only take effect whn pol_adj_en=1<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_val_l1</td>
+      <td width=5% valign=top class=cellBits>5:5</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_val_l2</td>
+      <td width=5% valign=top class=cellBits>6:6</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>pol_ow_val_l3</td>
+      <td width=5% valign=top class=cellBits>7:7</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       RXPOL_STATUS        Offset = 16'h3E            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>the polarity status for each lane</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_done_l0</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' means there are enough comma received to decide polarity<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_done_l1</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' means there are enough comma received to decide polarity<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_done_l2</td>
+      <td width=5% valign=top class=cellBits>2:2</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' means there are enough comma received to decide polarity<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_done_l3</td>
+      <td width=5% valign=top class=cellBits>3:3</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      1' means there are enough comma received to decide polarity<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_status_l0</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: polarity not inverted<p>1: polarity inverted<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_status_l1</td>
+      <td width=5% valign=top class=cellBits>5:5</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: polarity not inverted<p>1: polarity inverted<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_status_l2</td>
+      <td width=5% valign=top class=cellBits>6:6</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: polarity not inverted<p>1: polarity inverted<p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>rxpol_status_l3</td>
+      <td width=5% valign=top class=cellBits>7:7</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: polarity not inverted<p>1: polarity inverted<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       SPEED_SEL        Offset = 16'h3F            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>select the phyical layer speed 120Mbps/400Mbps</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>speed_sel_ow</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: speed is controlled by external pin<p>1: speed is controlled by register <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>speed_sel</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      when speed_sel_ow is '1', this bit control the physical speed<p><p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG1        Offset = 16'h40            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_addr</td>
+      <td width=5% valign=top class=cellBits>13:0</td>
+      <td width=10% valign=top class=cellDefault>14'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG2        Offset = 16'h41            Attributes : RW_EXT_L
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_wdata</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG3        Offset = 16'h42            Attributes : RW_EXT_H
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_wdata_ext_1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG4        Offset = 16'h43            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_val</td>
+      <td width=5% valign=top class=cellBits>8:8</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_rdwn</td>
+      <td width=5% valign=top class=cellBits>4:4</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_be</td>
+      <td width=5% valign=top class=cellBits>3:0</td>
+      <td width=10% valign=top class=cellDefault>4'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG5        Offset = 16'h44            Attributes : RO
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_ack</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_intr</td>
+      <td width=5% valign=top class=cellBits>1:1</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG6        Offset = 16'h45            Attributes : RO_EXT_L
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_rdata</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG7        Offset = 16'h46            Attributes : RO_EXT_H
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface control</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_rdata_ext_1</td>
+      <td width=5% valign=top class=cellBits>15:0</td>
+      <td width=10% valign=top class=cellDefault>16'h0</td>
+      <td width=70% valign=top class=cellDescription>
+      <p>
+      </td>
+    </tr>
+  </table> <br> <br>
+  <table width=100% cellspacing=2 cellpadding=1>
+    <tr>
+      <td width=100% colspan=4 class=cellRegTitle style="font-weight=bold">
+        <b>
+       GMAC_CFG_OWNER        Offset = 16'h47            Attributes : RW
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width=100% colspan=4 class=cellRegDesc>gmac MCI interface owner</td>
+    </tr>
+    <tr>
+      <td width=15% class=cellColumnTitle>Field Name</td>
+      <td width=5% class=cellColumnTitle>Bits</td>
+      <td width=10% class=cellColumnTitle>Default</td>
+      <td width=70% class=cellColumnTitle>Description</td>
+    </tr>
+    <tr>
+      <td width=15% valign=top class=cellFieldName>mci_owner</td>
+      <td width=5% valign=top class=cellBits>0:0</td>
+      <td width=10% valign=top class=cellDefault>1'b0</td>
+      <td width=70% valign=top class=cellDescription>
+      0: MCI interface is accessed by mac_speed_ctrl module<p>1: MCI interface is accessed by CFG register<p>
+      </td>
+    </tr>
+  </table> <br> <br>
+<!--Template_RegEnd-->
+  
+</body>
+</html>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2019.09.30.09:37:32"
+ outputDirectory="C:/Users/winner/Desktop/vlc_m_8x_syn_uart/wait_time_threshold/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE22E22C8"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="8"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="sources" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="source" direction="output" role="source" width="8" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="wait_time_threshold:1.0:AUTO_DEVICE=EP4CE22E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1569807448,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:18.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=40,source_width=8)"
+   instancePathKey="wait_time_threshold"
+   kind="wait_time_threshold"
+   version="1.0"
+   name="wait_time_threshold">
+  <parameter name="AUTO_GENERATION_ID" value="1569807448" />
+  <parameter name="AUTO_DEVICE" value="EP4CE22E22C8" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
+  <generatedFiles>
+   <file
+       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart/wait_time_threshold/synthesis/wait_time_threshold.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart/wait_time_threshold/synthesis/submodules/altsource_probe_top.v"
+       type="VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart/wait_time_threshold.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="D:/intelfpga/18.0/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="wait_time_threshold">queue size: 0 starting:wait_time_threshold "wait_time_threshold"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="wait_time_threshold"><![CDATA["<b>wait_time_threshold</b>" reuses <b>altera_in_system_sources_probes</b> "<b>submodules/altsource_probe_top</b>"]]></message>
+   <message level="Debug" culprit="wait_time_threshold">queue size: 0 starting:altera_in_system_sources_probes "submodules/altsource_probe_top"</message>
+   <message level="Info" culprit="in_system_sources_probes_0"><![CDATA["<b>wait_time_threshold</b>" instantiated <b>altera_in_system_sources_probes</b> "<b>in_system_sources_probes_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_in_system_sources_probes:18.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=40,source_width=8"
+   instancePathKey="wait_time_threshold:.:in_system_sources_probes_0"
+   kind="altera_in_system_sources_probes"
+   version="18.0"
+   name="altsource_probe_top">
+  <parameter name="create_source_clock" value="false" />
+  <parameter name="instance_id" value="NONE" />
+  <parameter name="source_initial_value" value="40" />
+  <parameter name="sld_auto_instance_index" value="YES" />
+  <parameter name="sld_instance_index" value="0" />
+  <parameter name="probe_width" value="0" />
+  <parameter name="source_width" value="8" />
+  <parameter name="create_source_clock_enable" value="false" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="enable_metastability" value="NO" />
+  <parameter name="gui_use_auto_index" value="true" />
+  <generatedFiles>
+   <file
+       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart/wait_time_threshold/synthesis/submodules/altsource_probe_top.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="D:/intelfpga/18.0/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="wait_time_threshold" as="in_system_sources_probes_0" />
+  <messages>
+   <message level="Debug" culprit="wait_time_threshold">queue size: 0 starting:altera_in_system_sources_probes "submodules/altsource_probe_top"</message>
+   <message level="Info" culprit="in_system_sources_probes_0"><![CDATA["<b>wait_time_threshold</b>" instantiated <b>altera_in_system_sources_probes</b> "<b>in_system_sources_probes_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

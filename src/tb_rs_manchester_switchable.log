@@ -1,0 +1,1890 @@
+# vsim "+nowarnTSCALE" -novopt tb_rs_manchester_switchable -l tb_rs_manchester_switchable.log 
+# Start time: 08:37:51 on Oct 12,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.tb_rs_manchester_switchable
+# Loading sv_std.std
+# Loading work.tb_rs_manchester_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pat_gen_switchable
+# Loading work.pat_gen_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.PCS_TOP
+# Loading work.PCS_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_TOP
+# Loading work.TX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_INTERFACE
+# Loading work.TX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_TOP
+# Loading work.RX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_INTERFACE
+# Loading work.RX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ASYNCFIFOGA
+# Loading work.ASYNCFIFOGA
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_r2w_ga
+# Loading work.sync_r2w_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.DFF_
+# Loading work.DFF_
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_w2r_ga
+# Loading work.sync_w2r_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fifomem_ga
+# Loading work.fifomem_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.rptr_empty_ga
+# Loading work.rptr_empty_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.wptr_full_ga
+# Loading work.wptr_full_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ps_avalon_tx_2_tx_interface
+# Loading work.ps_avalon_tx_2_tx_interface
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.frame_eof_regen
+# Loading work.frame_eof_regen
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pac_chek
+# Loading work.pac_chek
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_RS_ENC
+# Loading work.TX_RS_ENC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsEncodeTop
+# Loading work.RsEncodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_RS_DEC
+# Loading work.RX_RS_DEC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeTop
+# Loading work.RsDecodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeSyndrome
+# Loading work.RsDecodeSyndrome
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeEuclide
+# Loading work.RsDecodeEuclide
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeInv
+# Loading work.RsDecodeInv
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeMult
+# Loading work.RsDecodeMult
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeShiftOmega
+# Loading work.RsDecodeShiftOmega
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDegree
+# Loading work.RsDecodeDegree
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeChien
+# Loading work.RsDecodeChien
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDelay
+# Loading work.RsDecodeDelay
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDpRam
+# Loading work.RsDecodeDpRam
+# Loading std.standard
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.man_code(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.man_code(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.add_synheader_p(behavioral)
+# Loading work.add_synheader_p(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_p2s(behavioral)
+# Loading work.data_p2s(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.desyn(behavioral)
+# Loading ieee.std_logic_signed(body)
+# Loading work.desyn(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fir
+# Loading work.fir
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.product
+# Loading work.product
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_s2p(behavioral)
+# Loading work.data_s2p(behavioral)
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (15) does not match connection size (16) for port 'i_ari_frame_len'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(28).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (8) does not match connection size (32) for port 'o_data'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(33).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3017) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Too few port connections. Expected 25, found 24.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top File: trunk_MII_eth/rtl/rx/rx_top.v
+# ** Warning: (vsim-3722) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Missing connection for port 'o_sync_cnt'.
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'sop_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'MF_corr_value_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'count_temp_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'packet_num_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'data_in_delay_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'syn_header_error_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/rx/rx_interface.v(244): [PCDPC] - Port size (9) does not match connection size (33) for port 'wdata'. The port definition is at: trunk_MII_eth/rtl/pub/asyncfifoga.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/m_asyncfifo File: trunk_MII_eth/rtl/pub/asyncfifoga.v
+# ** Warning: (vsim-3015) tb_rs_manchester_switchable.v(153): [PCDPC] - Port size (15) does not match connection size (16) for port 'o_ari_frame_len'. The port definition is at: ps_avalon_tx_2_tx_interface.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_ps_avalon_tx_2_tx_interface File: ps_avalon_tx_2_tx_interface.v
+# ** Warning: (vsim-3017) tb_rs_manchester_switchable.v(198): [TFMPC] - Too few port connections. Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_pac_chek File: pac_chek.v
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_good_frame_num'.
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_frame_num'.
+# Process sim:/tb_rs_manchester_switchable/#INITIAL#49 no longer exists
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_pon_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_vl_tx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_serial_tx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_vl_tx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_serial_tx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_serial_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_serial_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_serial_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ari_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_frame_len \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ari_frame_len_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/i_threshold \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rgmii_tx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rgmii_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rgmii_tx_180_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rgmii_rx_180_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_cfg_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_wr_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_wr_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_wr_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_rd_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_rd_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/ctx_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_wr_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_wr_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_wr_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_rd_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_rd_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/crx_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rwc_len_wr_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rwc_len_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rwc_len_wr_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rwc_err_frame \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rrc_len_rd_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rrc_len_rd_csn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rrc_len_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rrc_len_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_rxstatus_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_frame_len \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ari_frame_len_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_phy_txd_o \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_phy_rxd_i \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rxld_half_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rxld_align_det_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rxld_align_los_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_disp_err \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_comma_aligned \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_rxld_overflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_aligned \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_err_num \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_soft_pcs_rst \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_soft_tx_rst \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_soft_rx_rst \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_tx_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rx_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_tx_rs_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_rx_rs_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_disp_err_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_disp_err_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_disp_err_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_disp_err_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_disp_err_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_disp_err_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_disp_err_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_disp_err_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_overflow_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_overflow_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_rxld_overflow_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_rxld_overflow_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_rxld_overflow_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_rxld_overflow_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_rxld_overflow_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_rxld_overflow_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxld_underflow_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_found_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_wdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_rdwn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_intr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_rdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_mci_owner \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_rdwrn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_wdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_rdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_mac_mci_intr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_addr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_rdwrn \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_wdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_msc_mci_rdata \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_speed_sel_ow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_speed_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_adj_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_cont_adj \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_val_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_val_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_val_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_csr_pol_ow_val_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxpol_done_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_rxpol_done_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_rxpol_done_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_rxpol_done_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rxpol_status_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_1_rxpol_status_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_2_rxpol_status_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_3_rxpol_status_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_cnt_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_fail_cnt_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_cnt_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_fail_cnt_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_cnt_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_fail_cnt_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_fail_cnt_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_fail_cnt_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_err_num_cnt_l0_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_err_num_cnt_l0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_err_num_cnt_l1_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_err_num_cnt_l1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_err_num_cnt_l2_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_err_num_cnt_l2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/c_vl_rx_0_rs_err_num_cnt_l3_clr \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/r_vl_rx_0_rs_err_num_cnt_l3 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/o_gclk_sel
+view -new wave
+# .main_pane.wave1.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/RS_N \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/RS_K \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/RS_R \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/RS_CNT_W \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/IDLE \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/SOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/FRAME_LEN \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/DATA_SYMBOL \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/DUMMY_DATA \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/CHECK_SYMBOL \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/o_ari_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_frame_len \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_ari_frame_len_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/o_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/o_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/o_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/o_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_state \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/c_state_next \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_rs_block_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_cur_frame_len \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/c_data_in \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_data_x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_data_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/r_x1_byte_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface/c_word_sent
+# Can't move the Now cursor.
+view -new wave
+# .main_pane.wave2.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/P_OFF \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/P_IDLE \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/P_DATA \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/P_EOF \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/P_WAIT \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/FRAME_LEN_VAL \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/FRAME_GAP_VAL \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/arst_n \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/i_switch \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/light_modu_clk \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/light_modu_tdata \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/light_modu_tvalid \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/light_modu_tlast \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/light_modu_tready \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/state \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/frame_len_cnt \
+sim:/tb_rs_manchester_switchable/m_pat_gen_switchable/frame_gap_cnt
+view -new wave
+# .main_pane.wave2.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_vl_tx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_serial_tx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_vl_tx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/o_ari_ack \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_frame_len \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_ari_frame_len_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/o_vl_tx_data_0 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_rs_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/i_pol_adj_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_post_rs_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_post_rs_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_post_rs_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_8b10b_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_8b10b_datak \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_post_8b10b_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_post_pol_adj_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/r_rs_check_symbol_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_rs_data_symbol_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_sof_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_eop_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_data_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_rs_data_symbol_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_sof_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_eop_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_data_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/c_tx_pre_rs_rs_check_symbol_16 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/data_coded_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/data_coded \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/with_header_data_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/with_header_en_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/s_data_out_temp \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/s_en_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/s_sop_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/s_eop_out
+view -new wave
+# .main_pane.wave3.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_vl_tx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_vl_tx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_serial_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_serial_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_serial_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_rs_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_rxld_half_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_rxld_align_det_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_rxld_align_los_thres \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_pol_adj_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_pol_cont_adj \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_pol_ow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_pol_ow_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_vl_rx_0_rs_fail \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_vl_rx_0_rs_err_found \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_vl_rx_0_rs_err_num \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/o_sync_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/i_threshold \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_dec_8b_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_dec_8b_datak \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_dec_8b_comma_aligned \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_aligned_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_aligned_datak \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_deskew_aligned \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x4_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x4_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x4_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x4_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x1_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x1_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x1_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_x1_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_rs_data_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_rs_check_symbol \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rbs_data_aligned \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rsdec_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rsdec_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/c_rsdec_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/syn_data_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/syn_en_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/syn_eop_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/clk_div8_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/r_sync_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_data_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_en_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_clk_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_sop_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_eop_out \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/r_rs_symbol_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_en_out_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_en_out_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_sop_out_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_sop_out_d2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_data_out_d1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/parallel_data_out_d2
+view -new wave
+# .main_pane.wave4.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FIFO_ADD_WIDTH \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/IDLE \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/SOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/DATA \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/EOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_valid_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_sof_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_valid_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_sof_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_full \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_empty \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_state \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_state_next \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_pkt_len_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_x1_byte_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_oflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_uflow
+do sim.do
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/fir.v 
+# -- Compiling module fir
+# 
+# Top level modules:
+# 	fir
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/delay1.v 
+# -- Compiling module delay1
+# 
+# Top level modules:
+# 	delay1
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/product.v 
+# -- Compiling module product
+# 
+# Top level modules:
+# 	product
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/add_synheader_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity add_synheader_p
+# -- Compiling architecture Behavioral of add_synheader_p
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_p2s.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_p2s
+# -- Compiling architecture Behavioral of data_p2s
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_s2p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_s2p
+# -- Compiling architecture Behavioral of data_s2p
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vcom -reportprogress 300 -2008 trunk_MII_eth/rtl/manchester_sync/desyn.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity desyn
+# -- Compiling architecture Behavioral of desyn
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/man_code.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity man_code
+# -- Compiling architecture Behavioral of man_code
+# End time: 09:19:42 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:42 on Oct 12,2019
+# vlog -reportprogress 300 -f filelist.f -sv "+define+GMAC_MII" 
+# -- Compiling module tb_rs_manchester_switchable
+# -- Compiling module frame_eof_regen
+# -- Compiling module pat_gen
+# -- Compiling module pat_gen_switchable
+# -- Compiling module pac_chek
+# -- Compiling module pulse_gen
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# -- Compiling module RESETSYNC2
+# -- Compiling module DFF_
+# -- Compiling module ASYNCFIFOGA
+# -- Compiling module fifomem_ga
+# -- Compiling module sync_r2w_ga
+# -- Compiling module sync_w2r_ga
+# -- Compiling module rptr_empty_ga
+# -- Compiling module wptr_full_ga
+# -- Compiling module DoubleSync
+# -- Compiling module PulseSync
+# -- Compiling module Handshake
+# -- Compiling module CLKCROSSPLS
+# -- Compiling module CLKCROSSBUS
+# -- Compiling module CLKCROSSDFF
+# -- Compiling module STALL
+# -- Compiling module RDSTALL
+# -- Compiling module frame_cnt
+# -- Compiling module RX_8B10B_DEC
+# -- Compiling module RX10TO8CAL
+# -- Compiling module RX10B8BBYTE
+# -- Compiling module COMCHK
+# -- Compiling module RX_INTERFACE
+# -- Compiling module RX_LD
+# -- Compiling module RXLDBUF
+# -- Compiling module RXLDCTRL
+# -- Compiling module RX_RS_BL_SYNC_X1
+# -- Compiling module RX_RS_BL_SYNC_X4
+# -- Compiling module RX_RS_DEC
+# -- Compiling module RX_ADJ_POL
+# -- Compiling module RX_TOP
+# -- Compiling module remove_chec_symbol
+# -- Compiling module TX_8B10B_ENC
+# -- Compiling module TXENC8TO10BYTE
+# -- Compiling module TX_CHAR_REPLACE
+# -- Compiling module TX_INTERFACE
+# -- Compiling module TX_RS_ENC
+# -- Compiling module TX_INSRT_POL_COMMA
+# -- Compiling module TX_TOP
+# -- Compiling module REG
+# -- Compiling module CDC
+# -- Compiling module CFG
+# -- Compiling module CLK_RST
+# -- Compiling module DWC_gmac_async_fifo
+# -- Compiling module DWC_gmac_bcm21
+# -- Compiling module DWC_gmac_bcm22
+# -- Compiling module DWC_gmac_bcm24
+# -- Compiling module DWC_gmac_bus_synczr
+# -- Compiling module DWC_gmac_afb
+# -- Compiling module DWC_gmac_crc
+# -- Compiling module DWC_gmac_csr
+# -- Compiling module DWC_gmac_mrc
+# -- Compiling module DWC_gmac_mrc_frx
+# -- Compiling module DWC_gmac_mrc_rbu
+# -- Compiling module DWC_gmac_mrc_rfc
+# -- Compiling module DWC_gmac_mrc_sync_fifo
+# -- Compiling module DWC_gmac_mre
+# -- Compiling module DWC_gmac_mre_lpbk
+# -- Compiling module DWC_gmac_mre_rpe
+# -- Compiling module DWC_gmac_mtc
+# -- Compiling module DWC_gmac_mtc_ftx
+# -- Compiling module DWC_gmac_mtc_tbu
+# -- Compiling module DWC_gmac_mtc_tfc
+# -- Compiling module DWC_gmac_mte
+# -- Compiling module DWC_gmac_mte_stx
+# -- Compiling module DWC_gmac_mte_tpe
+# -- Compiling module DWC_gmac_sma
+# -- Compiling module DWC_gmac_sync
+# -- Compiling module DWC_gmac_mdc_omr
+# -- Compiling module DWC_gmac_mtl
+# -- Compiling module DWC_gmac_mtl_rrc
+# -- Compiling module DWC_gmac_mtl_rsb
+# -- Compiling module DWC_gmac_mtl_rwc
+# -- Compiling module DWC_gmac_mtl_trc
+# -- Compiling module DWC_gmac_mtl_tsb
+# -- Compiling module DWC_gmac_mtl_twc
+# -- Compiling module DWC_gmac
+# -- Compiling module DWC_gmac_phy_rxmux
+# -- Compiling module DWC_gmac_phy_txmux
+# -- Compiling module DWC_gmac_top
+# -- Compiling module dpram
+# -- Compiling module RsDecodeChien
+# -- Compiling module RsDecodeDegree
+# -- Compiling module RsDecodeDelay
+# -- Compiling module RsDecodeDpRam
+# -- Compiling module RsDecodeEuclide
+# -- Compiling module RsDecodeInv
+# -- Compiling module RsDecodeMult
+# -- Compiling module RsDecodeShiftOmega
+# -- Compiling module RsDecodeSyndrome
+# -- Compiling module RsDecodeTop
+# -- Compiling module RsEncodeTop
+# -- Compiling module MAC_REG_ACCESS
+# -- Compiling module MAC_SPEED_CRTL_TOP
+# -- Compiling module PHY_REG_ACCESS
+# -- Compiling module POLL_SPEED
+# -- Compiling module PCS_TOP
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# 	pat_gen
+# 	pulse_gen
+# 	STALL
+# 	frame_cnt
+# 	RX_8B10B_DEC
+# 	RX_LD
+# 	RX_RS_BL_SYNC_X1
+# 	RX_RS_BL_SYNC_X4
+# 	remove_chec_symbol
+# 	TX_8B10B_ENC
+# 	TX_CHAR_REPLACE
+# 	TX_INSRT_POL_COMMA
+# 	CFG
+# 	CLK_RST
+# 	DWC_gmac_top
+# 	dpram
+# 	MAC_SPEED_CRTL_TOP
+# End time: 09:19:44 on Oct 12,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/pub/def.v 
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv tb_rs_manchester_switchable.v 
+# -- Compiling module tb_rs_manchester_switchable
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv frame_eof_regen.v 
+# -- Compiling module frame_eof_regen
+# 
+# Top level modules:
+# 	frame_eof_regen
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen.v 
+# -- Compiling module pat_gen
+# 
+# Top level modules:
+# 	pat_gen
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen_switchable.v 
+# -- Compiling module pat_gen_switchable
+# 
+# Top level modules:
+# 	pat_gen_switchable
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv pac_chek.v 
+# -- Compiling module pac_chek
+# 
+# Top level modules:
+# 	pac_chek
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 -sv pulse_gen.v 
+# -- Compiling module pulse_gen
+# 
+# Top level modules:
+# 	pulse_gen
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:19:45 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv ps_avalon_tx_2_tx_interface.v 
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# 
+# Top level modules:
+# 	ps_avalon_tx_2_tx_interface
+# End time: 09:19:45 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:19:46 on Oct 12,2019, Elapsed time: 0:41:55
+# Errors: 1, Warnings: 17
+# vsim "+nowarnTSCALE" -novopt tb_rs_manchester_switchable -l tb_rs_manchester_switchable.log 
+# Start time: 09:19:46 on Oct 12,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.tb_rs_manchester_switchable
+# Loading sv_std.std
+# Loading work.tb_rs_manchester_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pat_gen_switchable
+# Loading work.pat_gen_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.PCS_TOP
+# Loading work.PCS_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_TOP
+# Loading work.TX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_INTERFACE
+# Loading work.TX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_TOP
+# Loading work.RX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_INTERFACE
+# Loading work.RX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ASYNCFIFOGA
+# Loading work.ASYNCFIFOGA
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_r2w_ga
+# Loading work.sync_r2w_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.DFF_
+# Loading work.DFF_
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_w2r_ga
+# Loading work.sync_w2r_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fifomem_ga
+# Loading work.fifomem_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.rptr_empty_ga
+# Loading work.rptr_empty_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.wptr_full_ga
+# Loading work.wptr_full_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ps_avalon_tx_2_tx_interface
+# Loading work.ps_avalon_tx_2_tx_interface
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.frame_eof_regen
+# Loading work.frame_eof_regen
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pac_chek
+# Loading work.pac_chek
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_RS_ENC
+# Loading work.TX_RS_ENC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsEncodeTop
+# Loading work.RsEncodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_RS_DEC
+# Loading work.RX_RS_DEC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeTop
+# Loading work.RsDecodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeSyndrome
+# Loading work.RsDecodeSyndrome
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeEuclide
+# Loading work.RsDecodeEuclide
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeInv
+# Loading work.RsDecodeInv
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeMult
+# Loading work.RsDecodeMult
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeShiftOmega
+# Loading work.RsDecodeShiftOmega
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDegree
+# Loading work.RsDecodeDegree
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeChien
+# Loading work.RsDecodeChien
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDelay
+# Loading work.RsDecodeDelay
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDpRam
+# Loading work.RsDecodeDpRam
+# Loading std.standard
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.man_code(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.man_code(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.add_synheader_p(behavioral)
+# Loading work.add_synheader_p(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_p2s(behavioral)
+# Loading work.data_p2s(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.desyn(behavioral)
+# Loading ieee.std_logic_signed(body)
+# Loading work.desyn(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fir
+# Loading work.fir
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.product
+# Loading work.product
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_s2p(behavioral)
+# Loading work.data_s2p(behavioral)
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (15) does not match connection size (16) for port 'i_ari_frame_len'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(28).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (8) does not match connection size (32) for port 'o_data'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(33).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3017) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Too few port connections. Expected 25, found 24.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top File: trunk_MII_eth/rtl/rx/rx_top.v
+# ** Warning: (vsim-3722) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Missing connection for port 'o_sync_cnt'.
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'sop_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'MF_corr_value_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'count_temp_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'packet_num_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'data_in_delay_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'syn_header_error_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-3015) tb_rs_manchester_switchable.v(153): [PCDPC] - Port size (15) does not match connection size (16) for port 'o_ari_frame_len'. The port definition is at: ps_avalon_tx_2_tx_interface.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_ps_avalon_tx_2_tx_interface File: ps_avalon_tx_2_tx_interface.v
+# ** Warning: (vsim-3017) tb_rs_manchester_switchable.v(198): [TFMPC] - Too few port connections. Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_pac_chek File: pac_chek.v
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_good_frame_num'.
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_frame_num'.
+view -new wave
+# .main_pane.wave.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FIFO_ADD_WIDTH \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/IDLE \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/SOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/DATA \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/EOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_valid_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_sof_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_valid_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_sof_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_full \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_empty \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_state \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_state_next \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_pkt_len_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_x1_byte_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_oflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_uflow
+do sim.do
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/fir.v 
+# -- Compiling module fir
+# 
+# Top level modules:
+# 	fir
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/delay1.v 
+# -- Compiling module delay1
+# 
+# Top level modules:
+# 	delay1
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/product.v 
+# -- Compiling module product
+# 
+# Top level modules:
+# 	product
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/add_synheader_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity add_synheader_p
+# -- Compiling architecture Behavioral of add_synheader_p
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_p2s.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_p2s
+# -- Compiling architecture Behavioral of data_p2s
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:28 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_s2p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_s2p
+# -- Compiling architecture Behavioral of data_s2p
+# End time: 09:31:28 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:29 on Oct 12,2019
+# vcom -reportprogress 300 -2008 trunk_MII_eth/rtl/manchester_sync/desyn.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity desyn
+# -- Compiling architecture Behavioral of desyn
+# End time: 09:31:29 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:29 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/man_code.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity man_code
+# -- Compiling architecture Behavioral of man_code
+# End time: 09:31:29 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:29 on Oct 12,2019
+# vlog -reportprogress 300 -f filelist.f -sv "+define+GMAC_MII" 
+# -- Compiling module tb_rs_manchester_switchable
+# -- Compiling module frame_eof_regen
+# -- Compiling module pat_gen
+# -- Compiling module pat_gen_switchable
+# -- Compiling module pac_chek
+# -- Compiling module pulse_gen
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# -- Compiling module RESETSYNC2
+# -- Compiling module DFF_
+# -- Compiling module ASYNCFIFOGA
+# -- Compiling module fifomem_ga
+# -- Compiling module sync_r2w_ga
+# -- Compiling module sync_w2r_ga
+# -- Compiling module rptr_empty_ga
+# -- Compiling module wptr_full_ga
+# -- Compiling module DoubleSync
+# -- Compiling module PulseSync
+# -- Compiling module Handshake
+# -- Compiling module CLKCROSSPLS
+# -- Compiling module CLKCROSSBUS
+# -- Compiling module CLKCROSSDFF
+# -- Compiling module STALL
+# -- Compiling module RDSTALL
+# -- Compiling module frame_cnt
+# -- Compiling module RX_8B10B_DEC
+# -- Compiling module RX10TO8CAL
+# -- Compiling module RX10B8BBYTE
+# -- Compiling module COMCHK
+# -- Compiling module RX_INTERFACE
+# -- Compiling module RX_LD
+# -- Compiling module RXLDBUF
+# -- Compiling module RXLDCTRL
+# -- Compiling module RX_RS_BL_SYNC_X1
+# -- Compiling module RX_RS_BL_SYNC_X4
+# -- Compiling module RX_RS_DEC
+# -- Compiling module RX_ADJ_POL
+# -- Compiling module RX_TOP
+# -- Compiling module remove_chec_symbol
+# -- Compiling module TX_8B10B_ENC
+# -- Compiling module TXENC8TO10BYTE
+# -- Compiling module TX_CHAR_REPLACE
+# -- Compiling module TX_INTERFACE
+# -- Compiling module TX_RS_ENC
+# -- Compiling module TX_INSRT_POL_COMMA
+# -- Compiling module TX_TOP
+# -- Compiling module REG
+# -- Compiling module CDC
+# -- Compiling module CFG
+# -- Compiling module CLK_RST
+# -- Compiling module DWC_gmac_async_fifo
+# -- Compiling module DWC_gmac_bcm21
+# -- Compiling module DWC_gmac_bcm22
+# -- Compiling module DWC_gmac_bcm24
+# -- Compiling module DWC_gmac_bus_synczr
+# -- Compiling module DWC_gmac_afb
+# -- Compiling module DWC_gmac_crc
+# -- Compiling module DWC_gmac_csr
+# -- Compiling module DWC_gmac_mrc
+# -- Compiling module DWC_gmac_mrc_frx
+# -- Compiling module DWC_gmac_mrc_rbu
+# -- Compiling module DWC_gmac_mrc_rfc
+# -- Compiling module DWC_gmac_mrc_sync_fifo
+# -- Compiling module DWC_gmac_mre
+# -- Compiling module DWC_gmac_mre_lpbk
+# -- Compiling module DWC_gmac_mre_rpe
+# -- Compiling module DWC_gmac_mtc
+# -- Compiling module DWC_gmac_mtc_ftx
+# -- Compiling module DWC_gmac_mtc_tbu
+# -- Compiling module DWC_gmac_mtc_tfc
+# -- Compiling module DWC_gmac_mte
+# -- Compiling module DWC_gmac_mte_stx
+# -- Compiling module DWC_gmac_mte_tpe
+# -- Compiling module DWC_gmac_sma
+# -- Compiling module DWC_gmac_sync
+# -- Compiling module DWC_gmac_mdc_omr
+# -- Compiling module DWC_gmac_mtl
+# -- Compiling module DWC_gmac_mtl_rrc
+# -- Compiling module DWC_gmac_mtl_rsb
+# -- Compiling module DWC_gmac_mtl_rwc
+# -- Compiling module DWC_gmac_mtl_trc
+# -- Compiling module DWC_gmac_mtl_tsb
+# -- Compiling module DWC_gmac_mtl_twc
+# -- Compiling module DWC_gmac
+# -- Compiling module DWC_gmac_phy_rxmux
+# -- Compiling module DWC_gmac_phy_txmux
+# -- Compiling module DWC_gmac_top
+# -- Compiling module dpram
+# -- Compiling module RsDecodeChien
+# -- Compiling module RsDecodeDegree
+# -- Compiling module RsDecodeDelay
+# -- Compiling module RsDecodeDpRam
+# -- Compiling module RsDecodeEuclide
+# -- Compiling module RsDecodeInv
+# -- Compiling module RsDecodeMult
+# -- Compiling module RsDecodeShiftOmega
+# -- Compiling module RsDecodeSyndrome
+# -- Compiling module RsDecodeTop
+# -- Compiling module RsEncodeTop
+# -- Compiling module MAC_REG_ACCESS
+# -- Compiling module MAC_SPEED_CRTL_TOP
+# -- Compiling module PHY_REG_ACCESS
+# -- Compiling module POLL_SPEED
+# -- Compiling module PCS_TOP
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# 	pat_gen
+# 	pulse_gen
+# 	STALL
+# 	frame_cnt
+# 	RX_8B10B_DEC
+# 	RX_LD
+# 	RX_RS_BL_SYNC_X1
+# 	RX_RS_BL_SYNC_X4
+# 	remove_chec_symbol
+# 	TX_8B10B_ENC
+# 	TX_CHAR_REPLACE
+# 	TX_INSRT_POL_COMMA
+# 	CFG
+# 	CLK_RST
+# 	DWC_gmac_top
+# 	dpram
+# 	MAC_SPEED_CRTL_TOP
+# End time: 09:31:30 on Oct 12,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/pub/def.v 
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv tb_rs_manchester_switchable.v 
+# -- Compiling module tb_rs_manchester_switchable
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv frame_eof_regen.v 
+# -- Compiling module frame_eof_regen
+# 
+# Top level modules:
+# 	frame_eof_regen
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen.v 
+# -- Compiling module pat_gen
+# 
+# Top level modules:
+# 	pat_gen
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen_switchable.v 
+# -- Compiling module pat_gen_switchable
+# 
+# Top level modules:
+# 	pat_gen_switchable
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv pac_chek.v 
+# -- Compiling module pac_chek
+# 
+# Top level modules:
+# 	pac_chek
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 -sv pulse_gen.v 
+# -- Compiling module pulse_gen
+# 
+# Top level modules:
+# 	pulse_gen
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:31:31 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv ps_avalon_tx_2_tx_interface.v 
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# 
+# Top level modules:
+# 	ps_avalon_tx_2_tx_interface
+# End time: 09:31:31 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:31:32 on Oct 12,2019, Elapsed time: 0:11:46
+# Errors: 0, Warnings: 15
+# vsim "+nowarnTSCALE" -novopt tb_rs_manchester_switchable -l tb_rs_manchester_switchable.log 
+# Start time: 09:31:32 on Oct 12,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.tb_rs_manchester_switchable
+# Loading sv_std.std
+# Loading work.tb_rs_manchester_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pat_gen_switchable
+# Loading work.pat_gen_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.PCS_TOP
+# Loading work.PCS_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_TOP
+# Loading work.TX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_INTERFACE
+# Loading work.TX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_TOP
+# Loading work.RX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_INTERFACE
+# Loading work.RX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ASYNCFIFOGA
+# Loading work.ASYNCFIFOGA
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_r2w_ga
+# Loading work.sync_r2w_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.DFF_
+# Loading work.DFF_
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_w2r_ga
+# Loading work.sync_w2r_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fifomem_ga
+# Loading work.fifomem_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.rptr_empty_ga
+# Loading work.rptr_empty_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.wptr_full_ga
+# Loading work.wptr_full_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ps_avalon_tx_2_tx_interface
+# Loading work.ps_avalon_tx_2_tx_interface
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.frame_eof_regen
+# Loading work.frame_eof_regen
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pac_chek
+# Loading work.pac_chek
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_RS_ENC
+# Loading work.TX_RS_ENC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsEncodeTop
+# Loading work.RsEncodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_RS_DEC
+# Loading work.RX_RS_DEC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeTop
+# Loading work.RsDecodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeSyndrome
+# Loading work.RsDecodeSyndrome
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeEuclide
+# Loading work.RsDecodeEuclide
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeInv
+# Loading work.RsDecodeInv
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeMult
+# Loading work.RsDecodeMult
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeShiftOmega
+# Loading work.RsDecodeShiftOmega
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDegree
+# Loading work.RsDecodeDegree
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeChien
+# Loading work.RsDecodeChien
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDelay
+# Loading work.RsDecodeDelay
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDpRam
+# Loading work.RsDecodeDpRam
+# Loading std.standard
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.man_code(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.man_code(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.add_synheader_p(behavioral)
+# Loading work.add_synheader_p(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_p2s(behavioral)
+# Loading work.data_p2s(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.desyn(behavioral)
+# Loading ieee.std_logic_signed(body)
+# Loading work.desyn(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fir
+# Loading work.fir
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.product
+# Loading work.product
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_s2p(behavioral)
+# Loading work.data_s2p(behavioral)
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (15) does not match connection size (16) for port 'i_ari_frame_len'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(28).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (8) does not match connection size (32) for port 'o_data'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(33).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3017) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Too few port connections. Expected 25, found 24.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top File: trunk_MII_eth/rtl/rx/rx_top.v
+# ** Warning: (vsim-3722) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Missing connection for port 'o_sync_cnt'.
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'sop_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'MF_corr_value_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'count_temp_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'packet_num_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'data_in_delay_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'syn_header_error_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-3015) tb_rs_manchester_switchable.v(153): [PCDPC] - Port size (15) does not match connection size (16) for port 'o_ari_frame_len'. The port definition is at: ps_avalon_tx_2_tx_interface.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_ps_avalon_tx_2_tx_interface File: ps_avalon_tx_2_tx_interface.v
+# ** Warning: (vsim-3017) tb_rs_manchester_switchable.v(198): [TFMPC] - Too few port connections. Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_pac_chek File: pac_chek.v
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_good_frame_num'.
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_frame_num'.
+view -new wave
+# .main_pane.wave.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FIFO_ADD_WIDTH \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/IDLE \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/SOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/DATA \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/EOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_valid_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_sof_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_valid_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_sof_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_full \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_empty \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_state \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_state_next \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_pkt_len_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_x1_byte_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_oflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_uflow
+do sim.do
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/fir.v 
+# -- Compiling module fir
+# 
+# Top level modules:
+# 	fir
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/delay1.v 
+# -- Compiling module delay1
+# 
+# Top level modules:
+# 	delay1
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/manchester_sync/product.v 
+# -- Compiling module product
+# 
+# Top level modules:
+# 	product
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/add_synheader_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity add_synheader_p
+# -- Compiling architecture Behavioral of add_synheader_p
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_p2s.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_p2s
+# -- Compiling architecture Behavioral of data_p2s
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/data_s2p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_s2p
+# -- Compiling architecture Behavioral of data_s2p
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vcom -reportprogress 300 -2008 trunk_MII_eth/rtl/manchester_sync/desyn.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity desyn
+# -- Compiling architecture Behavioral of desyn
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vcom -reportprogress 300 trunk_MII_eth/rtl/manchester_sync/man_code.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity man_code
+# -- Compiling architecture Behavioral of man_code
+# End time: 09:48:03 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:03 on Oct 12,2019
+# vlog -reportprogress 300 -f filelist.f -sv "+define+GMAC_MII" 
+# -- Compiling module tb_rs_manchester_switchable
+# -- Compiling module frame_eof_regen
+# -- Compiling module pat_gen
+# -- Compiling module pat_gen_switchable
+# -- Compiling module pac_chek
+# -- Compiling module pulse_gen
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# -- Compiling module RESETSYNC2
+# -- Compiling module DFF_
+# -- Compiling module ASYNCFIFOGA
+# -- Compiling module fifomem_ga
+# -- Compiling module sync_r2w_ga
+# -- Compiling module sync_w2r_ga
+# -- Compiling module rptr_empty_ga
+# -- Compiling module wptr_full_ga
+# -- Compiling module DoubleSync
+# -- Compiling module PulseSync
+# -- Compiling module Handshake
+# -- Compiling module CLKCROSSPLS
+# -- Compiling module CLKCROSSBUS
+# -- Compiling module CLKCROSSDFF
+# -- Compiling module STALL
+# -- Compiling module RDSTALL
+# -- Compiling module frame_cnt
+# -- Compiling module RX_8B10B_DEC
+# -- Compiling module RX10TO8CAL
+# -- Compiling module RX10B8BBYTE
+# -- Compiling module COMCHK
+# -- Compiling module RX_INTERFACE
+# -- Compiling module RX_LD
+# -- Compiling module RXLDBUF
+# -- Compiling module RXLDCTRL
+# -- Compiling module RX_RS_BL_SYNC_X1
+# -- Compiling module RX_RS_BL_SYNC_X4
+# -- Compiling module RX_RS_DEC
+# -- Compiling module RX_ADJ_POL
+# -- Compiling module RX_TOP
+# -- Compiling module remove_chec_symbol
+# -- Compiling module TX_8B10B_ENC
+# -- Compiling module TXENC8TO10BYTE
+# -- Compiling module TX_CHAR_REPLACE
+# -- Compiling module TX_INTERFACE
+# -- Compiling module TX_RS_ENC
+# -- Compiling module TX_INSRT_POL_COMMA
+# -- Compiling module TX_TOP
+# -- Compiling module REG
+# -- Compiling module CDC
+# -- Compiling module CFG
+# -- Compiling module CLK_RST
+# -- Compiling module DWC_gmac_async_fifo
+# -- Compiling module DWC_gmac_bcm21
+# -- Compiling module DWC_gmac_bcm22
+# -- Compiling module DWC_gmac_bcm24
+# -- Compiling module DWC_gmac_bus_synczr
+# -- Compiling module DWC_gmac_afb
+# -- Compiling module DWC_gmac_crc
+# -- Compiling module DWC_gmac_csr
+# -- Compiling module DWC_gmac_mrc
+# -- Compiling module DWC_gmac_mrc_frx
+# -- Compiling module DWC_gmac_mrc_rbu
+# -- Compiling module DWC_gmac_mrc_rfc
+# -- Compiling module DWC_gmac_mrc_sync_fifo
+# -- Compiling module DWC_gmac_mre
+# -- Compiling module DWC_gmac_mre_lpbk
+# -- Compiling module DWC_gmac_mre_rpe
+# -- Compiling module DWC_gmac_mtc
+# -- Compiling module DWC_gmac_mtc_ftx
+# -- Compiling module DWC_gmac_mtc_tbu
+# -- Compiling module DWC_gmac_mtc_tfc
+# -- Compiling module DWC_gmac_mte
+# -- Compiling module DWC_gmac_mte_stx
+# -- Compiling module DWC_gmac_mte_tpe
+# -- Compiling module DWC_gmac_sma
+# -- Compiling module DWC_gmac_sync
+# -- Compiling module DWC_gmac_mdc_omr
+# -- Compiling module DWC_gmac_mtl
+# -- Compiling module DWC_gmac_mtl_rrc
+# -- Compiling module DWC_gmac_mtl_rsb
+# -- Compiling module DWC_gmac_mtl_rwc
+# -- Compiling module DWC_gmac_mtl_trc
+# -- Compiling module DWC_gmac_mtl_tsb
+# -- Compiling module DWC_gmac_mtl_twc
+# -- Compiling module DWC_gmac
+# -- Compiling module DWC_gmac_phy_rxmux
+# -- Compiling module DWC_gmac_phy_txmux
+# -- Compiling module DWC_gmac_top
+# -- Compiling module dpram
+# -- Compiling module RsDecodeChien
+# -- Compiling module RsDecodeDegree
+# -- Compiling module RsDecodeDelay
+# -- Compiling module RsDecodeDpRam
+# -- Compiling module RsDecodeEuclide
+# -- Compiling module RsDecodeInv
+# -- Compiling module RsDecodeMult
+# -- Compiling module RsDecodeShiftOmega
+# -- Compiling module RsDecodeSyndrome
+# -- Compiling module RsDecodeTop
+# -- Compiling module RsEncodeTop
+# -- Compiling module MAC_REG_ACCESS
+# -- Compiling module MAC_SPEED_CRTL_TOP
+# -- Compiling module PHY_REG_ACCESS
+# -- Compiling module POLL_SPEED
+# -- Compiling module PCS_TOP
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# 	pat_gen
+# 	pulse_gen
+# 	STALL
+# 	frame_cnt
+# 	RX_8B10B_DEC
+# 	RX_LD
+# 	RX_RS_BL_SYNC_X1
+# 	RX_RS_BL_SYNC_X4
+# 	remove_chec_symbol
+# 	TX_8B10B_ENC
+# 	TX_CHAR_REPLACE
+# 	TX_INSRT_POL_COMMA
+# 	CFG
+# 	CLK_RST
+# 	DWC_gmac_top
+# 	dpram
+# 	MAC_SPEED_CRTL_TOP
+# End time: 09:48:04 on Oct 12,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:05 on Oct 12,2019
+# vlog -reportprogress 300 -sv trunk_MII_eth/rtl/pub/def.v 
+# End time: 09:48:05 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:05 on Oct 12,2019
+# vlog -reportprogress 300 -sv tb_rs_manchester_switchable.v 
+# -- Compiling module tb_rs_manchester_switchable
+# 
+# Top level modules:
+# 	tb_rs_manchester_switchable
+# End time: 09:48:05 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:05 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv frame_eof_regen.v 
+# -- Compiling module frame_eof_regen
+# 
+# Top level modules:
+# 	frame_eof_regen
+# End time: 09:48:05 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:06 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen.v 
+# -- Compiling module pat_gen
+# 
+# Top level modules:
+# 	pat_gen
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:06 on Oct 12,2019
+# vlog -reportprogress 300 -sv pat_gen_switchable.v 
+# -- Compiling module pat_gen_switchable
+# 
+# Top level modules:
+# 	pat_gen_switchable
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:06 on Oct 12,2019
+# vlog -reportprogress 300 -sv pac_chek.v 
+# -- Compiling module pac_chek
+# 
+# Top level modules:
+# 	pac_chek
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:06 on Oct 12,2019
+# vlog -reportprogress 300 -sv pulse_gen.v 
+# -- Compiling module pulse_gen
+# 
+# Top level modules:
+# 	pulse_gen
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+# Start time: 09:48:06 on Oct 12,2019
+# vlog -reportprogress 300 "+define+DELAY=#0.1" -sv ps_avalon_tx_2_tx_interface.v 
+# -- Compiling module ps_avalon_tx_2_tx_interface
+# 
+# Top level modules:
+# 	ps_avalon_tx_2_tx_interface
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:48:06 on Oct 12,2019, Elapsed time: 0:16:34
+# Errors: 0, Warnings: 15
+# vsim "+nowarnTSCALE" -novopt tb_rs_manchester_switchable -l tb_rs_manchester_switchable.log 
+# Start time: 09:48:06 on Oct 12,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.tb_rs_manchester_switchable
+# Loading sv_std.std
+# Loading work.tb_rs_manchester_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pat_gen_switchable
+# Loading work.pat_gen_switchable
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.PCS_TOP
+# Loading work.PCS_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_TOP
+# Loading work.TX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_INTERFACE
+# Loading work.TX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_TOP
+# Loading work.RX_TOP
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_INTERFACE
+# Loading work.RX_INTERFACE
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ASYNCFIFOGA
+# Loading work.ASYNCFIFOGA
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_r2w_ga
+# Loading work.sync_r2w_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.DFF_
+# Loading work.DFF_
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.sync_w2r_ga
+# Loading work.sync_w2r_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fifomem_ga
+# Loading work.fifomem_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.rptr_empty_ga
+# Loading work.rptr_empty_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.wptr_full_ga
+# Loading work.wptr_full_ga
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.ps_avalon_tx_2_tx_interface
+# Loading work.ps_avalon_tx_2_tx_interface
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.frame_eof_regen
+# Loading work.frame_eof_regen
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.pac_chek
+# Loading work.pac_chek
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.TX_RS_ENC
+# Loading work.TX_RS_ENC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsEncodeTop
+# Loading work.RsEncodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RX_RS_DEC
+# Loading work.RX_RS_DEC
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeTop
+# Loading work.RsDecodeTop
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeSyndrome
+# Loading work.RsDecodeSyndrome
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeEuclide
+# Loading work.RsDecodeEuclide
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeInv
+# Loading work.RsDecodeInv
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeMult
+# Loading work.RsDecodeMult
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeShiftOmega
+# Loading work.RsDecodeShiftOmega
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDegree
+# Loading work.RsDecodeDegree
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeChien
+# Loading work.RsDecodeChien
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDelay
+# Loading work.RsDecodeDelay
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.RsDecodeDpRam
+# Loading work.RsDecodeDpRam
+# Loading std.standard
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.man_code(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.man_code(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.add_synheader_p(behavioral)
+# Loading work.add_synheader_p(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_p2s(behavioral)
+# Loading work.data_p2s(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.desyn(behavioral)
+# Loading ieee.std_logic_signed(body)
+# Loading work.desyn(behavioral)
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.fir
+# Loading work.fir
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.product
+# Loading work.product
+# Refreshing C:/Users/Administrator/Desktop/vlc_m_8x_syn_uart_2/src/work.data_s2p(behavioral)
+# Loading work.data_s2p(behavioral)
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (15) does not match connection size (16) for port 'i_ari_frame_len'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(28).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3015) trunk_MII_eth/rtl/tx/tx_top.v(54): [PCDPC] - Port size (8) does not match connection size (32) for port 'o_data'. The port definition is at: trunk_MII_eth/rtl/tx/tx_interface.v(33).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_tx_top/m_tx_interface File: trunk_MII_eth/rtl/tx/tx_interface.v
+# ** Warning: (vsim-3017) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Too few port connections. Expected 25, found 24.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top File: trunk_MII_eth/rtl/rx/rx_top.v
+# ** Warning: (vsim-3722) trunk_MII_eth/rtl/top/pcs_top.v(575): [TFMPC] - Missing connection for port 'o_sync_cnt'.
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'sop_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'MF_corr_value_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'count_temp_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'packet_num_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'data_in_delay_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-8822) trunk_MII_eth/rtl/rx/rx_top.v(224): [TFMPC] - Missing Verilog connection for formal VHDL port 'syn_header_error_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/desyn File: trunk_MII_eth/rtl/manchester_sync/desyn.vhd
+# ** Warning: (vsim-3015) tb_rs_manchester_switchable.v(153): [PCDPC] - Port size (15) does not match connection size (16) for port 'o_ari_frame_len'. The port definition is at: ps_avalon_tx_2_tx_interface.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_ps_avalon_tx_2_tx_interface File: ps_avalon_tx_2_tx_interface.v
+# ** Warning: (vsim-3017) tb_rs_manchester_switchable.v(198): [TFMPC] - Too few port connections. Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_rs_manchester_switchable/m_pac_chek File: pac_chek.v
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_good_frame_num'.
+# ** Warning: (vsim-3722) tb_rs_manchester_switchable.v(198): [TFMPC] - Missing connection for port 'o_frame_num'.
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FIFO_ADD_WIDTH \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/IDLE \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/SOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/FRAME_LEN_2 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/DATA \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/EOF \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_data_valid \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_rx_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_clk \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rst_n \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/o_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_ati_rdy \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/i_x1_mode \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_data_valid_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_rx_sof_x1 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_data_valid_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_sof_x1x4 \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_full \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_empty \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_rd_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_wr_en \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_state \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_state_next \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_pkt_len_cnt \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_val \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_sof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_eof \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_be \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_ati_data \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/r_x1_byte_sel \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_rx_fifo_oflow \
+sim:/tb_rs_manchester_switchable/m_PCS_TOP/m_rx_top/m_rx_interface/c_ati_fifo_uflow
+view -new wave
+# .main_pane.wave.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/tb_rs_manchester_switchable/r_serial_tx_clk \
+sim:/tb_rs_manchester_switchable/r_serial_rx_clk \
+sim:/tb_rs_manchester_switchable/r_vl_tx_clk \
+sim:/tb_rs_manchester_switchable/r_resetn \
+sim:/tb_rs_manchester_switchable/r_switch \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_data \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_valid \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_ready \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_startofpacket \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_endofpacket \
+sim:/tb_rs_manchester_switchable/tx_fifo_out_empty \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_data \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_valid \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_ready \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_startofpacket \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_endofpacket \
+sim:/tb_rs_manchester_switchable/rx_fifo_in_empty \
+sim:/tb_rs_manchester_switchable/c_ari_data \
+sim:/tb_rs_manchester_switchable/c_ari_be \
+sim:/tb_rs_manchester_switchable/c_ari_frame_len \
+sim:/tb_rs_manchester_switchable/c_pl_data \
+sim:/tb_rs_manchester_switchable/c_pl_be \
+sim:/tb_rs_manchester_switchable/c_serial_rx_data \
+sim:/tb_rs_manchester_switchable/c_serial_tx_data \
+sim:/tb_rs_manchester_switchable/c_ari_val \
+sim:/tb_rs_manchester_switchable/c_ari_sof \
+sim:/tb_rs_manchester_switchable/c_ari_eof \
+sim:/tb_rs_manchester_switchable/c_ari_ack \
+sim:/tb_rs_manchester_switchable/c_ari_frame_len_val \
+sim:/tb_rs_manchester_switchable/c_pl_val \
+sim:/tb_rs_manchester_switchable/c_pl_sof \
+sim:/tb_rs_manchester_switchable/c_pl_eof \
+sim:/tb_rs_manchester_switchable/c_pl_rdy \
+sim:/tb_rs_manchester_switchable/c_ps_rdy \
+sim:/tb_rs_manchester_switchable/r_good_word_num \
+sim:/tb_rs_manchester_switchable/r_state
+# End time: 10:12:58 on Oct 12,2019, Elapsed time: 0:24:52
+# Errors: 0, Warnings: 15

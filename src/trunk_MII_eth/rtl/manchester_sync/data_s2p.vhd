@@ -1,0 +1,357 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    11:39:19 11/27/2013 
+-- Design Name: 
+-- Module Name:    data_s2p - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: data conversion: serial data to parallel.
+--							the length of parallel_en_out( 255 bit) 
+--							is different from the  transmitter ( 223 bit ).
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity data_s2p is
+	port	(
+		clk			:	in std_logic;
+		reset		   :	in std_logic;
+		
+		data_in		:	in std_logic;
+		data_en		:	in std_logic;
+		data_eop		:	in std_logic;
+				
+		parallel_clk_out	:	out std_logic;  -----not good
+		parallel_data_out	:	out std_logic_vector(7 downto 0);
+		parallel_en_out	:	out std_logic;
+		parallel_sop_out	:	out std_logic;
+		parallel_eop_out	:	out std_logic
+	);
+end data_s2p;
+
+--##################################################################################
+architecture Behavioral of data_s2p is
+	------------------------------------------------------------------------------
+	-- 1. Signals Declaration
+	------------------------------------------------------------------------------
+	signal data_en_delay1	:	std_logic;
+	signal data_en_delay2	:	std_logic;
+	signal data_en_delay3	:	std_logic;
+	signal data_en_delay4	:	std_logic;
+	signal data_en_delay5	:	std_logic;
+	signal data_en_delay6	:	std_logic;
+	signal data_en_delay7	:	std_logic;
+	signal data_en_delay8	:	std_logic;
+	signal data_en_delay9	:	std_logic;
+	signal data_en_delay10	:	std_logic;
+	signal data_en_delay11	:	std_logic;
+	signal data_en_delay12	:	std_logic;
+	signal data_en_delay13	:	std_logic;
+	signal data_en_delay14	:	std_logic;
+	signal data_en_delay15	:	std_logic;
+	signal data_en_delay16	:	std_logic;
+	signal data_en_delay17	:	std_logic;
+	signal parallel_clk	:	std_logic;
+	
+	signal data_in_delay1	:	std_logic;
+	
+	signal count_s2p		:	std_logic_vector(3 downto 0);
+	
+	signal data_in_p		:	std_logic_vector(15 downto 0);
+	signal eop_in_p		:	std_logic;
+	signal sop_in_p		:	std_logic;
+	signal en_in_p			:	std_logic;
+
+	signal parallel_data_temp		:	std_logic_vector(7 downto 0);
+	signal parallel_data_temp_d1		:	std_logic_vector(7 downto 0);
+	signal parallel_data_temp_d2		:	std_logic_vector(7 downto 0);
+	signal parallel_sop_temp		:	std_logic;
+	signal parallel_eop_temp		:	std_logic;
+	signal parallel_en_temp			:	std_logic;
+	signal parallel_en_temp_d1			:	std_logic;
+	signal parallel_en_temp_d2			:	std_logic;
+	
+	subtype data_in_array is std_logic_vector(15 downto 0);
+	type data_in_delay_tp is array(15 downto 0) of data_in_array;
+	
+	signal data_in_delay_array : data_in_delay_tp;
+
+--##################################################################################
+begin
+	------------------------------------------------------------------------------
+	-- s2p: 255*8*2=4080 bits  (255*8=2040 is total bits of 1 RS_block)
+	------------------------------------------------------------------------------
+	parallel_clk_out <= parallel_clk;
+	-- count: 10
+	process(clk, reset)
+	begin
+		if(reset='1') then
+			--count_s2p<=(others=>'0');   --4096
+			count_s2p<="1111";   --4096 20190929 clk out should not wait for data in
+		elsif(rising_edge(clk)) then
+			if((data_en='1' and data_en_delay1='0') or count_s2p >=15 ) then
+				count_s2p<=(others=>'0');
+			elsif ( count_s2p <15) then
+				count_s2p<=count_s2p+'1';
+			end if;
+		end if;
+	end process;
+
+
+
+
+	-- delay one clock to be aligned with count_s2p
+	process(clk, reset)
+	begin
+		if(reset='1') then
+			data_in_delay1<='0';
+			
+			data_en_delay1<='0';
+            data_en_delay2<='0';
+            data_en_delay3<='0';
+			data_en_delay4<='0';
+            data_en_delay5<='0';
+            data_en_delay6<='0';
+			data_en_delay7<='0';
+            data_en_delay8<='0';
+            data_en_delay9<='0';
+			data_en_delay10<='0';
+            data_en_delay11<='0';
+            
+            data_en_delay12<='0';
+            data_en_delay13<='0';
+            data_en_delay14<='0';
+            data_en_delay15<='0';
+            data_en_delay16<='0';
+            data_en_delay17<='0';
+
+		elsif(rising_edge(clk)) then
+			data_in_delay1<=data_in;
+			
+			data_en_delay1<=data_en;
+			data_en_delay2<=data_en_delay1;
+			data_en_delay3<=data_en_delay2;
+			data_en_delay4<=data_en_delay3;
+			data_en_delay5<=data_en_delay4;
+			data_en_delay6<=data_en_delay5;
+			data_en_delay7<=data_en_delay6;
+			data_en_delay8<=data_en_delay7;
+			data_en_delay9<=data_en_delay8;
+			data_en_delay10<=data_en_delay9;
+			data_en_delay11<=data_en_delay10;
+			data_en_delay12<=data_en_delay11;
+			data_en_delay13<=data_en_delay12;
+			data_en_delay14<=data_en_delay13;
+			data_en_delay15<=data_en_delay14;
+			data_en_delay16<=data_en_delay15;
+			data_en_delay17<=data_en_delay16;
+		end if;
+	end process;
+
+	data_in_ff : for i in 0 to 14 generate
+		process(clk,reset)
+		begin
+			if(reset='1')	then
+                    data_in_delay_array(i+1)<=(others=>'0');
+            elsif(rising_edge(clk)) then
+				data_in_delay_array(i+1) <= data_in_delay_array(i);
+			end if;		
+		end process;
+	end generate data_in_ff;
+
+	-- data in parallel
+	process(clk, reset)
+	begin
+		if(reset='1') then
+			data_in_delay_array(0)<=(others=>'0');
+		elsif(rising_edge(clk)) then
+				data_in_delay_array(0)(conv_integer(count_s2p))<=data_in_delay1;
+		end if;
+	end process;
+
+	-- data in parallel
+	process(clk, reset)
+	begin
+		if(reset='1') then
+			data_in_p<=(others=>'0');
+		elsif(rising_edge(clk)) then
+		
+		   if( data_en_delay17 = '1') then
+                  
+				data_in_p(0)<=data_in_delay_array(15)(0);
+				data_in_p(1)<=data_in_delay_array(14)(1);
+				data_in_p(2)<=data_in_delay_array(13)(2);
+				data_in_p(3)<=data_in_delay_array(12)(3);
+				data_in_p(4)<=data_in_delay_array(11)(4);
+				data_in_p(5)<=data_in_delay_array(10)(5);
+				data_in_p(6)<=data_in_delay_array(9)(6);
+				data_in_p(7)<=data_in_delay_array(8)(7);
+				data_in_p(8)<=data_in_delay_array(7)(8);
+				data_in_p(9)<=data_in_delay_array(6)(9);
+				data_in_p(10)<=data_in_delay_array(5)(10);
+				data_in_p(11)<=data_in_delay_array(4)(11);
+				data_in_p(12)<=data_in_delay_array(3)(12);
+				data_in_p(13)<=data_in_delay_array(2)(13);
+				data_in_p(14)<=data_in_delay_array(1)(14);
+				data_in_p(15)<=data_in_delay_array(0)(15);
+			end if;
+		end if;
+	end process;
+
+
+
+	-- en in parallel
+	process(clk, reset)
+	begin
+		if(reset='1') then
+			en_in_p<='0';
+			
+		elsif(rising_edge(clk)) then
+		    
+			en_in_p <= data_en_delay17;
+		end if;
+	end process;
+
+--	-- eop in parallel
+--	process(clk, reset)
+--	begin
+--		if(reset='1') then
+--			eop_in_p<='0';
+--		elsif(rising_edge(clk)) then
+--			if(data_en_delay16='0' and data_en_delay17='1') then  -- 
+--				eop_in_p<='1';
+--			else
+--				eop_in_p<='0';
+--			end if;
+--		end if;
+--	end process;
+--
+--	
+--	
+--	-- sop in parallel
+--	process(clk, reset)
+--	begin
+--		if(reset='1') then
+--			sop_in_p<='0';
+--		elsif(rising_edge(clk)) then
+--			if(data_en_delay16='1' and data_en_delay17='0') then  -- 
+--				sop_in_p<='1';
+--			else
+--				sop_in_p<='0';
+--			end if;
+--		end if;
+--	end process;	
+	
+	process(clk)
+	begin
+		if(reset='1') then
+                parallel_data_temp<=(others=>'0');
+                parallel_en_temp<='0';
+--                parallel_eop_temp<='0';
+--                parallel_sop_temp<='0';
+        elsif(rising_edge(clk)) then
+			parallel_data_temp	<=	data_in_p(15) & data_in_p(13) & data_in_p(11) & data_in_p(9) & data_in_p(7) & data_in_p(5) & data_in_p(3) & data_in_p(1);
+			parallel_en_temp	<=	en_in_p;
+--			parallel_eop_temp	<=	eop_in_p;
+--			parallel_sop_temp	<=	sop_in_p;
+		end if;
+	end process;
+
+	process(clk)
+	begin
+		if(reset='1') then
+                parallel_clk<='0';
+        elsif(rising_edge(clk)) then
+		  
+			if(count_s2p>=4 and count_s2p<=11) then  -- 
+				parallel_clk<='1';
+			else
+				parallel_clk<='0';
+			end if;
+		end if;
+	end process;	
+
+
+	process(parallel_clk)
+	begin
+		if(reset='1') then
+                parallel_data_temp_d1	<=(others=>'0');
+                parallel_en_temp_d1		<='0';
+                parallel_data_temp_d2	<=(others=>'0');
+                parallel_en_temp_d2		<='0';
+
+        elsif(rising_edge(parallel_clk)) then
+			parallel_data_temp_d1	<=	parallel_data_temp;
+			parallel_en_temp_d1		<=	parallel_en_temp;
+			parallel_data_temp_d2	<=	parallel_data_temp_d1;
+			parallel_en_temp_d2		<=	parallel_en_temp_d1;
+
+		end if;
+	end process;
+	
+	-- sop
+	process(parallel_clk)
+	begin
+		if(reset='1') then
+                parallel_sop_temp<='0';
+
+        elsif(rising_edge(parallel_clk)) then
+			if ( parallel_en_temp='1' and parallel_en_temp_d1 = '0') then
+				parallel_sop_temp	<=	'1';
+			else
+				parallel_sop_temp	<=	'0';
+			end if;
+		end if;
+	end process;
+	
+	-- eop
+	process(parallel_clk)
+	begin
+		if(reset='1') then
+                parallel_eop_out<='0';
+
+        elsif(rising_edge(parallel_clk)) then
+			if ( parallel_en_temp='0' and parallel_en_temp_d1 = '1') then
+				parallel_eop_out	<=	'1';
+			else
+				parallel_eop_out	<=	'0';
+			end if;
+		end if;
+	end process;
+	
+	-- eop
+	process(parallel_clk)
+	begin
+		if(reset='1') then
+                parallel_data_out<=(others=>'0');
+                parallel_en_out<='0';
+                parallel_sop_out<='0';
+        elsif(rising_edge(parallel_clk)) then
+			parallel_data_out	<=	parallel_data_temp_d1;
+			parallel_en_out		<=	parallel_en_temp_d1;
+			parallel_sop_out	<=	parallel_sop_temp;
+		end if;
+	end process;	
+	
+end Behavioral;

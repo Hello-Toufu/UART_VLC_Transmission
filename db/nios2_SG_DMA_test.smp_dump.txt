@@ -1,0 +1,200 @@
+
+State Machine - |nios2_SG_DMA_test|sta_rd
+Name sta_rd.P_RD_STA_0 sta_rd.P_RD_STA_2 sta_rd.P_RD_STA_1 
+sta_rd.P_RD_STA_0 0 0 0 
+sta_rd.P_RD_STA_1 1 0 1 
+sta_rd.P_RD_STA_2 1 1 0 
+
+State Machine - |nios2_SG_DMA_test|pac_chek:m_pac_chek|r_state
+Name r_state.P_DATA r_state.P_WAIT r_state.P_IDLE 
+r_state.P_IDLE 0 0 0 
+r_state.P_DATA 1 0 1 
+r_state.P_WAIT 0 1 1 
+
+State Machine - |nios2_SG_DMA_test|pat_gen_switchable:m_pat_gen_switchable|state
+Name state.P_EOF state.P_DATA state.P_IDLE state.P_OFF state.P_WAIT 
+state.P_OFF 0 0 0 0 0 
+state.P_IDLE 0 0 1 1 0 
+state.P_DATA 0 1 0 1 0 
+state.P_EOF 1 0 0 1 0 
+state.P_WAIT 0 0 0 1 1 
+
+State Machine - |nios2_SG_DMA_test|pulse_gen:m_turn_on_pac_gen|r_state
+Name r_state.P_PULSE r_state.P_WAIT r_state.P_IDLE 
+r_state.P_IDLE 0 0 0 
+r_state.P_PULSE 1 0 1 
+r_state.P_WAIT 0 1 1 
+
+State Machine - |nios2_SG_DMA_test|pulse_gen:m_turn_on_ir_led|r_state
+Name r_state.P_PULSE r_state.P_WAIT r_state.P_IDLE 
+r_state.P_IDLE 0 0 0 
+r_state.P_PULSE 1 0 1 
+r_state.P_WAIT 0 1 1 
+
+State Machine - |nios2_SG_DMA_test|periodical_pulse_gen:m_periodical_rst_gen|r_state
+Name r_state.P_PULSE r_state.P_WAIT r_state.P_IDLE 
+r_state.P_IDLE 0 0 0 
+r_state.P_PULSE 1 0 1 
+r_state.P_WAIT 0 1 1 
+
+State Machine - |nios2_SG_DMA_test|frame_eof_regen:m_frame_eof_regen|r_state
+Name r_state.IDLE r_state.EOF_GEN r_state.DATA 
+r_state.IDLE 0 0 0 
+r_state.DATA 1 0 1 
+r_state.EOF_GEN 1 1 0 
+
+State Machine - |nios2_SG_DMA_test|ps_avalon_tx_2_tx_interface:m_ps_avalon_tx_2_tx_interface|r_state
+Name r_state.DATA_SYMBOL r_state.SOF r_state.FRAME_LEN r_state.IDLE 
+r_state.IDLE 0 0 0 0 
+r_state.FRAME_LEN 0 0 1 1 
+r_state.SOF 0 1 0 1 
+r_state.DATA_SYMBOL 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RX_INTERFACE:m_rx_interface|r_ati_state
+Name r_ati_state.EOF r_ati_state.DATA r_ati_state.FRAME_LEN_2 r_ati_state.FRAME_LEN_1 r_ati_state.SOF r_ati_state.IDLE 
+r_ati_state.IDLE 0 0 0 0 0 0 
+r_ati_state.SOF 0 0 0 0 1 1 
+r_ati_state.FRAME_LEN_1 0 0 0 1 0 1 
+r_ati_state.FRAME_LEN_2 0 0 1 0 0 1 
+r_ati_state.DATA 0 1 0 0 0 1 
+r_ati_state.EOF 1 0 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|rs_dspip_avalon_streaming_sink_checker:avalon_sink_checker|packet_error_s
+Name packet_error_s.ue_valid packet_error_s.miss_eop packet_error_s.miss_sop packet_error_s.no_error 
+packet_error_s.no_error 0 0 0 0 
+packet_error_s.miss_sop 0 0 1 1 
+packet_error_s.miss_eop 0 1 0 1 
+packet_error_s.ue_valid 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|rs_dspip_avalon_streaming_sink_checker:avalon_sink_checker|sink_state
+Name sink_state.st_err sink_state.run sink_state.start 
+sink_state.start 0 0 0 
+sink_state.run 0 1 1 
+sink_state.st_err 1 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|atl_buffer_state
+Name atl_buffer_state.out_hold atl_buffer_state.out_active atl_buffer_state.out_idle atl_buffer_state.S0 
+atl_buffer_state.S0 0 0 0 0 
+atl_buffer_state.out_idle 0 0 1 1 
+atl_buffer_state.out_active 0 1 0 1 
+atl_buffer_state.out_hold 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|syn_bms_chn_synch_ctrl
+Name syn_bms_chn_synch_ctrl.fifo_block2 syn_bms_chn_synch_ctrl.fifo_block syn_bms_chn_synch_ctrl.bms_chn_block syn_bms_chn_synch_ctrl.chn_block syn_bms_chn_synch_ctrl.bms_block syn_bms_chn_synch_ctrl.allow_ena syn_bms_chn_synch_ctrl.S0 
+syn_bms_chn_synch_ctrl.S0 0 0 0 0 0 0 0 
+syn_bms_chn_synch_ctrl.allow_ena 0 0 0 0 0 1 1 
+syn_bms_chn_synch_ctrl.bms_block 0 0 0 0 1 0 1 
+syn_bms_chn_synch_ctrl.chn_block 0 0 0 1 0 0 1 
+syn_bms_chn_synch_ctrl.bms_chn_block 0 0 1 0 0 0 1 
+syn_bms_chn_synch_ctrl.fifo_block 0 1 0 0 0 0 1 
+syn_bms_chn_synch_ctrl.fifo_block2 1 0 0 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|ena_ctrl_state
+Name ena_ctrl_state.able ena_ctrl_state.disable_val_active ena_ctrl_state.disable_val_nonactive 
+ena_ctrl_state.disable_val_nonactive 0 0 0 
+ena_ctrl_state.disable_val_active 0 1 1 
+ena_ctrl_state.able 1 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|rd_state
+Name rd_state.S4 rd_state.S3 rd_state.S2 rd_state.S1 rd_state.S0 
+rd_state.S0 0 0 0 0 0 
+rd_state.S1 0 0 0 1 1 
+rd_state.S2 0 0 1 0 1 
+rd_state.S3 0 1 0 0 1 
+rd_state.S4 1 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|wr_state
+Name wr_state.S4 wr_state.S3 wr_state.S2 wr_state.S1 
+wr_state.S1 0 0 0 0 
+wr_state.S2 0 0 1 1 
+wr_state.S3 0 1 0 1 
+wr_state.S4 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|readadd_ctrl
+Name readadd_ctrl.busy readadd_ctrl.idle readadd_ctrl.S0 
+readadd_ctrl.S0 0 0 0 
+readadd_ctrl.idle 0 1 1 
+readadd_ctrl.busy 1 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|chn_status
+Name chn_status.load chn_status.waiting chn_status.booked chn_status.busy chn_status.idle 
+chn_status.idle 0 0 0 0 0 
+chn_status.busy 0 0 0 1 1 
+chn_status.booked 0 0 1 0 1 
+chn_status.waiting 0 1 0 0 1 
+chn_status.load 1 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|bms_status
+Name bms_status.booked bms_status.busy bms_status.idle 
+bms_status.idle 0 0 0 
+bms_status.busy 0 1 1 
+bms_status.booked 1 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RS_DE_LANE_QUATUS:m_rx_rs_dec|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_bms_atl:\key_full:key|state
+Name state.S99 state.S98 state.S12 state.S11 state.S10 state.S8 state.S7 state.S6 state.S5 state.S4 state.S3 state.S2a state.S2 state.S1 state.S0c state.S0 
+state.S0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.S0c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.S1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.S2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.S2a 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.S3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.S4 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.S5 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.S6 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.S7 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.S8 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.S10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.S11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S98 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S99 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top|RS_ENC_LANE_QUATUS:RS_ENC_LANE[0].m_tx_rs_enc|auk_rs_enc_top_atl:auk_rs_enc_top_atl_inst|rs_dspip_avalon_streaming_sink_checker:avalon_sink_checker|packet_error_s
+Name packet_error_s.ue_valid packet_error_s.miss_eop packet_error_s.miss_sop packet_error_s.no_error 
+packet_error_s.no_error 0 0 0 0 
+packet_error_s.miss_sop 0 0 1 1 
+packet_error_s.miss_eop 0 1 0 1 
+packet_error_s.ue_valid 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top|RS_ENC_LANE_QUATUS:RS_ENC_LANE[0].m_tx_rs_enc|auk_rs_enc_top_atl:auk_rs_enc_top_atl_inst|rs_dspip_avalon_streaming_sink_checker:avalon_sink_checker|sink_state
+Name sink_state.st_err sink_state.run sink_state.start 
+sink_state.start 0 0 0 
+sink_state.run 0 1 1 
+sink_state.st_err 1 0 1 
+
+State Machine - |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top|TX_INTERFACE:m_tx_interface|r_state
+Name r_state.CHECK_SYMBOL r_state.DUMMY_DATA r_state.DATA_SYMBOL r_state.FRAME_LEN r_state.SOF r_state.IDLE 
+r_state.IDLE 0 0 0 0 0 0 
+r_state.SOF 0 0 0 0 1 1 
+r_state.FRAME_LEN 0 0 0 1 0 1 
+r_state.DATA_SYMBOL 0 0 1 0 0 1 
+r_state.DUMMY_DATA 0 1 0 0 0 1 
+r_state.CHECK_SYMBOL 1 0 0 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state_d1
+Name r_state_d1.DATA_SYMBOL r_state_d1.SOF r_state_d1.EOF r_state_d1.IDLE 
+r_state_d1.IDLE 0 0 0 0 
+r_state_d1.EOF 0 0 1 1 
+r_state_d1.SOF 0 1 0 1 
+r_state_d1.DATA_SYMBOL 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|fifo_2_pcs_tx_interface:m_fifo_2_pcs_tx_interface|r_state
+Name r_state.DATA_SYMBOL r_state.SOF r_state.EOF r_state.IDLE 
+r_state.IDLE 0 0 0 0 
+r_state.EOF 0 0 1 1 
+r_state.SOF 0 1 0 1 
+r_state.DATA_SYMBOL 1 0 0 1 
+
+State Machine - |nios2_SG_DMA_test|UART:uart_0|Tsta
+Name Tsta.Tsta_0 Tsta.Tsta_3 Tsta.Tsta_2 Tsta.Tsta_1 
+Tsta.Tsta_0 0 0 0 0 
+Tsta.Tsta_1 1 0 0 1 
+Tsta.Tsta_2 1 0 1 0 
+Tsta.Tsta_3 1 1 0 0 
+
+State Machine - |nios2_SG_DMA_test|UART:uart_0|Rsta
+Name Rsta.Rsta_0 Rsta.Rsta_3 Rsta.Rsta_2 Rsta.Rsta_1 
+Rsta.Rsta_0 0 0 0 0 
+Rsta.Rsta_1 1 0 0 1 
+Rsta.Rsta_2 1 0 1 0 
+Rsta.Rsta_3 1 1 0 0 
