@@ -2,7 +2,7 @@ set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_TOOL_VERSION "18.0"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "syn_threshold" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../syn_threshold.sopcinfo"]
-set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name SLD_INFO "QSYS_NAME syn_threshold HAS_SOPCINFO 1 GENERATION_ID 1570848575"
+set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name SLD_INFO "QSYS_NAME syn_threshold HAS_SOPCINFO 1 GENERATION_ID 1570873731"
 set_global_assignment -library "syn_threshold" -name SLD_FILE [file join $::quartus(qip_path) "syn_threshold.debuginfo"]
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone IV E}"
@@ -14,7 +14,7 @@ set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU3MDg0ODU3NQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU3MDg3MzczMQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UyMkUyMkM4::QXV0byBERVZJQ0U="
 set_global_assignment -entity "syn_threshold" -library "syn_threshold" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::OA==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

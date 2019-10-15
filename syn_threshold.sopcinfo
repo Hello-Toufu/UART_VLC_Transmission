@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="syn_threshold" kind="syn_threshold" version="1.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2019.10.12.10:49:35 -->
+ <!-- 2019.10.12.17:48:52 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1570848575</value>
+  <value>1570873731</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

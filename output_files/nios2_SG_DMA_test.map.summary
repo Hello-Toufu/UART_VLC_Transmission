@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Oct 12 10:51:59 2019
+Analysis & Synthesis Status : Successful - Sat Oct 12 17:51:16 2019
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : nios2_SG_DMA_test
 Top-level Entity Name : nios2_SG_DMA_test
 Family : Cyclone IV E
-Total logic elements : 6,922
-    Total combinational functions : 4,696
-    Dedicated logic registers : 4,787
-Total registers : 4787
+Total logic elements : 7,379
+    Total combinational functions : 5,027
+    Dedicated logic registers : 5,086
+Total registers : 5086
 Total pins : 12
 Total virtual pins : 0
-Total memory bits : 215,616
+Total memory bits : 250,432
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

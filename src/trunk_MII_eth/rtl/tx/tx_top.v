@@ -31,6 +31,7 @@ module TX_TOP(
     ,input              i_rs_en
     ,input              i_x1_mode
     ,input              i_pol_adj_en
+	,input				i_tx_9600_or_115200
     
 );
 
@@ -67,6 +68,7 @@ module TX_TOP(
         ,.o_rs_data_symbol      (c_tx_pre_rs_rs_data_symbol   )
         ,.o_rs_check_symbol     (c_tx_pre_rs_rs_check_symbol  )
         ,.i_x1_mode             (i_x1_mode)
+		,.i_tx_9600_or_115200   (i_tx_9600_or_115200                      )
     );
 
 

@@ -1,6 +1,7 @@
 `timescale 1ps/1ps
-`define CLK_FREQ	200000
-`define BAUD_RATE	9600
+`define CLK_FREQ			6400000
+`define BAUD_RATE_115200	115200
+`define BAUD_RATE_9600		9600
 
 module nios2_SG_DMA_test(
 	//*********** global clock and reset signal *********
@@ -72,63 +73,125 @@ module nios2_SG_DMA_test(
 		else if(count_clk>=99) count_clk<=7'd0;
 		else count_clk<=count_clk+1'd1;
 	end
-	//-------------------------------------------------------------
+	//---------------------choose buad rate----------------------------------------
 	assign rst_n = clk_locked;
-
-	wire [7:0] 	c_uart_tdata;
-	wire [7:0] 	c_uart_rdata;
-
-	wire [7:0] 	c_tx_rd_data;
-	wire		c_tx_rd_empty;
-	wire		c_tx_wr_full;
-	wire [5:0] 	c_tx_rdusedw;
-
-	reg			i_rd_en;
-
-	UART uart_0(
-		.iCLK(s_clk_8x),
-		.iRST_N(rst_n),
-		.iRX(rx),
-		.oTX(tx),
-		.oR(rt),
-		.oT(tfinish),
-		.iT(i_rd_en),
-		.iTDATA(c_uart_tdata),
-		.oRDATA(c_uart_rdata)
+	uart_buad_rate_recognize m_uart_buad_rate_recognize(
+		.i_clk				(clk_6_4M),
+    	.i_rst_n			(rst_n),
+		.i_uart_data		(rx),
+    	.o_9600_or_115200	(c_tx_9600_or_115200)
 	);
-	defparam uart_0.CLK_FREQ=`CLK_FREQ;
-	defparam uart_0.BAUD_RATE=`BAUD_RATE;
+	assign		tx			= c_rx_9600_or_115200 ? tx_9600 : tx_115200;
+	//---------------------115200 uart module----------------------------------------
+	wire [7:0] 	c_uart_tdata_115200;
+	wire [7:0] 	c_uart_rdata_115200;
+	wire		rx_115200;
+	assign		rx_115200 = rx;
+	wire		tx_115200;
+	wire		rt_115200;
+	wire		tfinish_115200;
+	wire		i_rd_en_115200;
 
+	UART uart_BAUD_RATE_115200(
+		.iCLK(clk_6_4M),
+		.iRST_N(rst_n),
+		.iRX(rx_115200),
+		.oTX(tx_115200),
+		.oR(rt_115200),
+		.oT(tfinish_115200),
+		.iT(i_rd_en_115200),
+		.iTDATA(c_uart_tdata_115200),
+		.oRDATA(c_uart_rdata_115200)
+	);
+	defparam uart_BAUD_RATE_115200.CLK_FREQ=`CLK_FREQ;
+	defparam uart_BAUD_RATE_115200.BAUD_RATE=`BAUD_RATE_115200;
 	
-	wire 			c_fifo_tx_req;
-	wire [7 : 0]	c_fifo_tx_wr_data;
-	assign c_fifo_tx_req 		=  rt;
-	assign c_fifo_tx_wr_data 	=  c_uart_rdata;
+	wire 			c_fifo_tx_115200_req;
+	wire [7 : 0]	c_fifo_tx_115200_wr_data;
+	assign c_fifo_tx_115200_req 		=  rt_115200;
+	assign c_fifo_tx_115200_wr_data 	=  c_uart_rdata_115200;
 	
-	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_wrusedw;
-	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_rdusedw;
-	(*keep = "true"*)wire [7 : 0] 	c_fifo_tx_rd_data;
-	fifo_tx fifo_tx_inst  (
+	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_115200_wrusedw;
+	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_115200_rdusedw;
+	(*keep = "true"*)wire [7 : 0] 	c_fifo_tx_115200_rd_data;
+	fifo_tx fifo_tx_115200_inst  (
 		.aclr		(~clk_locked),
-		.wrclk		(s_clk_8x),
-		.wrreq		(c_fifo_tx_req   ),
-		.data		(c_fifo_tx_wr_data  ),
-		.wrfull		(c_fifo_tx_full),
+		.wrclk		(clk_6_4M),
+		.wrreq		(c_fifo_tx_115200_req   ),
+		.data		(c_fifo_tx_115200_wr_data  ),
+		.wrfull		(c_fifo_tx_115200_full),
 		//.wrempty(wrempty),
-		.wrusedw	(c_fifo_tx_wrusedw),
+		.wrusedw	(c_fifo_tx_115200_wrusedw),
 		
 		.rdclk		(c_vl_tx_clk),
-		.rdreq		(c_fifo_tx_rd_en),
-		.q			(c_fifo_tx_rd_data),
-		.rdfull		(c_fifo_tx_rdfull),
-		.rdempty	(c_fifo_tx_rdempty),
-		.rdusedw	(c_fifo_tx_rdusedw)
+		.rdreq		(c_fifo_tx_115200_rd_en),
+		.q			(c_fifo_tx_115200_rd_data),
+		.rdfull		(c_fifo_tx_115200_rdfull),
+		.rdempty	(c_fifo_tx_115200_rdempty),
+		.rdusedw	(c_fifo_tx_115200_rdusedw)
 		);	 
+	//---------------------9600 uart module----------------------------------------
+	wire [7:0] 	c_uart_tdata_9600;
+	wire [7:0] 	c_uart_rdata_9600;
+	wire		rx_9600;
+	assign		rx_9600 = rx;
+	wire		tx_9600;
+	wire		rt_9600;
+	wire		tfinish_9600;
+	wire		i_rd_en_9600;
+
+	UART uart_BAUD_RATE_9600(
+		.iCLK(clk_6_4M),
+		.iRST_N(rst_n),
+		.iRX(rx_9600),
+		.oTX(tx_9600),
+		.oR(rt_9600),
+		.oT(tfinish_9600),
+		.iT(i_rd_en_9600),
+		.iTDATA(c_uart_tdata_9600),
+		.oRDATA(c_uart_rdata_9600)
+	);
+	defparam uart_BAUD_RATE_9600.CLK_FREQ=`CLK_FREQ;
+	defparam uart_BAUD_RATE_9600.BAUD_RATE=`BAUD_RATE_9600;
+
+	wire 			c_fifo_tx_9600_req;
+	wire [7 : 0]	c_fifo_tx_9600_wr_data;
+	assign c_fifo_tx_9600_req 		=  rt_9600;
+	assign c_fifo_tx_9600_wr_data 	=  c_uart_rdata_9600;
+	
+	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_9600_wrusedw;
+	(*keep = "true"*)wire [11 : 0] 	c_fifo_tx_9600_rdusedw;
+	(*keep = "true"*)wire [7 : 0] 	c_fifo_tx_9600_rd_data;
+	fifo_tx fifo_tx_9600_inst  (
+		.aclr		(~clk_locked),
+		.wrclk		(clk_6_4M),
+		.wrreq		(c_fifo_tx_9600_req   ),
+		.data		(c_fifo_tx_9600_wr_data  ),
+		.wrfull		(c_fifo_tx_9600_full),
+		//.wrempty(wrempty),
+		.wrusedw	(c_fifo_tx_9600_wrusedw),
+		
+		.rdclk		(c_vl_tx_clk),
+		.rdreq		(c_fifo_tx_9600_rd_en),
+		.q			(c_fifo_tx_9600_rd_data),
+		.rdfull		(c_fifo_tx_9600_rdfull),
+		.rdempty	(c_fifo_tx_9600_rdempty),
+		.rdusedw	(c_fifo_tx_9600_rdusedw)
+		);	 
+
+	assign c_fifo_tx_9600_rd_en			=   c_fifo_tx_rd_en;
+	assign c_fifo_tx_115200_rd_en		=   c_fifo_tx_rd_en;
+ 	assign c_fifo_tx_rd_data	=   c_tx_9600_or_115200 ? c_fifo_tx_9600_rd_data  : c_fifo_tx_115200_rd_data    ;
+    assign c_fifo_tx_rdfull		=   c_tx_9600_or_115200 ? c_fifo_tx_9600_rdfull	  : c_fifo_tx_115200_rdfull	    ;
+    assign c_fifo_tx_rdempty	=   c_tx_9600_or_115200 ? c_fifo_tx_9600_rdempty  : c_fifo_tx_115200_rdempty    ;
+	assign c_fifo_tx_rdusedw	=   c_tx_9600_or_115200 ? c_fifo_tx_9600_rdusedw  : c_fifo_tx_115200_rdusedw    ;
 	
 	wire [7:0] 	c_wait_time_threshold;
     wait_time_threshold m_wait_time_threshold (
         .source (c_wait_time_threshold)  // 1/25K /16 *64 = 0.16ms
     );
+	wire [7:0]	c_fifo_tx_rd_data;
+	wire [11:0]	c_fifo_tx_rdusedw;
 	wire [7:0]	c_fifo_tx_ari_data;
 	wire [1:0] 	c_fifo_tx_ari_be;
 	wire [15:0] c_fifo_tx_ari_frame_len;
@@ -161,6 +224,7 @@ module nios2_SG_DMA_test(
 
 	(*keep = "true"*)wire [10 : 0] 	c_fifo_rx_rd_cnt;
 	(*keep = "true"*)wire [7 : 0] 	c_fifo_rx_rd_data;
+	reg i_rd_en;
 	fifo_rx fifo_rx_inst  (
 		.aclr	(~clk_locked		),
 		.wrclk	(c_vl_tx_clk	),
@@ -170,22 +234,27 @@ module nios2_SG_DMA_test(
 		//.wrempty(wrempty),
 		//.wrusedw(c_fifo_rx_wr_cnt	),
 		
-		.rdclk	(s_clk_8x),
+		.rdclk	(clk_6_4M),
 		.rdreq	(i_rd_en),
-		.q		(c_uart_tdata),
+		.q		(c_fifo_rx_rd_data),
 		.rdfull	(c_fifo_rx_rdfull),
 		.rdempty(o_rd_empty)
 		//.rdusedw(c_fifo_rx_rd_cnt)
-		);	 
-
+		);	
+	assign i_rd_en_9600			= i_rd_en;
+	assign i_rd_en_115200		= i_rd_en;
+	assign c_uart_tdata_9600	= c_fifo_rx_rd_data;
+	assign c_uart_tdata_115200	= c_fifo_rx_rd_data;
 	//------------------------------------Read data from fifo to UART TX------------------------------------------------
+	wire		tfinish;
+	assign		tfinish		= c_rx_9600_or_115200 ? tfinish_9600 : tfinish_115200;
 	reg [2:0] sta_rd;
 	reg [4:0] r_wait_cnt;
 	localparam P_RD_STA_0=3'b000;
 	localparam P_RD_STA_1=3'b001;
 	localparam P_RD_STA_2=3'b010;
 	localparam P_RD_STA_3=3'b100;
-	always@(posedge s_clk_8x or negedge rst_n)begin
+	always@(posedge clk_6_4M or negedge rst_n)begin
 		if(!rst_n) sta_rd<=P_RD_STA_0;
 		else begin
 			case(sta_rd)
@@ -206,13 +275,13 @@ module nios2_SG_DMA_test(
 		end
 	end
 
-	always@(posedge s_clk_8x or negedge rst_n)begin
+	always@(posedge clk_6_4M or negedge rst_n)begin
 		if(!rst_n) i_rd_en<=1'b0;
 		else if(sta_rd==P_RD_STA_1) i_rd_en<=1'b1;
 		else i_rd_en<=1'b0;
 	end
 
-	always@(posedge s_clk_8x or negedge rst_n)begin
+	always@(posedge clk_6_4M or negedge rst_n)begin
 		if(!rst_n) r_wait_cnt<=5'b0;
 		else if(sta_rd==P_RD_STA_2 && r_wait_cnt<=10) r_wait_cnt<=r_wait_cnt+1'b1;
 		else r_wait_cnt<=5'b0;
@@ -242,7 +311,9 @@ module nios2_SG_DMA_test(
 		,.i_serial_rx_clk          (c_8x_serial_tx_clk                  )
 		,.o_serial_tx_data         (r_serial_tx_data                 )
 		,.i_serial_rx_data         (r_serial_rx_data                 )
-		,.i_vl_tx_clk              (c_vl_tx_clk                      )																						 
+		,.i_vl_tx_clk              (c_vl_tx_clk                      )
+		,.i_tx_9600_or_115200      (c_tx_9600_or_115200                      )
+		,.o_rx_9600_or_115200      (c_rx_9600_or_115200                      )
 	                                                                 
 		,.i_ari_val                (c_pcs_ari_val                        )
 		,.i_ari_sof                (c_pcs_ari_sof                        )

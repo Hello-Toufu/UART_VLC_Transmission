@@ -118,6 +118,8 @@ module PCS_TOP(
 	,input         			i_ati_rdy     
 
 	 ,input	[15:0]		i_threshold
+	,input					i_tx_9600_or_115200
+	,output					o_rx_9600_or_115200
 
 	
 );
@@ -565,6 +567,7 @@ module PCS_TOP(
         ,.i_x1_mode              (c_tx_x1_mode)     
 `endif
         ,.i_pol_adj_en           (1'b1)
+		,.i_tx_9600_or_115200     (i_tx_9600_or_115200                      )
     );
     //assign c_ari_frame_len[14] = 1'b0;
 
@@ -628,6 +631,7 @@ module PCS_TOP(
         ,.o_vl_rx_0_rs_err_num          (c_vl_rx_0_rs_err_num    ) 
 		  
 		  ,.i_threshold							(i_threshold)
+		,.o_rx_9600_or_115200     (o_rx_9600_or_115200                      )
 
     );
 

@@ -29,6 +29,7 @@ module RX_INTERFACE#(
 
     //control
     ,input              i_x1_mode
+	,output				o_rx_9600_or_115200
 );
     reg  [31:0]         r_rx_data_x1;
     reg                 r_rx_data_valid_x1;
@@ -151,7 +152,7 @@ module RX_INTERFACE#(
             IDLE     : begin
                 //sof detected
                 //if(c_ati_fifo_rd_en && c_ati_fifo_rd_sof && (c_ati_fifo_rd_data==32'h55555555))
-                if(c_ati_fifo_rd_en && c_ati_fifo_rd_sof && (c_ati_fifo_rd_data==8'h55))
+                if(c_ati_fifo_rd_en && c_ati_fifo_rd_sof && ((c_ati_fifo_rd_data==8'h55) || (c_ati_fifo_rd_data==8'hAA)))
                     c_ati_state_next = SOF;
                 else
                     c_ati_state_next = IDLE;
@@ -205,7 +206,24 @@ module RX_INTERFACE#(
         endcase
     end
 
-
+//================================================================================
+//Function  : buad rate choose
+//================================================================================
+	reg r_rx_9600_or_115200;
+    always@(posedge i_ati_clk or negedge i_ati_rst_n) begin
+        if (~i_ati_rst_n) begin
+            r_rx_9600_or_115200 <= `DELAY 1'd0;
+        end
+        else begin
+            if(c_ati_fifo_rd_en && c_ati_fifo_rd_sof && ((c_ati_fifo_rd_data==8'h55))) begin
+				r_rx_9600_or_115200 <= 1'b1;
+            end
+			else if (c_ati_fifo_rd_en && c_ati_fifo_rd_sof && ((c_ati_fifo_rd_data==8'hAA))) begin
+				r_rx_9600_or_115200 <= 1'b0;
+            end
+        end
+    end
+	assign o_rx_9600_or_115200 = r_rx_9600_or_115200;
 //================================================================================
 //Function  : packet len counter
 //================================================================================

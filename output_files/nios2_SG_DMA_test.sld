@@ -2,12 +2,12 @@
   <sld_infos>
     <sld_info hpath="manual_rst:m_manual_rst" name="m_manual_rst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME manual_rst HAS_SOPCINFO 1 GENERATION_ID 1570848597"/>
+        <assignment_value text="QSYS_NAME manual_rst HAS_SOPCINFO 1 GENERATION_ID 1570873755"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="syn_threshold:m_syn_threshold" name="m_syn_threshold">
       <assignment_values>
-        <assignment_value text="QSYS_NAME syn_threshold HAS_SOPCINFO 1 GENERATION_ID 1570848575"/>
+        <assignment_value text="QSYS_NAME syn_threshold HAS_SOPCINFO 1 GENERATION_ID 1570873731"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="wait_time_threshold:m_wait_time_threshold" name="m_wait_time_threshold">

@@ -38,6 +38,7 @@ module TX_INTERFACE#(
         //
     //control
     ,input              i_x1_mode
+	,input				i_tx_9600_or_115200
 );
     
     localparam  RS_R = RS_N - RS_K + 5'd7; //20190505 ZDF parent module will deal the problem of length of o_rs_check_symbol
@@ -260,7 +261,7 @@ module TX_INTERFACE#(
                 CHECK_SYMBOL:
                     r_data_x1 <= `DELAY 8'h0;
                 SOF: 
-                    r_data_x1 <= `DELAY 8'h55;
+                    r_data_x1 <= `DELAY i_tx_9600_or_115200 ? 8'h55 : 8'hAA;
                 FRAME_LEN:
                     r_data_x1 <= `DELAY (r_x1_byte_sel == 2'd0) ? r_cur_frame_len[7:0] :
                                         (r_x1_byte_sel == 2'd1) ? {1'b0, r_cur_frame_len[14:8]} :

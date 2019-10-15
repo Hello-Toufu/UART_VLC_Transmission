@@ -1,7 +1,7 @@
 |nios2_SG_DMA_test
 i_sys_clk => i_sys_clk.IN1
-rx => rx.IN1
-tx <= UART:uart_0.oTX
+rx => rx.IN3
+tx <= tx.DB_MAX_OUTPUT_PORT_TYPE
 arm_rx <= <VCC>
 arm_tx => ~NO_FANOUT~
 vlc_rx => r_serial_rx_data.DATAA
@@ -92,7 +92,49 @@ inclk[1] => pll1.CLK1
 locked <= pll1.LOCKED
 
 
-|nios2_SG_DMA_test|UART:uart_0
+|nios2_SG_DMA_test|uart_buad_rate_recognize:m_uart_buad_rate_recognize
+i_clk => r_continuous_zeros_cnt[0].CLK
+i_clk => r_continuous_zeros_cnt[1].CLK
+i_clk => r_continuous_zeros_cnt[2].CLK
+i_clk => r_continuous_zeros_cnt[3].CLK
+i_clk => r_continuous_zeros_cnt[4].CLK
+i_clk => r_continuous_zeros_cnt[5].CLK
+i_clk => r_continuous_zeros_cnt[6].CLK
+i_clk => r_continuous_zeros_cnt[7].CLK
+i_clk => r_continuous_zeros_cnt[8].CLK
+i_clk => r_continuous_zeros_cnt[9].CLK
+i_clk => r_continuous_zeros_cnt[10].CLK
+i_clk => r_continuous_zeros_cnt[11].CLK
+i_clk => r_continuous_zeros_cnt[12].CLK
+i_clk => r_continuous_zeros_cnt[13].CLK
+i_clk => r_continuous_zeros_cnt[14].CLK
+i_clk => r_continuous_zeros_cnt[15].CLK
+i_clk => r_curr_state~1.DATAIN
+i_rst_n => r_continuous_zeros_cnt[0].ACLR
+i_rst_n => r_continuous_zeros_cnt[1].ACLR
+i_rst_n => r_continuous_zeros_cnt[2].ACLR
+i_rst_n => r_continuous_zeros_cnt[3].ACLR
+i_rst_n => r_continuous_zeros_cnt[4].ACLR
+i_rst_n => r_continuous_zeros_cnt[5].ACLR
+i_rst_n => r_continuous_zeros_cnt[6].ACLR
+i_rst_n => r_continuous_zeros_cnt[7].ACLR
+i_rst_n => r_continuous_zeros_cnt[8].ACLR
+i_rst_n => r_continuous_zeros_cnt[9].ACLR
+i_rst_n => r_continuous_zeros_cnt[10].ACLR
+i_rst_n => r_continuous_zeros_cnt[11].ACLR
+i_rst_n => r_continuous_zeros_cnt[12].ACLR
+i_rst_n => r_continuous_zeros_cnt[13].ACLR
+i_rst_n => r_continuous_zeros_cnt[14].ACLR
+i_rst_n => r_continuous_zeros_cnt[15].ACLR
+i_rst_n => r_curr_state~3.DATAIN
+i_uart_data => r_next_state.P_IDLE.DATAB
+i_uart_data => Selector1.IN2
+i_uart_data => always0.IN1
+i_uart_data => Selector0.IN1
+o_9600_or_115200 <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|UART:uart_BAUD_RATE_115200
 iCLK => oT~reg0.CLK
 iCLK => oTX~reg0.CLK
 iCLK => rTData[0].CLK
@@ -264,7 +306,7 @@ oRDATA[6] <= oRDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oRDATA[7] <= oRDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -315,7 +357,7 @@ wrusedw[10] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 wrusedw[11] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_3hm1:auto_generated.aclr
 data[0] => dcfifo_3hm1:auto_generated.data[0]
 data[1] => dcfifo_3hm1:auto_generated.data[1]
@@ -369,7 +411,7 @@ wrusedw[10] <= dcfifo_3hm1:auto_generated.wrusedw[10]
 wrusedw[11] <= dcfifo_3hm1:auto_generated.wrusedw[11]
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated
 aclr => a_graycounter_877:rdptr_g1p.aclr
 aclr => a_graycounter_4lc:wrptr_g1p.aclr
 aclr => altsyncram_ev61:fifo_ram.aclr1
@@ -514,7 +556,7 @@ wrusedw[10] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
 wrusedw[11] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rdptr_g_gray2bin
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rdptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -544,7 +586,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rs_dgwp_gray2bin
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rs_dgwp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -574,7 +616,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:wrptr_g_gray2bin
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:wrptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -604,7 +646,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:ws_dgrp_gray2bin
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:ws_dgrp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -634,7 +676,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_877:rdptr_g1p
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_877:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -689,7 +731,7 @@ q[11] <= counter5a11.DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= counter5a12.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_4lc:wrptr_g1p
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_4lc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -744,7 +786,7 @@ q[11] <= counter8a11.DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= counter8a12.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|altsyncram_ev61:fifo_ram
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|altsyncram_ev61:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -1011,7 +1053,7 @@ wren_a => ram_block11a7.PORTAWE
 wren_a => ram_block11a7.ENA0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_brp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_brp
 clock => dffe16a[12].CLK
 clock => dffe16a[11].CLK
 clock => dffe16a[10].CLK
@@ -1066,7 +1108,7 @@ q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_bwp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_bwp
 clock => dffe16a[12].CLK
 clock => dffe16a[11].CLK
 clock => dffe16a[10].CLK
@@ -1121,7 +1163,7 @@ q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp
 clock => dffpipe_4f9:dffpipe12.clock
 clrn => dffpipe_4f9:dffpipe12.clrn
 d[0] => dffpipe_4f9:dffpipe12.d[0]
@@ -1152,7 +1194,7 @@ q[11] <= dffpipe_4f9:dffpipe12.q[11]
 q[12] <= dffpipe_4f9:dffpipe12.q[12]
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp|dffpipe_4f9:dffpipe12
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp|dffpipe_4f9:dffpipe12
 clock => dffe13a[12].CLK
 clock => dffe13a[11].CLK
 clock => dffe13a[10].CLK
@@ -1233,7 +1275,7 @@ q[11] <= dffe14a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe14a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_brp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_brp
 clock => dffe16a[12].CLK
 clock => dffe16a[11].CLK
 clock => dffe16a[10].CLK
@@ -1288,7 +1330,7 @@ q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_bwp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_bwp
 clock => dffe16a[12].CLK
 clock => dffe16a[11].CLK
 clock => dffe16a[10].CLK
@@ -1343,7 +1385,7 @@ q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp
 clock => dffpipe_5f9:dffpipe15.clock
 clrn => dffpipe_5f9:dffpipe15.clrn
 d[0] => dffpipe_5f9:dffpipe15.d[0]
@@ -1374,7 +1416,7 @@ q[11] <= dffpipe_5f9:dffpipe15.q[11]
 q[12] <= dffpipe_5f9:dffpipe15.q[12]
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp|dffpipe_5f9:dffpipe15
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp|dffpipe_5f9:dffpipe15
 clock => dffe16a[12].CLK
 clock => dffe16a[11].CLK
 clock => dffe16a[10].CLK
@@ -1455,7 +1497,7 @@ q[11] <= dffe17a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe17a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp1_lsb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp1_lsb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1473,7 +1515,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp1_msb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp1_msb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1489,7 +1531,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp_lsb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp_lsb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1507,7 +1549,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp_msb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp_msb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1523,7 +1565,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_q76:rdfull_eq_comp
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_q76:rdfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1553,7 +1595,7 @@ datab[11] => data_wire[7].IN1
 datab[12] => data_wire[8].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp1_lsb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp1_lsb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1571,7 +1613,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp1_msb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp1_msb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1587,7 +1629,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp_lsb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp_lsb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1605,7 +1647,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp_msb
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp_msb
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1621,7 +1663,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux
 data[0] => result_node[0].IN1
 data[1] => result_node[0].IN1
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -1629,7 +1671,7 @@ sel[0] => result_node[0].IN0
 sel[0] => _.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux
 data[0] => result_node[0].IN1
 data[1] => result_node[0].IN1
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -1637,7 +1679,7 @@ sel[0] => result_node[0].IN0
 sel[0] => _.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux
 data[0] => result_node[0].IN1
 data[1] => result_node[0].IN1
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -1645,7 +1687,1568 @@ sel[0] => result_node[0].IN0
 sel[0] => _.IN0
 
 
-|nios2_SG_DMA_test|fifo_tx:fifo_tx_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_115200_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux
+data[0] => result_node[0].IN1
+data[1] => result_node[0].IN1
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node[0].IN0
+sel[0] => _.IN0
+
+
+|nios2_SG_DMA_test|UART:uart_BAUD_RATE_9600
+iCLK => oT~reg0.CLK
+iCLK => oTX~reg0.CLK
+iCLK => rTData[0].CLK
+iCLK => rTData[1].CLK
+iCLK => rTData[2].CLK
+iCLK => rTData[3].CLK
+iCLK => rTData[4].CLK
+iCLK => rTData[5].CLK
+iCLK => rTData[6].CLK
+iCLK => rTData[7].CLK
+iCLK => rTBaudCnt[0].CLK
+iCLK => rTBaudCnt[1].CLK
+iCLK => rTBaudCnt[2].CLK
+iCLK => rTBaudCnt[3].CLK
+iCLK => rTBaudCnt[4].CLK
+iCLK => rTBaudCnt[5].CLK
+iCLK => rTBaudCnt[6].CLK
+iCLK => rTBaudCnt[7].CLK
+iCLK => rTBaudCnt[8].CLK
+iCLK => rTBaudCnt[9].CLK
+iCLK => rTBaudCnt[10].CLK
+iCLK => rTBaudCnt[11].CLK
+iCLK => rTBaudCnt[12].CLK
+iCLK => rTBaudCnt[13].CLK
+iCLK => rTBaudCnt[14].CLK
+iCLK => rTBaudCnt[15].CLK
+iCLK => rTBitCnt[0].CLK
+iCLK => rTBitCnt[1].CLK
+iCLK => rTBitCnt[2].CLK
+iCLK => rTsyn_0.CLK
+iCLK => rTsyn_1.CLK
+iCLK => rTsyn.CLK
+iCLK => oRDATA[0]~reg0.CLK
+iCLK => oRDATA[1]~reg0.CLK
+iCLK => oRDATA[2]~reg0.CLK
+iCLK => oRDATA[3]~reg0.CLK
+iCLK => oRDATA[4]~reg0.CLK
+iCLK => oRDATA[5]~reg0.CLK
+iCLK => oRDATA[6]~reg0.CLK
+iCLK => oRDATA[7]~reg0.CLK
+iCLK => oR~reg0.CLK
+iCLK => rRData[0].CLK
+iCLK => rRData[1].CLK
+iCLK => rRData[2].CLK
+iCLK => rRData[3].CLK
+iCLK => rRData[4].CLK
+iCLK => rRData[5].CLK
+iCLK => rRData[6].CLK
+iCLK => rRData[7].CLK
+iCLK => rRBaudCnt[0].CLK
+iCLK => rRBaudCnt[1].CLK
+iCLK => rRBaudCnt[2].CLK
+iCLK => rRBaudCnt[3].CLK
+iCLK => rRBaudCnt[4].CLK
+iCLK => rRBaudCnt[5].CLK
+iCLK => rRBaudCnt[6].CLK
+iCLK => rRBaudCnt[7].CLK
+iCLK => rRBaudCnt[8].CLK
+iCLK => rRBaudCnt[9].CLK
+iCLK => rRBaudCnt[10].CLK
+iCLK => rRBaudCnt[11].CLK
+iCLK => rRBaudCnt[12].CLK
+iCLK => rRBaudCnt[13].CLK
+iCLK => rRBaudCnt[14].CLK
+iCLK => rRBaudCnt[15].CLK
+iCLK => rRBitCnt[0].CLK
+iCLK => rRBitCnt[1].CLK
+iCLK => rRBitCnt[2].CLK
+iCLK => rSample_1[0].CLK
+iCLK => rSample_1[1].CLK
+iCLK => rRX_syn_0.CLK
+iCLK => rRX_syn.CLK
+iCLK => Tsta~5.DATAIN
+iCLK => Rsta~5.DATAIN
+iRST_N => oRDATA[0]~reg0.ACLR
+iRST_N => oRDATA[1]~reg0.ACLR
+iRST_N => oRDATA[2]~reg0.ACLR
+iRST_N => oRDATA[3]~reg0.ACLR
+iRST_N => oRDATA[4]~reg0.ACLR
+iRST_N => oRDATA[5]~reg0.ACLR
+iRST_N => oRDATA[6]~reg0.ACLR
+iRST_N => oRDATA[7]~reg0.ACLR
+iRST_N => oTX~reg0.PRESET
+iRST_N => oR~reg0.ACLR
+iRST_N => oT~reg0.PRESET
+iRST_N => rRX_syn_0.PRESET
+iRST_N => rRX_syn.PRESET
+iRST_N => rSample_1[0].ACLR
+iRST_N => rSample_1[1].ACLR
+iRST_N => rRBitCnt[0].ACLR
+iRST_N => rRBitCnt[1].ACLR
+iRST_N => rRBitCnt[2].ACLR
+iRST_N => rRBaudCnt[0].ACLR
+iRST_N => rRBaudCnt[1].ACLR
+iRST_N => rRBaudCnt[2].ACLR
+iRST_N => rRBaudCnt[3].ACLR
+iRST_N => rRBaudCnt[4].ACLR
+iRST_N => rRBaudCnt[5].ACLR
+iRST_N => rRBaudCnt[6].ACLR
+iRST_N => rRBaudCnt[7].ACLR
+iRST_N => rRBaudCnt[8].ACLR
+iRST_N => rRBaudCnt[9].ACLR
+iRST_N => rRBaudCnt[10].ACLR
+iRST_N => rRBaudCnt[11].ACLR
+iRST_N => rRBaudCnt[12].ACLR
+iRST_N => rRBaudCnt[13].ACLR
+iRST_N => rRBaudCnt[14].ACLR
+iRST_N => rRBaudCnt[15].ACLR
+iRST_N => rRData[0].ACLR
+iRST_N => rRData[1].ACLR
+iRST_N => rRData[2].ACLR
+iRST_N => rRData[3].ACLR
+iRST_N => rRData[4].ACLR
+iRST_N => rRData[5].ACLR
+iRST_N => rRData[6].ACLR
+iRST_N => rRData[7].ACLR
+iRST_N => rTsyn_0.PRESET
+iRST_N => rTsyn_1.PRESET
+iRST_N => rTsyn.PRESET
+iRST_N => rTBitCnt[0].ACLR
+iRST_N => rTBitCnt[1].ACLR
+iRST_N => rTBitCnt[2].ACLR
+iRST_N => rTBaudCnt[0].ACLR
+iRST_N => rTBaudCnt[1].ACLR
+iRST_N => rTBaudCnt[2].ACLR
+iRST_N => rTBaudCnt[3].ACLR
+iRST_N => rTBaudCnt[4].ACLR
+iRST_N => rTBaudCnt[5].ACLR
+iRST_N => rTBaudCnt[6].ACLR
+iRST_N => rTBaudCnt[7].ACLR
+iRST_N => rTBaudCnt[8].ACLR
+iRST_N => rTBaudCnt[9].ACLR
+iRST_N => rTBaudCnt[10].ACLR
+iRST_N => rTBaudCnt[11].ACLR
+iRST_N => rTBaudCnt[12].ACLR
+iRST_N => rTBaudCnt[13].ACLR
+iRST_N => rTBaudCnt[14].ACLR
+iRST_N => rTBaudCnt[15].ACLR
+iRST_N => rTData[0].ACLR
+iRST_N => rTData[1].ACLR
+iRST_N => rTData[2].ACLR
+iRST_N => rTData[3].ACLR
+iRST_N => rTData[4].ACLR
+iRST_N => rTData[5].ACLR
+iRST_N => rTData[6].ACLR
+iRST_N => rTData[7].ACLR
+iRST_N => Tsta~7.DATAIN
+iRST_N => Rsta~7.DATAIN
+iRX => rRX_syn_0.DATAIN
+oTX <= oTX~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oR <= oR~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oT <= oT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+iT => rTsyn_0.DATAIN
+iTDATA[0] => rTData.DATAB
+iTDATA[1] => rTData.DATAB
+iTDATA[2] => rTData.DATAB
+iTDATA[3] => rTData.DATAB
+iTDATA[4] => rTData.DATAB
+iTDATA[5] => rTData.DATAB
+iTDATA[6] => rTData.DATAB
+iTDATA[7] => rTData.DATAB
+oRDATA[0] <= oRDATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[1] <= oRDATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[2] <= oRDATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[3] <= oRDATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[4] <= oRDATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[5] <= oRDATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[6] <= oRDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oRDATA[7] <= oRDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst
+aclr => aclr.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+data[4] => data[4].IN1
+data[5] => data[5].IN1
+data[6] => data[6].IN1
+data[7] => data[7].IN1
+rdclk => rdclk.IN1
+rdreq => rdreq.IN1
+wrclk => wrclk.IN1
+wrreq => wrreq.IN1
+q[0] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[1] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[2] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[3] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[4] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[5] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+q[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.q
+rdempty <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdempty
+rdfull <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdfull
+rdusedw[0] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[1] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[2] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[3] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[4] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[5] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[8] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[9] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[10] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+rdusedw[11] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
+wrfull <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrfull
+wrusedw[0] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[1] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[2] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[3] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[4] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[5] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[8] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[9] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[10] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+wrusedw[11] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+aclr => dcfifo_3hm1:auto_generated.aclr
+data[0] => dcfifo_3hm1:auto_generated.data[0]
+data[1] => dcfifo_3hm1:auto_generated.data[1]
+data[2] => dcfifo_3hm1:auto_generated.data[2]
+data[3] => dcfifo_3hm1:auto_generated.data[3]
+data[4] => dcfifo_3hm1:auto_generated.data[4]
+data[5] => dcfifo_3hm1:auto_generated.data[5]
+data[6] => dcfifo_3hm1:auto_generated.data[6]
+data[7] => dcfifo_3hm1:auto_generated.data[7]
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+q[0] <= dcfifo_3hm1:auto_generated.q[0]
+q[1] <= dcfifo_3hm1:auto_generated.q[1]
+q[2] <= dcfifo_3hm1:auto_generated.q[2]
+q[3] <= dcfifo_3hm1:auto_generated.q[3]
+q[4] <= dcfifo_3hm1:auto_generated.q[4]
+q[5] <= dcfifo_3hm1:auto_generated.q[5]
+q[6] <= dcfifo_3hm1:auto_generated.q[6]
+q[7] <= dcfifo_3hm1:auto_generated.q[7]
+rdclk => dcfifo_3hm1:auto_generated.rdclk
+rdempty <= dcfifo_3hm1:auto_generated.rdempty
+rdfull <= dcfifo_3hm1:auto_generated.rdfull
+rdreq => dcfifo_3hm1:auto_generated.rdreq
+rdusedw[0] <= dcfifo_3hm1:auto_generated.rdusedw[0]
+rdusedw[1] <= dcfifo_3hm1:auto_generated.rdusedw[1]
+rdusedw[2] <= dcfifo_3hm1:auto_generated.rdusedw[2]
+rdusedw[3] <= dcfifo_3hm1:auto_generated.rdusedw[3]
+rdusedw[4] <= dcfifo_3hm1:auto_generated.rdusedw[4]
+rdusedw[5] <= dcfifo_3hm1:auto_generated.rdusedw[5]
+rdusedw[6] <= dcfifo_3hm1:auto_generated.rdusedw[6]
+rdusedw[7] <= dcfifo_3hm1:auto_generated.rdusedw[7]
+rdusedw[8] <= dcfifo_3hm1:auto_generated.rdusedw[8]
+rdusedw[9] <= dcfifo_3hm1:auto_generated.rdusedw[9]
+rdusedw[10] <= dcfifo_3hm1:auto_generated.rdusedw[10]
+rdusedw[11] <= dcfifo_3hm1:auto_generated.rdusedw[11]
+wrclk => dcfifo_3hm1:auto_generated.wrclk
+wrempty <= <GND>
+wrfull <= dcfifo_3hm1:auto_generated.wrfull
+wrreq => dcfifo_3hm1:auto_generated.wrreq
+wrusedw[0] <= dcfifo_3hm1:auto_generated.wrusedw[0]
+wrusedw[1] <= dcfifo_3hm1:auto_generated.wrusedw[1]
+wrusedw[2] <= dcfifo_3hm1:auto_generated.wrusedw[2]
+wrusedw[3] <= dcfifo_3hm1:auto_generated.wrusedw[3]
+wrusedw[4] <= dcfifo_3hm1:auto_generated.wrusedw[4]
+wrusedw[5] <= dcfifo_3hm1:auto_generated.wrusedw[5]
+wrusedw[6] <= dcfifo_3hm1:auto_generated.wrusedw[6]
+wrusedw[7] <= dcfifo_3hm1:auto_generated.wrusedw[7]
+wrusedw[8] <= dcfifo_3hm1:auto_generated.wrusedw[8]
+wrusedw[9] <= dcfifo_3hm1:auto_generated.wrusedw[9]
+wrusedw[10] <= dcfifo_3hm1:auto_generated.wrusedw[10]
+wrusedw[11] <= dcfifo_3hm1:auto_generated.wrusedw[11]
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated
+aclr => a_graycounter_877:rdptr_g1p.aclr
+aclr => a_graycounter_4lc:wrptr_g1p.aclr
+aclr => altsyncram_ev61:fifo_ram.aclr1
+aclr => delayed_wrptr_g[12].IN0
+aclr => rdemp_eq_comp_lsb_aeb.IN0
+aclr => rdemp_eq_comp_msb_aeb.IN0
+aclr => rdptr_g[12].IN0
+aclr => rs_dgwp_reg[12].IN0
+aclr => wrfull_eq_comp_lsb_mux_reg.IN0
+aclr => wrfull_eq_comp_msb_mux_reg.IN0
+aclr => wrptr_g[12].IN0
+aclr => ws_dgrp_reg[12].IN0
+aclr => _.IN0
+aclr => _.IN0
+aclr => _.IN0
+aclr => _.IN0
+aclr => _.IN0
+aclr => _.IN0
+data[0] => altsyncram_ev61:fifo_ram.data_a[0]
+data[1] => altsyncram_ev61:fifo_ram.data_a[1]
+data[2] => altsyncram_ev61:fifo_ram.data_a[2]
+data[3] => altsyncram_ev61:fifo_ram.data_a[3]
+data[4] => altsyncram_ev61:fifo_ram.data_a[4]
+data[5] => altsyncram_ev61:fifo_ram.data_a[5]
+data[6] => altsyncram_ev61:fifo_ram.data_a[6]
+data[7] => altsyncram_ev61:fifo_ram.data_a[7]
+q[0] <= altsyncram_ev61:fifo_ram.q_b[0]
+q[1] <= altsyncram_ev61:fifo_ram.q_b[1]
+q[2] <= altsyncram_ev61:fifo_ram.q_b[2]
+q[3] <= altsyncram_ev61:fifo_ram.q_b[3]
+q[4] <= altsyncram_ev61:fifo_ram.q_b[4]
+q[5] <= altsyncram_ev61:fifo_ram.q_b[5]
+q[6] <= altsyncram_ev61:fifo_ram.q_b[6]
+q[7] <= altsyncram_ev61:fifo_ram.q_b[7]
+rdclk => a_graycounter_877:rdptr_g1p.clock
+rdclk => altsyncram_ev61:fifo_ram.clock1
+rdclk => dffpipe_0f9:rs_brp.clock
+rdclk => dffpipe_0f9:rs_bwp.clock
+rdclk => alt_synch_pipe_gpl:rs_dgwp.clock
+rdclk => rdemp_eq_comp_lsb_aeb.CLK
+rdclk => rdemp_eq_comp_msb_aeb.CLK
+rdclk => rdptr_g[12].CLK
+rdclk => rdptr_g[11].CLK
+rdclk => rdptr_g[10].CLK
+rdclk => rdptr_g[9].CLK
+rdclk => rdptr_g[8].CLK
+rdclk => rdptr_g[7].CLK
+rdclk => rdptr_g[6].CLK
+rdclk => rdptr_g[5].CLK
+rdclk => rdptr_g[4].CLK
+rdclk => rdptr_g[3].CLK
+rdclk => rdptr_g[2].CLK
+rdclk => rdptr_g[1].CLK
+rdclk => rdptr_g[0].CLK
+rdclk => rs_dgwp_reg[12].CLK
+rdclk => rs_dgwp_reg[11].CLK
+rdclk => rs_dgwp_reg[10].CLK
+rdclk => rs_dgwp_reg[9].CLK
+rdclk => rs_dgwp_reg[8].CLK
+rdclk => rs_dgwp_reg[7].CLK
+rdclk => rs_dgwp_reg[6].CLK
+rdclk => rs_dgwp_reg[5].CLK
+rdclk => rs_dgwp_reg[4].CLK
+rdclk => rs_dgwp_reg[3].CLK
+rdclk => rs_dgwp_reg[2].CLK
+rdclk => rs_dgwp_reg[1].CLK
+rdclk => rs_dgwp_reg[0].CLK
+rdempty <= int_rdempty.DB_MAX_OUTPUT_PORT_TYPE
+rdfull <= cmpr_q76:rdfull_eq_comp.aeb
+rdreq => valid_rdreq.IN0
+rdusedw[0] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[1] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[2] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[3] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[4] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[5] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[8] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[9] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[10] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+rdusedw[11] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+wrclk => a_graycounter_4lc:wrptr_g1p.clock
+wrclk => altsyncram_ev61:fifo_ram.clock0
+wrclk => dffpipe_0f9:ws_brp.clock
+wrclk => dffpipe_0f9:ws_bwp.clock
+wrclk => alt_synch_pipe_hpl:ws_dgrp.clock
+wrclk => delayed_wrptr_g[12].CLK
+wrclk => delayed_wrptr_g[11].CLK
+wrclk => delayed_wrptr_g[10].CLK
+wrclk => delayed_wrptr_g[9].CLK
+wrclk => delayed_wrptr_g[8].CLK
+wrclk => delayed_wrptr_g[7].CLK
+wrclk => delayed_wrptr_g[6].CLK
+wrclk => delayed_wrptr_g[5].CLK
+wrclk => delayed_wrptr_g[4].CLK
+wrclk => delayed_wrptr_g[3].CLK
+wrclk => delayed_wrptr_g[2].CLK
+wrclk => delayed_wrptr_g[1].CLK
+wrclk => delayed_wrptr_g[0].CLK
+wrclk => wrfull_eq_comp_lsb_mux_reg.CLK
+wrclk => wrfull_eq_comp_msb_mux_reg.CLK
+wrclk => wrptr_g[12].CLK
+wrclk => wrptr_g[11].CLK
+wrclk => wrptr_g[10].CLK
+wrclk => wrptr_g[9].CLK
+wrclk => wrptr_g[8].CLK
+wrclk => wrptr_g[7].CLK
+wrclk => wrptr_g[6].CLK
+wrclk => wrptr_g[5].CLK
+wrclk => wrptr_g[4].CLK
+wrclk => wrptr_g[3].CLK
+wrclk => wrptr_g[2].CLK
+wrclk => wrptr_g[1].CLK
+wrclk => wrptr_g[0].CLK
+wrclk => ws_dgrp_reg[12].CLK
+wrclk => ws_dgrp_reg[11].CLK
+wrclk => ws_dgrp_reg[10].CLK
+wrclk => ws_dgrp_reg[9].CLK
+wrclk => ws_dgrp_reg[8].CLK
+wrclk => ws_dgrp_reg[7].CLK
+wrclk => ws_dgrp_reg[6].CLK
+wrclk => ws_dgrp_reg[5].CLK
+wrclk => ws_dgrp_reg[4].CLK
+wrclk => ws_dgrp_reg[3].CLK
+wrclk => ws_dgrp_reg[2].CLK
+wrclk => ws_dgrp_reg[1].CLK
+wrclk => ws_dgrp_reg[0].CLK
+wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
+wrreq => valid_wrreq.IN0
+wrusedw[0] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[1] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[2] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[3] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[4] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[5] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[6] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[7] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[8] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[9] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[10] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+wrusedw[11] <= op_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rdptr_g_gray2bin
+bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
+bin[3] <= xor3.DB_MAX_OUTPUT_PORT_TYPE
+bin[4] <= xor4.DB_MAX_OUTPUT_PORT_TYPE
+bin[5] <= xor5.DB_MAX_OUTPUT_PORT_TYPE
+bin[6] <= xor6.DB_MAX_OUTPUT_PORT_TYPE
+bin[7] <= xor7.DB_MAX_OUTPUT_PORT_TYPE
+bin[8] <= xor8.DB_MAX_OUTPUT_PORT_TYPE
+bin[9] <= xor9.DB_MAX_OUTPUT_PORT_TYPE
+bin[10] <= xor10.DB_MAX_OUTPUT_PORT_TYPE
+bin[11] <= xor11.DB_MAX_OUTPUT_PORT_TYPE
+bin[12] <= gray[12].DB_MAX_OUTPUT_PORT_TYPE
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN0
+gray[5] => xor5.IN0
+gray[6] => xor6.IN0
+gray[7] => xor7.IN0
+gray[8] => xor8.IN0
+gray[9] => xor9.IN0
+gray[10] => xor10.IN0
+gray[11] => xor11.IN1
+gray[12] => bin[12].DATAIN
+gray[12] => xor11.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:rs_dgwp_gray2bin
+bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
+bin[3] <= xor3.DB_MAX_OUTPUT_PORT_TYPE
+bin[4] <= xor4.DB_MAX_OUTPUT_PORT_TYPE
+bin[5] <= xor5.DB_MAX_OUTPUT_PORT_TYPE
+bin[6] <= xor6.DB_MAX_OUTPUT_PORT_TYPE
+bin[7] <= xor7.DB_MAX_OUTPUT_PORT_TYPE
+bin[8] <= xor8.DB_MAX_OUTPUT_PORT_TYPE
+bin[9] <= xor9.DB_MAX_OUTPUT_PORT_TYPE
+bin[10] <= xor10.DB_MAX_OUTPUT_PORT_TYPE
+bin[11] <= xor11.DB_MAX_OUTPUT_PORT_TYPE
+bin[12] <= gray[12].DB_MAX_OUTPUT_PORT_TYPE
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN0
+gray[5] => xor5.IN0
+gray[6] => xor6.IN0
+gray[7] => xor7.IN0
+gray[8] => xor8.IN0
+gray[9] => xor9.IN0
+gray[10] => xor10.IN0
+gray[11] => xor11.IN1
+gray[12] => bin[12].DATAIN
+gray[12] => xor11.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:wrptr_g_gray2bin
+bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
+bin[3] <= xor3.DB_MAX_OUTPUT_PORT_TYPE
+bin[4] <= xor4.DB_MAX_OUTPUT_PORT_TYPE
+bin[5] <= xor5.DB_MAX_OUTPUT_PORT_TYPE
+bin[6] <= xor6.DB_MAX_OUTPUT_PORT_TYPE
+bin[7] <= xor7.DB_MAX_OUTPUT_PORT_TYPE
+bin[8] <= xor8.DB_MAX_OUTPUT_PORT_TYPE
+bin[9] <= xor9.DB_MAX_OUTPUT_PORT_TYPE
+bin[10] <= xor10.DB_MAX_OUTPUT_PORT_TYPE
+bin[11] <= xor11.DB_MAX_OUTPUT_PORT_TYPE
+bin[12] <= gray[12].DB_MAX_OUTPUT_PORT_TYPE
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN0
+gray[5] => xor5.IN0
+gray[6] => xor6.IN0
+gray[7] => xor7.IN0
+gray[8] => xor8.IN0
+gray[9] => xor9.IN0
+gray[10] => xor10.IN0
+gray[11] => xor11.IN1
+gray[12] => bin[12].DATAIN
+gray[12] => xor11.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_gray2bin_9ib:ws_dgrp_gray2bin
+bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
+bin[3] <= xor3.DB_MAX_OUTPUT_PORT_TYPE
+bin[4] <= xor4.DB_MAX_OUTPUT_PORT_TYPE
+bin[5] <= xor5.DB_MAX_OUTPUT_PORT_TYPE
+bin[6] <= xor6.DB_MAX_OUTPUT_PORT_TYPE
+bin[7] <= xor7.DB_MAX_OUTPUT_PORT_TYPE
+bin[8] <= xor8.DB_MAX_OUTPUT_PORT_TYPE
+bin[9] <= xor9.DB_MAX_OUTPUT_PORT_TYPE
+bin[10] <= xor10.DB_MAX_OUTPUT_PORT_TYPE
+bin[11] <= xor11.DB_MAX_OUTPUT_PORT_TYPE
+bin[12] <= gray[12].DB_MAX_OUTPUT_PORT_TYPE
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN0
+gray[5] => xor5.IN0
+gray[6] => xor6.IN0
+gray[7] => xor7.IN0
+gray[8] => xor8.IN0
+gray[9] => xor9.IN0
+gray[10] => xor10.IN0
+gray[11] => xor11.IN1
+gray[12] => bin[12].DATAIN
+gray[12] => xor11.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_877:rdptr_g1p
+aclr => counter5a1.IN0
+aclr => counter5a0.IN0
+aclr => parity6.IN0
+aclr => sub_parity7a[3].IN0
+aclr => sub_parity7a[2].IN0
+aclr => sub_parity7a[1].IN0
+aclr => sub_parity7a[0].IN0
+clock => counter5a0.CLK
+clock => counter5a1.CLK
+clock => counter5a2.CLK
+clock => counter5a3.CLK
+clock => counter5a4.CLK
+clock => counter5a5.CLK
+clock => counter5a6.CLK
+clock => counter5a7.CLK
+clock => counter5a8.CLK
+clock => counter5a9.CLK
+clock => counter5a10.CLK
+clock => counter5a11.CLK
+clock => counter5a12.CLK
+clock => parity6.CLK
+clock => sub_parity7a[3].CLK
+clock => sub_parity7a[2].CLK
+clock => sub_parity7a[1].CLK
+clock => sub_parity7a[0].CLK
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => cntr_cout[0].IN0
+cnt_en => parity_cout.IN1
+q[0] <= counter5a0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter5a1.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter5a2.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter5a3.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter5a4.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter5a5.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter5a6.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter5a7.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter5a9.DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter5a10.DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter5a11.DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter5a12.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|a_graycounter_4lc:wrptr_g1p
+aclr => counter8a1.IN0
+aclr => counter8a0.IN0
+aclr => parity9.IN0
+aclr => sub_parity10a[3].IN0
+aclr => sub_parity10a[2].IN0
+aclr => sub_parity10a[1].IN0
+aclr => sub_parity10a[0].IN0
+clock => counter8a0.CLK
+clock => counter8a1.CLK
+clock => counter8a2.CLK
+clock => counter8a3.CLK
+clock => counter8a4.CLK
+clock => counter8a5.CLK
+clock => counter8a6.CLK
+clock => counter8a7.CLK
+clock => counter8a8.CLK
+clock => counter8a9.CLK
+clock => counter8a10.CLK
+clock => counter8a11.CLK
+clock => counter8a12.CLK
+clock => parity9.CLK
+clock => sub_parity10a[3].CLK
+clock => sub_parity10a[2].CLK
+clock => sub_parity10a[1].CLK
+clock => sub_parity10a[0].CLK
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => cntr_cout[0].IN0
+cnt_en => parity_cout.IN1
+q[0] <= counter8a0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter8a1.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter8a2.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter8a3.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter8a4.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter8a5.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter8a6.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter8a7.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter8a9.DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter8a10.DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter8a11.DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter8a12.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|altsyncram_ev61:fifo_ram
+aclr1 => ram_block11a0.CLR1
+aclr1 => ram_block11a1.CLR1
+aclr1 => ram_block11a2.CLR1
+aclr1 => ram_block11a3.CLR1
+aclr1 => ram_block11a4.CLR1
+aclr1 => ram_block11a5.CLR1
+aclr1 => ram_block11a6.CLR1
+aclr1 => ram_block11a7.CLR1
+address_a[0] => ram_block11a0.PORTAADDR
+address_a[0] => ram_block11a1.PORTAADDR
+address_a[0] => ram_block11a2.PORTAADDR
+address_a[0] => ram_block11a3.PORTAADDR
+address_a[0] => ram_block11a4.PORTAADDR
+address_a[0] => ram_block11a5.PORTAADDR
+address_a[0] => ram_block11a6.PORTAADDR
+address_a[0] => ram_block11a7.PORTAADDR
+address_a[1] => ram_block11a0.PORTAADDR1
+address_a[1] => ram_block11a1.PORTAADDR1
+address_a[1] => ram_block11a2.PORTAADDR1
+address_a[1] => ram_block11a3.PORTAADDR1
+address_a[1] => ram_block11a4.PORTAADDR1
+address_a[1] => ram_block11a5.PORTAADDR1
+address_a[1] => ram_block11a6.PORTAADDR1
+address_a[1] => ram_block11a7.PORTAADDR1
+address_a[2] => ram_block11a0.PORTAADDR2
+address_a[2] => ram_block11a1.PORTAADDR2
+address_a[2] => ram_block11a2.PORTAADDR2
+address_a[2] => ram_block11a3.PORTAADDR2
+address_a[2] => ram_block11a4.PORTAADDR2
+address_a[2] => ram_block11a5.PORTAADDR2
+address_a[2] => ram_block11a6.PORTAADDR2
+address_a[2] => ram_block11a7.PORTAADDR2
+address_a[3] => ram_block11a0.PORTAADDR3
+address_a[3] => ram_block11a1.PORTAADDR3
+address_a[3] => ram_block11a2.PORTAADDR3
+address_a[3] => ram_block11a3.PORTAADDR3
+address_a[3] => ram_block11a4.PORTAADDR3
+address_a[3] => ram_block11a5.PORTAADDR3
+address_a[3] => ram_block11a6.PORTAADDR3
+address_a[3] => ram_block11a7.PORTAADDR3
+address_a[4] => ram_block11a0.PORTAADDR4
+address_a[4] => ram_block11a1.PORTAADDR4
+address_a[4] => ram_block11a2.PORTAADDR4
+address_a[4] => ram_block11a3.PORTAADDR4
+address_a[4] => ram_block11a4.PORTAADDR4
+address_a[4] => ram_block11a5.PORTAADDR4
+address_a[4] => ram_block11a6.PORTAADDR4
+address_a[4] => ram_block11a7.PORTAADDR4
+address_a[5] => ram_block11a0.PORTAADDR5
+address_a[5] => ram_block11a1.PORTAADDR5
+address_a[5] => ram_block11a2.PORTAADDR5
+address_a[5] => ram_block11a3.PORTAADDR5
+address_a[5] => ram_block11a4.PORTAADDR5
+address_a[5] => ram_block11a5.PORTAADDR5
+address_a[5] => ram_block11a6.PORTAADDR5
+address_a[5] => ram_block11a7.PORTAADDR5
+address_a[6] => ram_block11a0.PORTAADDR6
+address_a[6] => ram_block11a1.PORTAADDR6
+address_a[6] => ram_block11a2.PORTAADDR6
+address_a[6] => ram_block11a3.PORTAADDR6
+address_a[6] => ram_block11a4.PORTAADDR6
+address_a[6] => ram_block11a5.PORTAADDR6
+address_a[6] => ram_block11a6.PORTAADDR6
+address_a[6] => ram_block11a7.PORTAADDR6
+address_a[7] => ram_block11a0.PORTAADDR7
+address_a[7] => ram_block11a1.PORTAADDR7
+address_a[7] => ram_block11a2.PORTAADDR7
+address_a[7] => ram_block11a3.PORTAADDR7
+address_a[7] => ram_block11a4.PORTAADDR7
+address_a[7] => ram_block11a5.PORTAADDR7
+address_a[7] => ram_block11a6.PORTAADDR7
+address_a[7] => ram_block11a7.PORTAADDR7
+address_a[8] => ram_block11a0.PORTAADDR8
+address_a[8] => ram_block11a1.PORTAADDR8
+address_a[8] => ram_block11a2.PORTAADDR8
+address_a[8] => ram_block11a3.PORTAADDR8
+address_a[8] => ram_block11a4.PORTAADDR8
+address_a[8] => ram_block11a5.PORTAADDR8
+address_a[8] => ram_block11a6.PORTAADDR8
+address_a[8] => ram_block11a7.PORTAADDR8
+address_a[9] => ram_block11a0.PORTAADDR9
+address_a[9] => ram_block11a1.PORTAADDR9
+address_a[9] => ram_block11a2.PORTAADDR9
+address_a[9] => ram_block11a3.PORTAADDR9
+address_a[9] => ram_block11a4.PORTAADDR9
+address_a[9] => ram_block11a5.PORTAADDR9
+address_a[9] => ram_block11a6.PORTAADDR9
+address_a[9] => ram_block11a7.PORTAADDR9
+address_a[10] => ram_block11a0.PORTAADDR10
+address_a[10] => ram_block11a1.PORTAADDR10
+address_a[10] => ram_block11a2.PORTAADDR10
+address_a[10] => ram_block11a3.PORTAADDR10
+address_a[10] => ram_block11a4.PORTAADDR10
+address_a[10] => ram_block11a5.PORTAADDR10
+address_a[10] => ram_block11a6.PORTAADDR10
+address_a[10] => ram_block11a7.PORTAADDR10
+address_a[11] => ram_block11a0.PORTAADDR11
+address_a[11] => ram_block11a1.PORTAADDR11
+address_a[11] => ram_block11a2.PORTAADDR11
+address_a[11] => ram_block11a3.PORTAADDR11
+address_a[11] => ram_block11a4.PORTAADDR11
+address_a[11] => ram_block11a5.PORTAADDR11
+address_a[11] => ram_block11a6.PORTAADDR11
+address_a[11] => ram_block11a7.PORTAADDR11
+address_b[0] => ram_block11a0.PORTBADDR
+address_b[0] => ram_block11a1.PORTBADDR
+address_b[0] => ram_block11a2.PORTBADDR
+address_b[0] => ram_block11a3.PORTBADDR
+address_b[0] => ram_block11a4.PORTBADDR
+address_b[0] => ram_block11a5.PORTBADDR
+address_b[0] => ram_block11a6.PORTBADDR
+address_b[0] => ram_block11a7.PORTBADDR
+address_b[1] => ram_block11a0.PORTBADDR1
+address_b[1] => ram_block11a1.PORTBADDR1
+address_b[1] => ram_block11a2.PORTBADDR1
+address_b[1] => ram_block11a3.PORTBADDR1
+address_b[1] => ram_block11a4.PORTBADDR1
+address_b[1] => ram_block11a5.PORTBADDR1
+address_b[1] => ram_block11a6.PORTBADDR1
+address_b[1] => ram_block11a7.PORTBADDR1
+address_b[2] => ram_block11a0.PORTBADDR2
+address_b[2] => ram_block11a1.PORTBADDR2
+address_b[2] => ram_block11a2.PORTBADDR2
+address_b[2] => ram_block11a3.PORTBADDR2
+address_b[2] => ram_block11a4.PORTBADDR2
+address_b[2] => ram_block11a5.PORTBADDR2
+address_b[2] => ram_block11a6.PORTBADDR2
+address_b[2] => ram_block11a7.PORTBADDR2
+address_b[3] => ram_block11a0.PORTBADDR3
+address_b[3] => ram_block11a1.PORTBADDR3
+address_b[3] => ram_block11a2.PORTBADDR3
+address_b[3] => ram_block11a3.PORTBADDR3
+address_b[3] => ram_block11a4.PORTBADDR3
+address_b[3] => ram_block11a5.PORTBADDR3
+address_b[3] => ram_block11a6.PORTBADDR3
+address_b[3] => ram_block11a7.PORTBADDR3
+address_b[4] => ram_block11a0.PORTBADDR4
+address_b[4] => ram_block11a1.PORTBADDR4
+address_b[4] => ram_block11a2.PORTBADDR4
+address_b[4] => ram_block11a3.PORTBADDR4
+address_b[4] => ram_block11a4.PORTBADDR4
+address_b[4] => ram_block11a5.PORTBADDR4
+address_b[4] => ram_block11a6.PORTBADDR4
+address_b[4] => ram_block11a7.PORTBADDR4
+address_b[5] => ram_block11a0.PORTBADDR5
+address_b[5] => ram_block11a1.PORTBADDR5
+address_b[5] => ram_block11a2.PORTBADDR5
+address_b[5] => ram_block11a3.PORTBADDR5
+address_b[5] => ram_block11a4.PORTBADDR5
+address_b[5] => ram_block11a5.PORTBADDR5
+address_b[5] => ram_block11a6.PORTBADDR5
+address_b[5] => ram_block11a7.PORTBADDR5
+address_b[6] => ram_block11a0.PORTBADDR6
+address_b[6] => ram_block11a1.PORTBADDR6
+address_b[6] => ram_block11a2.PORTBADDR6
+address_b[6] => ram_block11a3.PORTBADDR6
+address_b[6] => ram_block11a4.PORTBADDR6
+address_b[6] => ram_block11a5.PORTBADDR6
+address_b[6] => ram_block11a6.PORTBADDR6
+address_b[6] => ram_block11a7.PORTBADDR6
+address_b[7] => ram_block11a0.PORTBADDR7
+address_b[7] => ram_block11a1.PORTBADDR7
+address_b[7] => ram_block11a2.PORTBADDR7
+address_b[7] => ram_block11a3.PORTBADDR7
+address_b[7] => ram_block11a4.PORTBADDR7
+address_b[7] => ram_block11a5.PORTBADDR7
+address_b[7] => ram_block11a6.PORTBADDR7
+address_b[7] => ram_block11a7.PORTBADDR7
+address_b[8] => ram_block11a0.PORTBADDR8
+address_b[8] => ram_block11a1.PORTBADDR8
+address_b[8] => ram_block11a2.PORTBADDR8
+address_b[8] => ram_block11a3.PORTBADDR8
+address_b[8] => ram_block11a4.PORTBADDR8
+address_b[8] => ram_block11a5.PORTBADDR8
+address_b[8] => ram_block11a6.PORTBADDR8
+address_b[8] => ram_block11a7.PORTBADDR8
+address_b[9] => ram_block11a0.PORTBADDR9
+address_b[9] => ram_block11a1.PORTBADDR9
+address_b[9] => ram_block11a2.PORTBADDR9
+address_b[9] => ram_block11a3.PORTBADDR9
+address_b[9] => ram_block11a4.PORTBADDR9
+address_b[9] => ram_block11a5.PORTBADDR9
+address_b[9] => ram_block11a6.PORTBADDR9
+address_b[9] => ram_block11a7.PORTBADDR9
+address_b[10] => ram_block11a0.PORTBADDR10
+address_b[10] => ram_block11a1.PORTBADDR10
+address_b[10] => ram_block11a2.PORTBADDR10
+address_b[10] => ram_block11a3.PORTBADDR10
+address_b[10] => ram_block11a4.PORTBADDR10
+address_b[10] => ram_block11a5.PORTBADDR10
+address_b[10] => ram_block11a6.PORTBADDR10
+address_b[10] => ram_block11a7.PORTBADDR10
+address_b[11] => ram_block11a0.PORTBADDR11
+address_b[11] => ram_block11a1.PORTBADDR11
+address_b[11] => ram_block11a2.PORTBADDR11
+address_b[11] => ram_block11a3.PORTBADDR11
+address_b[11] => ram_block11a4.PORTBADDR11
+address_b[11] => ram_block11a5.PORTBADDR11
+address_b[11] => ram_block11a6.PORTBADDR11
+address_b[11] => ram_block11a7.PORTBADDR11
+addressstall_b => ram_block11a0.PORTBADDRSTALL
+addressstall_b => ram_block11a1.PORTBADDRSTALL
+addressstall_b => ram_block11a2.PORTBADDRSTALL
+addressstall_b => ram_block11a3.PORTBADDRSTALL
+addressstall_b => ram_block11a4.PORTBADDRSTALL
+addressstall_b => ram_block11a5.PORTBADDRSTALL
+addressstall_b => ram_block11a6.PORTBADDRSTALL
+addressstall_b => ram_block11a7.PORTBADDRSTALL
+clock0 => ram_block11a0.CLK0
+clock0 => ram_block11a1.CLK0
+clock0 => ram_block11a2.CLK0
+clock0 => ram_block11a3.CLK0
+clock0 => ram_block11a4.CLK0
+clock0 => ram_block11a5.CLK0
+clock0 => ram_block11a6.CLK0
+clock0 => ram_block11a7.CLK0
+clock1 => ram_block11a0.CLK1
+clock1 => ram_block11a1.CLK1
+clock1 => ram_block11a2.CLK1
+clock1 => ram_block11a3.CLK1
+clock1 => ram_block11a4.CLK1
+clock1 => ram_block11a5.CLK1
+clock1 => ram_block11a6.CLK1
+clock1 => ram_block11a7.CLK1
+clocken1 => ram_block11a0.ENA1
+clocken1 => ram_block11a1.ENA1
+clocken1 => ram_block11a2.ENA1
+clocken1 => ram_block11a3.ENA1
+clocken1 => ram_block11a4.ENA1
+clocken1 => ram_block11a5.ENA1
+clocken1 => ram_block11a6.ENA1
+clocken1 => ram_block11a7.ENA1
+data_a[0] => ram_block11a0.PORTADATAIN
+data_a[1] => ram_block11a1.PORTADATAIN
+data_a[2] => ram_block11a2.PORTADATAIN
+data_a[3] => ram_block11a3.PORTADATAIN
+data_a[4] => ram_block11a4.PORTADATAIN
+data_a[5] => ram_block11a5.PORTADATAIN
+data_a[6] => ram_block11a6.PORTADATAIN
+data_a[7] => ram_block11a7.PORTADATAIN
+q_b[0] <= ram_block11a0.PORTBDATAOUT
+q_b[1] <= ram_block11a1.PORTBDATAOUT
+q_b[2] <= ram_block11a2.PORTBDATAOUT
+q_b[3] <= ram_block11a3.PORTBDATAOUT
+q_b[4] <= ram_block11a4.PORTBDATAOUT
+q_b[5] <= ram_block11a5.PORTBDATAOUT
+q_b[6] <= ram_block11a6.PORTBDATAOUT
+q_b[7] <= ram_block11a7.PORTBDATAOUT
+wren_a => ram_block11a0.PORTAWE
+wren_a => ram_block11a0.ENA0
+wren_a => ram_block11a1.PORTAWE
+wren_a => ram_block11a1.ENA0
+wren_a => ram_block11a2.PORTAWE
+wren_a => ram_block11a2.ENA0
+wren_a => ram_block11a3.PORTAWE
+wren_a => ram_block11a3.ENA0
+wren_a => ram_block11a4.PORTAWE
+wren_a => ram_block11a4.ENA0
+wren_a => ram_block11a5.PORTAWE
+wren_a => ram_block11a5.ENA0
+wren_a => ram_block11a6.PORTAWE
+wren_a => ram_block11a6.ENA0
+wren_a => ram_block11a7.PORTAWE
+wren_a => ram_block11a7.ENA0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_brp
+clock => dffe16a[12].CLK
+clock => dffe16a[11].CLK
+clock => dffe16a[10].CLK
+clock => dffe16a[9].CLK
+clock => dffe16a[8].CLK
+clock => dffe16a[7].CLK
+clock => dffe16a[6].CLK
+clock => dffe16a[5].CLK
+clock => dffe16a[4].CLK
+clock => dffe16a[3].CLK
+clock => dffe16a[2].CLK
+clock => dffe16a[1].CLK
+clock => dffe16a[0].CLK
+clrn => dffe16a[12].ACLR
+clrn => dffe16a[11].ACLR
+clrn => dffe16a[10].ACLR
+clrn => dffe16a[9].ACLR
+clrn => dffe16a[8].ACLR
+clrn => dffe16a[7].ACLR
+clrn => dffe16a[6].ACLR
+clrn => dffe16a[5].ACLR
+clrn => dffe16a[4].ACLR
+clrn => dffe16a[3].ACLR
+clrn => dffe16a[2].ACLR
+clrn => dffe16a[1].ACLR
+clrn => dffe16a[0].ACLR
+d[0] => dffe16a[0].IN0
+d[1] => dffe16a[1].IN0
+d[2] => dffe16a[2].IN0
+d[3] => dffe16a[3].IN0
+d[4] => dffe16a[4].IN0
+d[5] => dffe16a[5].IN0
+d[6] => dffe16a[6].IN0
+d[7] => dffe16a[7].IN0
+d[8] => dffe16a[8].IN0
+d[9] => dffe16a[9].IN0
+d[10] => dffe16a[10].IN0
+d[11] => dffe16a[11].IN0
+d[12] => dffe16a[12].IN0
+q[0] <= dffe16a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe16a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe16a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe16a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe16a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe16a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe16a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe16a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe16a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe16a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe16a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:rs_bwp
+clock => dffe16a[12].CLK
+clock => dffe16a[11].CLK
+clock => dffe16a[10].CLK
+clock => dffe16a[9].CLK
+clock => dffe16a[8].CLK
+clock => dffe16a[7].CLK
+clock => dffe16a[6].CLK
+clock => dffe16a[5].CLK
+clock => dffe16a[4].CLK
+clock => dffe16a[3].CLK
+clock => dffe16a[2].CLK
+clock => dffe16a[1].CLK
+clock => dffe16a[0].CLK
+clrn => dffe16a[12].ACLR
+clrn => dffe16a[11].ACLR
+clrn => dffe16a[10].ACLR
+clrn => dffe16a[9].ACLR
+clrn => dffe16a[8].ACLR
+clrn => dffe16a[7].ACLR
+clrn => dffe16a[6].ACLR
+clrn => dffe16a[5].ACLR
+clrn => dffe16a[4].ACLR
+clrn => dffe16a[3].ACLR
+clrn => dffe16a[2].ACLR
+clrn => dffe16a[1].ACLR
+clrn => dffe16a[0].ACLR
+d[0] => dffe16a[0].IN0
+d[1] => dffe16a[1].IN0
+d[2] => dffe16a[2].IN0
+d[3] => dffe16a[3].IN0
+d[4] => dffe16a[4].IN0
+d[5] => dffe16a[5].IN0
+d[6] => dffe16a[6].IN0
+d[7] => dffe16a[7].IN0
+d[8] => dffe16a[8].IN0
+d[9] => dffe16a[9].IN0
+d[10] => dffe16a[10].IN0
+d[11] => dffe16a[11].IN0
+d[12] => dffe16a[12].IN0
+q[0] <= dffe16a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe16a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe16a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe16a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe16a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe16a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe16a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe16a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe16a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe16a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe16a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp
+clock => dffpipe_4f9:dffpipe12.clock
+clrn => dffpipe_4f9:dffpipe12.clrn
+d[0] => dffpipe_4f9:dffpipe12.d[0]
+d[1] => dffpipe_4f9:dffpipe12.d[1]
+d[2] => dffpipe_4f9:dffpipe12.d[2]
+d[3] => dffpipe_4f9:dffpipe12.d[3]
+d[4] => dffpipe_4f9:dffpipe12.d[4]
+d[5] => dffpipe_4f9:dffpipe12.d[5]
+d[6] => dffpipe_4f9:dffpipe12.d[6]
+d[7] => dffpipe_4f9:dffpipe12.d[7]
+d[8] => dffpipe_4f9:dffpipe12.d[8]
+d[9] => dffpipe_4f9:dffpipe12.d[9]
+d[10] => dffpipe_4f9:dffpipe12.d[10]
+d[11] => dffpipe_4f9:dffpipe12.d[11]
+d[12] => dffpipe_4f9:dffpipe12.d[12]
+q[0] <= dffpipe_4f9:dffpipe12.q[0]
+q[1] <= dffpipe_4f9:dffpipe12.q[1]
+q[2] <= dffpipe_4f9:dffpipe12.q[2]
+q[3] <= dffpipe_4f9:dffpipe12.q[3]
+q[4] <= dffpipe_4f9:dffpipe12.q[4]
+q[5] <= dffpipe_4f9:dffpipe12.q[5]
+q[6] <= dffpipe_4f9:dffpipe12.q[6]
+q[7] <= dffpipe_4f9:dffpipe12.q[7]
+q[8] <= dffpipe_4f9:dffpipe12.q[8]
+q[9] <= dffpipe_4f9:dffpipe12.q[9]
+q[10] <= dffpipe_4f9:dffpipe12.q[10]
+q[11] <= dffpipe_4f9:dffpipe12.q[11]
+q[12] <= dffpipe_4f9:dffpipe12.q[12]
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_gpl:rs_dgwp|dffpipe_4f9:dffpipe12
+clock => dffe13a[12].CLK
+clock => dffe13a[11].CLK
+clock => dffe13a[10].CLK
+clock => dffe13a[9].CLK
+clock => dffe13a[8].CLK
+clock => dffe13a[7].CLK
+clock => dffe13a[6].CLK
+clock => dffe13a[5].CLK
+clock => dffe13a[4].CLK
+clock => dffe13a[3].CLK
+clock => dffe13a[2].CLK
+clock => dffe13a[1].CLK
+clock => dffe13a[0].CLK
+clock => dffe14a[12].CLK
+clock => dffe14a[11].CLK
+clock => dffe14a[10].CLK
+clock => dffe14a[9].CLK
+clock => dffe14a[8].CLK
+clock => dffe14a[7].CLK
+clock => dffe14a[6].CLK
+clock => dffe14a[5].CLK
+clock => dffe14a[4].CLK
+clock => dffe14a[3].CLK
+clock => dffe14a[2].CLK
+clock => dffe14a[1].CLK
+clock => dffe14a[0].CLK
+clrn => dffe13a[12].ACLR
+clrn => dffe13a[11].ACLR
+clrn => dffe13a[10].ACLR
+clrn => dffe13a[9].ACLR
+clrn => dffe13a[8].ACLR
+clrn => dffe13a[7].ACLR
+clrn => dffe13a[6].ACLR
+clrn => dffe13a[5].ACLR
+clrn => dffe13a[4].ACLR
+clrn => dffe13a[3].ACLR
+clrn => dffe13a[2].ACLR
+clrn => dffe13a[1].ACLR
+clrn => dffe13a[0].ACLR
+clrn => dffe14a[12].ACLR
+clrn => dffe14a[11].ACLR
+clrn => dffe14a[10].ACLR
+clrn => dffe14a[9].ACLR
+clrn => dffe14a[8].ACLR
+clrn => dffe14a[7].ACLR
+clrn => dffe14a[6].ACLR
+clrn => dffe14a[5].ACLR
+clrn => dffe14a[4].ACLR
+clrn => dffe14a[3].ACLR
+clrn => dffe14a[2].ACLR
+clrn => dffe14a[1].ACLR
+clrn => dffe14a[0].ACLR
+d[0] => dffe13a[0].IN0
+d[1] => dffe13a[1].IN0
+d[2] => dffe13a[2].IN0
+d[3] => dffe13a[3].IN0
+d[4] => dffe13a[4].IN0
+d[5] => dffe13a[5].IN0
+d[6] => dffe13a[6].IN0
+d[7] => dffe13a[7].IN0
+d[8] => dffe13a[8].IN0
+d[9] => dffe13a[9].IN0
+d[10] => dffe13a[10].IN0
+d[11] => dffe13a[11].IN0
+d[12] => dffe13a[12].IN0
+q[0] <= dffe14a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe14a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe14a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe14a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe14a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe14a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe14a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe14a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe14a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe14a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe14a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe14a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_brp
+clock => dffe16a[12].CLK
+clock => dffe16a[11].CLK
+clock => dffe16a[10].CLK
+clock => dffe16a[9].CLK
+clock => dffe16a[8].CLK
+clock => dffe16a[7].CLK
+clock => dffe16a[6].CLK
+clock => dffe16a[5].CLK
+clock => dffe16a[4].CLK
+clock => dffe16a[3].CLK
+clock => dffe16a[2].CLK
+clock => dffe16a[1].CLK
+clock => dffe16a[0].CLK
+clrn => dffe16a[12].ACLR
+clrn => dffe16a[11].ACLR
+clrn => dffe16a[10].ACLR
+clrn => dffe16a[9].ACLR
+clrn => dffe16a[8].ACLR
+clrn => dffe16a[7].ACLR
+clrn => dffe16a[6].ACLR
+clrn => dffe16a[5].ACLR
+clrn => dffe16a[4].ACLR
+clrn => dffe16a[3].ACLR
+clrn => dffe16a[2].ACLR
+clrn => dffe16a[1].ACLR
+clrn => dffe16a[0].ACLR
+d[0] => dffe16a[0].IN0
+d[1] => dffe16a[1].IN0
+d[2] => dffe16a[2].IN0
+d[3] => dffe16a[3].IN0
+d[4] => dffe16a[4].IN0
+d[5] => dffe16a[5].IN0
+d[6] => dffe16a[6].IN0
+d[7] => dffe16a[7].IN0
+d[8] => dffe16a[8].IN0
+d[9] => dffe16a[9].IN0
+d[10] => dffe16a[10].IN0
+d[11] => dffe16a[11].IN0
+d[12] => dffe16a[12].IN0
+q[0] <= dffe16a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe16a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe16a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe16a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe16a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe16a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe16a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe16a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe16a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe16a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe16a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|dffpipe_0f9:ws_bwp
+clock => dffe16a[12].CLK
+clock => dffe16a[11].CLK
+clock => dffe16a[10].CLK
+clock => dffe16a[9].CLK
+clock => dffe16a[8].CLK
+clock => dffe16a[7].CLK
+clock => dffe16a[6].CLK
+clock => dffe16a[5].CLK
+clock => dffe16a[4].CLK
+clock => dffe16a[3].CLK
+clock => dffe16a[2].CLK
+clock => dffe16a[1].CLK
+clock => dffe16a[0].CLK
+clrn => dffe16a[12].ACLR
+clrn => dffe16a[11].ACLR
+clrn => dffe16a[10].ACLR
+clrn => dffe16a[9].ACLR
+clrn => dffe16a[8].ACLR
+clrn => dffe16a[7].ACLR
+clrn => dffe16a[6].ACLR
+clrn => dffe16a[5].ACLR
+clrn => dffe16a[4].ACLR
+clrn => dffe16a[3].ACLR
+clrn => dffe16a[2].ACLR
+clrn => dffe16a[1].ACLR
+clrn => dffe16a[0].ACLR
+d[0] => dffe16a[0].IN0
+d[1] => dffe16a[1].IN0
+d[2] => dffe16a[2].IN0
+d[3] => dffe16a[3].IN0
+d[4] => dffe16a[4].IN0
+d[5] => dffe16a[5].IN0
+d[6] => dffe16a[6].IN0
+d[7] => dffe16a[7].IN0
+d[8] => dffe16a[8].IN0
+d[9] => dffe16a[9].IN0
+d[10] => dffe16a[10].IN0
+d[11] => dffe16a[11].IN0
+d[12] => dffe16a[12].IN0
+q[0] <= dffe16a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe16a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe16a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe16a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe16a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe16a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe16a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe16a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe16a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe16a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe16a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe16a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp
+clock => dffpipe_5f9:dffpipe15.clock
+clrn => dffpipe_5f9:dffpipe15.clrn
+d[0] => dffpipe_5f9:dffpipe15.d[0]
+d[1] => dffpipe_5f9:dffpipe15.d[1]
+d[2] => dffpipe_5f9:dffpipe15.d[2]
+d[3] => dffpipe_5f9:dffpipe15.d[3]
+d[4] => dffpipe_5f9:dffpipe15.d[4]
+d[5] => dffpipe_5f9:dffpipe15.d[5]
+d[6] => dffpipe_5f9:dffpipe15.d[6]
+d[7] => dffpipe_5f9:dffpipe15.d[7]
+d[8] => dffpipe_5f9:dffpipe15.d[8]
+d[9] => dffpipe_5f9:dffpipe15.d[9]
+d[10] => dffpipe_5f9:dffpipe15.d[10]
+d[11] => dffpipe_5f9:dffpipe15.d[11]
+d[12] => dffpipe_5f9:dffpipe15.d[12]
+q[0] <= dffpipe_5f9:dffpipe15.q[0]
+q[1] <= dffpipe_5f9:dffpipe15.q[1]
+q[2] <= dffpipe_5f9:dffpipe15.q[2]
+q[3] <= dffpipe_5f9:dffpipe15.q[3]
+q[4] <= dffpipe_5f9:dffpipe15.q[4]
+q[5] <= dffpipe_5f9:dffpipe15.q[5]
+q[6] <= dffpipe_5f9:dffpipe15.q[6]
+q[7] <= dffpipe_5f9:dffpipe15.q[7]
+q[8] <= dffpipe_5f9:dffpipe15.q[8]
+q[9] <= dffpipe_5f9:dffpipe15.q[9]
+q[10] <= dffpipe_5f9:dffpipe15.q[10]
+q[11] <= dffpipe_5f9:dffpipe15.q[11]
+q[12] <= dffpipe_5f9:dffpipe15.q[12]
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|alt_synch_pipe_hpl:ws_dgrp|dffpipe_5f9:dffpipe15
+clock => dffe16a[12].CLK
+clock => dffe16a[11].CLK
+clock => dffe16a[10].CLK
+clock => dffe16a[9].CLK
+clock => dffe16a[8].CLK
+clock => dffe16a[7].CLK
+clock => dffe16a[6].CLK
+clock => dffe16a[5].CLK
+clock => dffe16a[4].CLK
+clock => dffe16a[3].CLK
+clock => dffe16a[2].CLK
+clock => dffe16a[1].CLK
+clock => dffe16a[0].CLK
+clock => dffe17a[12].CLK
+clock => dffe17a[11].CLK
+clock => dffe17a[10].CLK
+clock => dffe17a[9].CLK
+clock => dffe17a[8].CLK
+clock => dffe17a[7].CLK
+clock => dffe17a[6].CLK
+clock => dffe17a[5].CLK
+clock => dffe17a[4].CLK
+clock => dffe17a[3].CLK
+clock => dffe17a[2].CLK
+clock => dffe17a[1].CLK
+clock => dffe17a[0].CLK
+clrn => dffe16a[12].ACLR
+clrn => dffe16a[11].ACLR
+clrn => dffe16a[10].ACLR
+clrn => dffe16a[9].ACLR
+clrn => dffe16a[8].ACLR
+clrn => dffe16a[7].ACLR
+clrn => dffe16a[6].ACLR
+clrn => dffe16a[5].ACLR
+clrn => dffe16a[4].ACLR
+clrn => dffe16a[3].ACLR
+clrn => dffe16a[2].ACLR
+clrn => dffe16a[1].ACLR
+clrn => dffe16a[0].ACLR
+clrn => dffe17a[12].ACLR
+clrn => dffe17a[11].ACLR
+clrn => dffe17a[10].ACLR
+clrn => dffe17a[9].ACLR
+clrn => dffe17a[8].ACLR
+clrn => dffe17a[7].ACLR
+clrn => dffe17a[6].ACLR
+clrn => dffe17a[5].ACLR
+clrn => dffe17a[4].ACLR
+clrn => dffe17a[3].ACLR
+clrn => dffe17a[2].ACLR
+clrn => dffe17a[1].ACLR
+clrn => dffe17a[0].ACLR
+d[0] => dffe16a[0].IN0
+d[1] => dffe16a[1].IN0
+d[2] => dffe16a[2].IN0
+d[3] => dffe16a[3].IN0
+d[4] => dffe16a[4].IN0
+d[5] => dffe16a[5].IN0
+d[6] => dffe16a[6].IN0
+d[7] => dffe16a[7].IN0
+d[8] => dffe16a[8].IN0
+d[9] => dffe16a[9].IN0
+d[10] => dffe16a[10].IN0
+d[11] => dffe16a[11].IN0
+d[12] => dffe16a[12].IN0
+q[0] <= dffe17a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffe17a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffe17a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffe17a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffe17a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffe17a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffe17a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffe17a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffe17a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= dffe17a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= dffe17a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= dffe17a[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp1_lsb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+dataa[6] => data_wire[3].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+datab[6] => data_wire[3].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp1_msb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:rdempty_eq_comp_lsb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+dataa[6] => data_wire[3].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+datab[6] => data_wire[3].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:rdempty_eq_comp_msb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_q76:rdfull_eq_comp
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[2].IN0
+dataa[1] => data_wire[2].IN0
+dataa[2] => data_wire[3].IN0
+dataa[3] => data_wire[3].IN0
+dataa[4] => data_wire[4].IN0
+dataa[5] => data_wire[4].IN0
+dataa[6] => data_wire[5].IN0
+dataa[7] => data_wire[5].IN0
+dataa[8] => data_wire[6].IN0
+dataa[9] => data_wire[6].IN0
+dataa[10] => data_wire[7].IN0
+dataa[11] => data_wire[7].IN0
+dataa[12] => data_wire[8].IN0
+datab[0] => data_wire[2].IN1
+datab[1] => data_wire[2].IN1
+datab[2] => data_wire[3].IN1
+datab[3] => data_wire[3].IN1
+datab[4] => data_wire[4].IN1
+datab[5] => data_wire[4].IN1
+datab[6] => data_wire[5].IN1
+datab[7] => data_wire[5].IN1
+datab[8] => data_wire[6].IN1
+datab[9] => data_wire[6].IN1
+datab[10] => data_wire[7].IN1
+datab[11] => data_wire[7].IN1
+datab[12] => data_wire[8].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp1_lsb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+dataa[6] => data_wire[3].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+datab[6] => data_wire[3].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp1_msb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_d66:wrfull_eq_comp_lsb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+dataa[6] => data_wire[3].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+datab[6] => data_wire[3].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|cmpr_c66:wrfull_eq_comp_msb
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux
+data[0] => result_node[0].IN1
+data[1] => result_node[0].IN1
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node[0].IN0
+sel[0] => _.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux
+data[0] => result_node[0].IN1
+data[1] => result_node[0].IN1
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node[0].IN0
+sel[0] => _.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux
+data[0] => result_node[0].IN1
+data[1] => result_node[0].IN1
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node[0].IN0
+sel[0] => _.IN0
+
+
+|nios2_SG_DMA_test|fifo_tx:fifo_tx_9600_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_3hm1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux
 data[0] => result_node[0].IN1
 data[1] => result_node[0].IN1
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -3430,6 +5033,8 @@ i_threshold[12] => i_threshold[12].IN1
 i_threshold[13] => i_threshold[13].IN1
 i_threshold[14] => i_threshold[14].IN1
 i_threshold[15] => i_threshold[15].IN1
+i_tx_9600_or_115200 => i_tx_9600_or_115200.IN1
+o_rx_9600_or_115200 <= RX_TOP:m_rx_top.o_rx_9600_or_115200
 
 
 |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top
@@ -3495,6 +5100,7 @@ o_vl_tx_data_0 <= o_vl_tx_data_0.DB_MAX_OUTPUT_PORT_TYPE
 i_rs_en => ~NO_FANOUT~
 i_x1_mode => i_x1_mode.IN1
 i_pol_adj_en => ~NO_FANOUT~
+i_tx_9600_or_115200 => i_tx_9600_or_115200.IN1
 
 
 |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top|TX_INTERFACE:m_tx_interface
@@ -3660,6 +5266,14 @@ o_data[7] <= r_data_x1[7].DB_MAX_OUTPUT_PORT_TYPE
 o_rs_data_symbol <= r_rs_data_symbol.DB_MAX_OUTPUT_PORT_TYPE
 o_rs_check_symbol <= r_rs_check_symbol.DB_MAX_OUTPUT_PORT_TYPE
 i_x1_mode => ~NO_FANOUT~
+i_tx_9600_or_115200 => Selector7.IN4
+i_tx_9600_or_115200 => Selector9.IN4
+i_tx_9600_or_115200 => Selector11.IN4
+i_tx_9600_or_115200 => Selector13.IN4
+i_tx_9600_or_115200 => Selector6.IN1
+i_tx_9600_or_115200 => Selector8.IN1
+i_tx_9600_or_115200 => Selector10.IN1
+i_tx_9600_or_115200 => Selector12.IN1
 
 
 |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|TX_TOP:m_tx_top|RS_ENC_LANE_QUATUS:RS_ENC_LANE[0].m_tx_rs_enc
@@ -4988,6 +6602,7 @@ i_threshold[12] => i_threshold[12].IN1
 i_threshold[13] => i_threshold[13].IN1
 i_threshold[14] => i_threshold[14].IN1
 i_threshold[15] => i_threshold[15].IN1
+o_rx_9600_or_115200 <= RX_INTERFACE:m_rx_interface.o_rx_9600_or_115200
 
 
 |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|desyn:desyn
@@ -16954,12 +18569,13 @@ o_ati_data[29] <= <GND>
 o_ati_data[30] <= <GND>
 o_ati_data[31] <= <GND>
 i_ati_rdy => c_ati_fifo_rd_en.IN1
-i_ati_rdy => always7.IN1
+i_ati_rdy => always8.IN1
 i_ati_rdy => r_ati_val.OUTPUTSELECT
 i_ati_rdy => r_ati_sof.OUTPUTSELECT
 i_ati_rdy => Selector0.IN3
 i_ati_rdy => Selector5.IN2
 i_x1_mode => ~NO_FANOUT~
+o_rx_9600_or_115200 <= r_rx_9600_or_115200.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |nios2_SG_DMA_test|PCS_TOP:m_PCS_TOP|RX_TOP:m_rx_top|RX_INTERFACE:m_rx_interface|ASYNCFIFOGA:m_asyncfifo

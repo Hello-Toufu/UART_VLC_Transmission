@@ -185,16 +185,36 @@ r_state.EOF 0 0 1 1
 r_state.SOF 0 1 0 1 
 r_state.DATA_SYMBOL 1 0 0 1 
 
-State Machine - |nios2_SG_DMA_test|UART:uart_0|Tsta
+State Machine - |nios2_SG_DMA_test|UART:uart_BAUD_RATE_9600|Tsta
 Name Tsta.Tsta_0 Tsta.Tsta_3 Tsta.Tsta_2 Tsta.Tsta_1 
 Tsta.Tsta_0 0 0 0 0 
 Tsta.Tsta_1 1 0 0 1 
 Tsta.Tsta_2 1 0 1 0 
 Tsta.Tsta_3 1 1 0 0 
 
-State Machine - |nios2_SG_DMA_test|UART:uart_0|Rsta
+State Machine - |nios2_SG_DMA_test|UART:uart_BAUD_RATE_9600|Rsta
 Name Rsta.Rsta_0 Rsta.Rsta_3 Rsta.Rsta_2 Rsta.Rsta_1 
 Rsta.Rsta_0 0 0 0 0 
 Rsta.Rsta_1 1 0 0 1 
 Rsta.Rsta_2 1 0 1 0 
 Rsta.Rsta_3 1 1 0 0 
+
+State Machine - |nios2_SG_DMA_test|UART:uart_BAUD_RATE_115200|Tsta
+Name Tsta.Tsta_0 Tsta.Tsta_3 Tsta.Tsta_2 Tsta.Tsta_1 
+Tsta.Tsta_0 0 0 0 0 
+Tsta.Tsta_1 1 0 0 1 
+Tsta.Tsta_2 1 0 1 0 
+Tsta.Tsta_3 1 1 0 0 
+
+State Machine - |nios2_SG_DMA_test|UART:uart_BAUD_RATE_115200|Rsta
+Name Rsta.Rsta_0 Rsta.Rsta_3 Rsta.Rsta_2 Rsta.Rsta_1 
+Rsta.Rsta_0 0 0 0 0 
+Rsta.Rsta_1 1 0 0 1 
+Rsta.Rsta_2 1 0 1 0 
+Rsta.Rsta_3 1 1 0 0 
+
+State Machine - |nios2_SG_DMA_test|uart_buad_rate_recognize:m_uart_buad_rate_recognize|r_curr_state
+Name r_curr_state.P_IDLE r_curr_state.P_RECOGNIZED r_curr_state.P_FIRST_ZERO 
+r_curr_state.P_IDLE 0 0 0 
+r_curr_state.P_FIRST_ZERO 1 0 1 
+r_curr_state.P_RECOGNIZED 1 1 0 

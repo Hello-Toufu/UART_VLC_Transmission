@@ -64,6 +64,7 @@ module RX_TOP(
     ,output [7:0]      	o_sync_cnt
 	 
 	 ,input	[15:0]		i_threshold
+	,output					o_rx_9600_or_115200
 );
     //parameter   SYN_THRESHOLD  = 16'd420;
     wire    [31:0]      c_dec_8b_data;
@@ -424,5 +425,6 @@ module RX_TOP(
         ,.o_ati_data        (o_ati_data)
         ,.i_ati_rdy         (i_ati_rdy )
         ,.i_x1_mode         (i_x1_mode )
+		,.o_rx_9600_or_115200     (o_rx_9600_or_115200                      )
     );
 endmodule

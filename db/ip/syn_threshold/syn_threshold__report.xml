@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.10.12.10:49:40"
- outputDirectory="C:/Users/winner/Desktop/vlc_m_8x_syn_uart_2/db/ip/syn_threshold/">
+ date="2019.10.12.17:48:57"
+ outputDirectory="C:/Users/winner/Desktop/vlc_uart/vlc_m_8x_syn_uart_3/db/ip/syn_threshold/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -41,29 +41,30 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="syn_threshold:1.0:AUTO_DEVICE=EP4CE22E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1570848575,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:18.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=190,source_width=16)"
+   parameterizationKey="syn_threshold:1.0:AUTO_DEVICE=EP4CE22E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1570873731,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:18.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=190,source_width=16)"
    instancePathKey="syn_threshold"
    kind="syn_threshold"
    version="1.0"
    name="syn_threshold">
-  <parameter name="AUTO_GENERATION_ID" value="1570848575" />
+  <parameter name="AUTO_GENERATION_ID" value="1570873731" />
   <parameter name="AUTO_DEVICE" value="EP4CE22E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
   <generatedFiles>
    <file
-       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart_2/db/ip/syn_threshold/syn_threshold.v"
+       path="C:/Users/winner/Desktop/vlc_uart/vlc_m_8x_syn_uart_3/db/ip/syn_threshold/syn_threshold.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart_2/db/ip/syn_threshold/submodules/altsource_probe_top.v"
+       path="C:/Users/winner/Desktop/vlc_uart/vlc_m_8x_syn_uart_3/db/ip/syn_threshold/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart_2/syn_threshold.qsys" />
+   <file
+       path="C:/Users/winner/Desktop/vlc_uart/vlc_m_8x_syn_uart_3/syn_threshold.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -108,7 +109,7 @@
   <parameter name="gui_use_auto_index" value="true" />
   <generatedFiles>
    <file
-       path="C:/Users/winner/Desktop/vlc_m_8x_syn_uart_2/db/ip/syn_threshold/submodules/altsource_probe_top.v"
+       path="C:/Users/winner/Desktop/vlc_uart/vlc_m_8x_syn_uart_3/db/ip/syn_threshold/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
